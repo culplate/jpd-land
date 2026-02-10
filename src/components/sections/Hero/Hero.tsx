@@ -9,8 +9,9 @@ import {
   AnimateItem,
 } from '@/components/ui';
 import styles from './Hero.module.scss';
+import { Dictionary } from '@/content/i18n/schema';
 
-export function Hero() {
+export function Hero({ dict }: { dict: Dictionary['common'] }) {
   return (
     <Section id="hero" padding="xl" background="white">
       <Container size="lg">

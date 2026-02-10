@@ -25,16 +25,16 @@ export function Header() {
           >
             <ul className={styles.navList}>
               <li>
-                <NavLink href="#hero">Home</NavLink>
+                <NavLink href="/">Home</NavLink>
               </li>
               <li>
-                <NavLink href="#demo">Services</NavLink>
+                <NavLink href="/products">Products</NavLink>
               </li>
               <li>
-                <NavLink href="#about">About</NavLink>
+                <NavLink href="/about">About</NavLink>
               </li>
               <li>
-                <NavLink href="#contact">Contact</NavLink>
+                <NavLink href="/contact">Contact</NavLink>
               </li>
             </ul>
           </nav>

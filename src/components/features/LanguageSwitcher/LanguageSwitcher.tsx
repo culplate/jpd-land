@@ -1,5 +1,6 @@
 'use client';
 
+import type { Route } from 'next';
 import { usePathname, useRouter } from 'next/navigation';
 import { useLocale } from '@/lib/locales/locales';
 import { LOCALES, DEFAULT_LOCALE } from '@/lib/locales/i18n-config';
@@ -8,9 +9,6 @@ import styles from './LanguageSwitcher.module.scss';
 const LOCALE_NAMES: Record<string, string> = {
   en: 'English',
   uk: 'Українська',
-  es: 'Español',
-  fr: 'Français',
-  de: 'Deutsch',
 };
 
 export function LanguageSwitcher() {
@@ -33,7 +31,7 @@ export function LanguageSwitcher() {
       newPathname = `/${newLocale}${newPathname}`;
     }
 
-    router.push(newPathname);
+    router.push(newPathname as Route);
   };
 
   return (
