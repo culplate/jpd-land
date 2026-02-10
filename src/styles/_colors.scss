@@ -1,0 +1,40 @@
+// CSS Custom Properties - Colors
+:root {
+  // Primary Colors
+  --color-primary: #0066cc;
+  --color-primary-hover: #0052a3;
+  --color-cta: #ff6b35;
+  --color-cta-hover: #e85a2a;
+  --color-secondary: #6b7280;
+  --color-secondary-hover: #4b5563;
+
+  // Text Colors
+  --color-text: #1f2937;
+  --color-text-muted: #6b7280;
+  --color-text-white: #ffffff;
+
+  // Background Colors
+  --color-white: #ffffff;
+  --color-background-gray: #f9fafb;
+  --color-background-hover: #f3f4f6;
+
+  // Border Colors
+  --color-border: #d1d5db;
+  --color-border-hover: #9ca3af;
+
+  // Semantic Colors
+  --color-error: #dc2626;
+  --color-success: #16a34a;
+
+  // Focus
+  --color-focus: #005fcc;
+
+  // Gradient
+  --color-gradient-from: #0066cc;
+  --color-gradient-to: #ff6b35;
+
+  // Navigation
+  --color-nav: inherit;
+  --color-nav-hover: var(--color-primary);
+  --color-nav-active: var(--color-primary);
+}

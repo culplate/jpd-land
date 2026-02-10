@@ -1,0 +1,142 @@
+---
+alwaysApply: true
+---
+
+dont create/update documentation unless asked to!
+
+# Development Rules
+
+## Template Philosophy
+
+This repository is a production-ready template for team's internal use, not a playground or a demo.
+
+Its purpose is to:
+
+- serve as a starting point for real projects
+- reduce setup time for new applications
+- enforce consistent architecture and code quality
+- scale without turning into a fucking mess after the first sprint
+
+## Core Principles
+
+### Scalability first
+
+The structure must allow adding new features, sections, and pages without refactoring half of the codebase.
+
+### Clear responsibility boundaries
+
+Every file and component should have a clear purpose.  
+If it is unclear where something belongs - the structure is already broken.
+
+### Predictable extension
+
+New developers (or future you) should be able to:
+
+- understand the structure quickly
+- add new functionality without guessing where things go
+- follow existing patterns instead of inventing new ones
+
+### No premature abstractions, no hacks
+
+This template is opinionated, but practical.  
+No overengineering, no quick-and-dirty bullshit that will bite later.
+
+### Consistency over freedom
+
+Rules exist to keep velocity high in real projects, not to limit creativity.  
+If something breaks the rules, it must have a very good reason.
+
+## Styling Guidelines
+
+- **Use SCSS**: Always use SCSS for styling instead of CSS
+- **Mobile-first approach**: Write styles for mobile devices first, then scale up
+- **Nested media queries**: Place media queries inside their parent selectors for better organization
+- **No Tailwind CSS**: Do not use Tailwind CSS classes or utilities
+- **Use CSS Variables**: Always use the predefined color variables from `src/styles/globals.scss` instead of hardcoded colors
+- **Mixins**: dont import mixins directly to scss files, they should be passed once at creating into `next.cofig.ts` - sassOptions - additionalData
+
+### Media Query Example
+
+```scss
+.heading {
+  font-size: 3.5rem;
+  color: var(--color-text-white);
+
+  @media (min-width: 768px) {
+    font-size: 4.5rem;
+  }
+
+  @media (min-width: 1024px) {
+    font-size: 5rem;
+  }
+}
+```
+
+## Code Standards
+
+- **No CommonJS**: Use ES modules (import/export) instead of CommonJS (require/module.exports)
+- **Modern JavaScript**: Prefer modern JavaScript features and syntax
+- **SSR**: Stick to SSR approach when possible, for better SEO and performance
+- **Typing**: never use "any" type
+- **MD files**: dont create/update documentation unless asked to
+
+## File Organization
+
+- Keep styles organized with SCSS modules
+- Use meaningful class names that describe the component's purpose
+- Maintain consistent naming conventions across the project
+
+## Component Guidelines
+
+- **Reuse UI Components**: Always check and use existing UI components from `src/components/ui/` before creating new ones
+- **Extend, Don't Duplicate**: When possible, extend existing UI components with new variants or props instead of creating similar components
+- **Consistent Styling**: Use the established UI component patterns for buttons, containers, sections, and other common elements
+
+### Component types
+
+Every component must belong to exactly one of the following types, based on its responsibility.
+
+#### ui
+
+- Base, reusable, and presentational components.
+- They contain no business logic and are not aware of application state.
+
+Examples:
+
+- Button
+- Input
+- Modal
+- Icon
+- Spinner
+
+#### features
+
+- Components that implement specific functionality or business logic.
+- They may manage state, handle user interactions, and combine multiple ui components.
+
+Examples:
+
+- ProductCarousel
+- AuthForm
+- SearchBar
+- FiltersPanel
+
+#### sections
+
+- High-level layout or page-building components.
+- They compose features and ui components to form distinct page sections, but contain minimal logic.
+
+Examples:
+
+- Header
+- Footer
+- HeroSection
+- ProductListSection
+
+### Rules
+
+- Do not mix responsibilities between types.
+- ui components must not import features or sections.
+- features may import ui components.
+- sections may import both ui and features.
+- If a component grows too complex, split it into smaller components following these rules.

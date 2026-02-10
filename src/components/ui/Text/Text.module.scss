@@ -1,0 +1,99 @@
+.text {
+  margin: 0;
+  line-height: 1.5;
+}
+
+// Sizes
+.xs {
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
+.sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.md {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+.xl {
+  font-size: 1.25rem;
+  line-height: 1.875rem;
+}
+
+.\32xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+// Weights
+.weight-normal {
+  font-weight: 400;
+}
+
+.weight-medium {
+  font-weight: 500;
+}
+
+.weight-semibold {
+  font-weight: 600;
+}
+
+.weight-bold {
+  font-weight: 700;
+}
+
+// Alignment
+.align-left {
+  text-align: left;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.align-right {
+  text-align: right;
+}
+
+// Colors
+.color-default {
+  color: var(--color-text, #1f2937);
+}
+
+.color-muted {
+  color: var(--color-text-muted, #6b7280);
+}
+
+.color-primary {
+  color: var(--color-primary, #0066cc);
+}
+
+.color-secondary {
+  color: var(--color-secondary, #6b7280);
+}
+
+.color-error {
+  color: var(--color-error, #dc2626);
+}
+
+.color-success {
+  color: var(--color-success, #16a34a);
+}
+
+// Truncation
+.truncate {
+  @include truncate;
+}
+
+.lineClamp {
+  @include line-clamp(var(--line-clamp, 2));
+}

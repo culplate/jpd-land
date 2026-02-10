@@ -1,0 +1,14 @@
+node_modules
+.next
+out
+build
+next-env.d.ts
+*.lock
+package-lock.json
+*.min.js
+*.min.css
+public
+.git
+dist
+coverage
+

@@ -1,0 +1,80 @@
+.title {
+  margin: 0;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+// Sizes with fluid typography
+.xs {
+  @include fontSize(18px, 20px);
+}
+
+.sm {
+  @include fontSize(20px, 24px);
+}
+
+.md {
+  @include fontSize(24px, 28px);
+}
+
+.lg {
+  @include fontSize(28px, 32px);
+}
+
+.xl {
+  @include fontSize(32px, 40px);
+}
+
+.\32xl {
+  @include fontSize(40px, 48px);
+}
+
+.\33xl {
+  @include fontSize(48px, 60px);
+}
+
+.\34xl {
+  @include fontSize(60px, 72px);
+}
+
+// Weights
+.weight-normal {
+  font-weight: 400;
+}
+
+.weight-medium {
+  font-weight: 500;
+}
+
+.weight-semibold {
+  font-weight: 600;
+}
+
+.weight-bold {
+  font-weight: 700;
+}
+
+// Alignment
+.align-left {
+  text-align: left;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.align-right {
+  text-align: right;
+}
+
+// Gradient text
+.gradient {
+  background: linear-gradient(
+    135deg,
+    var(--color-gradient-from, #0066cc) 0%,
+    var(--color-gradient-to, #ff6b35) 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

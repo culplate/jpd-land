@@ -1,0 +1,62 @@
+.section {
+  width: 100%;
+}
+
+// Padding sizes - mobile first with nested media queries
+.sm {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+
+  @include media($bp-tablet) {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+}
+
+.md {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+
+  @include media($bp-tablet) {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+}
+
+.lg {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+
+  @include media($bp-tablet) {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+}
+
+.xl {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+
+  @include media($bp-tablet) {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
+}
+
+// Background variants
+.transparent {
+  background-color: transparent;
+}
+
+.white {
+  background-color: var(--color-white);
+}
+
+.gray {
+  background-color: var(--color-background-gray);
+}
+
+.primary {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
