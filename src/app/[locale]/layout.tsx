@@ -25,6 +25,7 @@ type LayoutProps = {
   params: Promise<{ locale: string }>;
 };
 
+// TODO: ADDITIONALLY ADD JSON-LD SCHEMA FOR EACH PAGE
 export async function generateMetadata({
   params,
 }: LayoutProps): Promise<Metadata> {
@@ -50,6 +51,9 @@ export async function generateMetadata({
     metadataBase: new URL(baseUrl),
     title: dict.seo.title,
     description: dict.seo.description,
+    // TODO: ADD IMAGES "/android-chrome-512x512.png" and "/android-chrome-192x192.png" to the project and manifest
+    // TODO opengraph-image.png, twitter-image.png, apple-icon.png, apple-touch-icon.png, favicon.ico, icon.png into APP directory
+    manifest: '/site.webmanifest',
     openGraph: {
       title: dict.og.title,
       description: dict.og.description,
