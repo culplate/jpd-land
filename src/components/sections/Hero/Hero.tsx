@@ -11,7 +11,7 @@ import {
 import styles from './Hero.module.scss';
 import { Dictionary } from '@/content/i18n/schema';
 
-export function Hero({ dict }: { dict: Dictionary['common'] }) {
+export function Hero({ dict }: { dict: Dictionary['main']['hero'] }) {
   return (
     <Section id="hero" padding="xl" background="white">
       <Container size="lg">

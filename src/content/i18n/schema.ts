@@ -15,4 +15,20 @@ export type Dictionary = {
     about: string;
     contact: string;
   };
+  main: {
+    hero: {
+      title: string;
+      description: string;
+      button: string;
+    };
+  };
+  products: {
+    title: string;
+  };
+  about: {
+    title: string;
+  };
+  contact: {
+    title: string;
+  };
 };

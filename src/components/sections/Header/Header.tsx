@@ -25,7 +25,9 @@ export function Header() {
           >
             <ul className={styles.navList}>
               <li>
-                <NavLink href="/">Home</NavLink>
+                <NavLink href="/" exactMatch>
+                  Home
+                </NavLink>
               </li>
               <li>
                 <NavLink href="/products">Products</NavLink>

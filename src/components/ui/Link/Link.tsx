@@ -6,6 +6,7 @@ import styles from './Link.module.scss';
 import { UrlObject } from 'url';
 import { useCreateHref } from '@/lib/locales/hooks';
 
+// use Link everywhere by default, except for page navigation links
 export interface LinkProps extends Omit<
   AnchorHTMLAttributes<HTMLAnchorElement>,
   'href'

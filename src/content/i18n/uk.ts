@@ -12,6 +12,22 @@ const uk: Dictionary = {
     about: 'Про нас',
     contact: 'Контакти',
   },
+  main: {
+    hero: {
+      title: 'Ласкаво просимо на наш сайт',
+      description: 'Це опис нашого сайту',
+      button: 'Почати',
+    },
+  },
+  products: {
+    title: 'Продукти',
+  },
+  about: {
+    title: 'Про нас',
+  },
+  contact: {
+    title: 'Контакти',
+  },
 };
 
 export default uk;

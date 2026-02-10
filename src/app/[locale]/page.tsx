@@ -11,7 +11,7 @@ export default async function Home({ params }: Props) {
 
   return (
     <>
-      <Hero dict={dict.common} />
+      <Hero dict={dict.main.hero} />
     </>
   );
 }

@@ -3,12 +3,7 @@ import { Geist, Geist_Mono } from 'next/font/google';
 import '@/styles/globals.scss';
 import { Header } from '@/components/sections/Header/Header';
 import { Footer } from '@/components/sections/Footer/Footer';
-import {
-  LOCALES,
-  DEFAULT_LOCALE,
-  type Locale,
-} from '@/lib/locales/i18n-config';
-import { getDictionary } from '@/lib/locales/locales';
+import { LOCALES } from '@/lib/locales/i18n-config';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -36,7 +31,6 @@ type Props = {
 
 export default async function LocaleLayout({ children, params }: Props) {
   const { locale } = await params;
-  const dict = await getDictionary(locale);
 
   return (
     <html lang={locale}>
