@@ -7,6 +7,25 @@ export type PageSeo = {
   description: string;
 };
 
+export type ProductId =
+  | 'fujiyama'
+  | 'yamato'
+  | 'shori'
+  | 'fujizakura'
+  | 'shogun';
+
+export type ProductDictionaryItem = {
+  name: string;
+  title: string;
+  description: string;
+  nutrition: string;
+};
+
+export type ProductsDictionary = {
+  title: string;
+  items: Record<ProductId, ProductDictionaryItem>;
+};
+
 export type Dictionary = {
   name: string;
   // Common translations
@@ -29,9 +48,7 @@ export type Dictionary = {
       button: string;
     };
   };
-  products: {
-    title: string;
-  };
+  products: ProductsDictionary;
   about: {
     title: string;
   };

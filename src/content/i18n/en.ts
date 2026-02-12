@@ -23,6 +23,38 @@ const en: Dictionary = {
   },
   products: {
     title: 'Products',
+    items: {
+      fujiyama: {
+        name: 'Fujiyama',
+        title: 'Fujiyama — Staple',
+        description: 'Essential staple food for Japanese koi cultivation and breeding, inspired by Mount Fuji.',
+        nutrition: 'Balanced formula for steady growth. High in protein, ideal for everyday feeding.',
+      },
+      yamato: {
+        name: 'Yamato',
+        title: 'Yamato — Color',
+        description: 'Color-enhancing formula for Yamato Nishiki and other koi. Promotes vibrant red and white patterns.',
+        nutrition: 'Breeding and color enhancement (Iroage). Rich in pigments for deeper, richer coloration.',
+      },
+      shori: {
+        name: 'Shori',
+        title: 'Shori — Gain Weight',
+        description: 'High weight-gain formula for show koi. Helps develop robust body mass and competitive condition.',
+        nutrition: 'Katsugoi (victorious carp) formula. High calorie, supports rapid growth and body development.',
+      },
+      fujizakura: {
+        name: 'Fujizakura',
+        title: 'Fujizakura — Health',
+        description: 'Health management formula combining growth support with wellness. Named after Mount Fuji cherry.',
+        nutrition: 'High-growth and health care. Supports digestion, vitality, and overall koi well-being.',
+      },
+      shogun: {
+        name: 'Shogun',
+        title: 'Shogun — All Season',
+        description: 'Versatile all-season food suitable for both high and low water temperatures. Year-round feeding.',
+        nutrition: 'Digestible in warm and cold water. Balanced nutrition for consistent feeding in any season.',
+      },
+    },
   },
   about: {
     title: 'About',
