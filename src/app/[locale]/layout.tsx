@@ -91,7 +91,7 @@ export default async function LocaleLayout({ children, params }: Props) {
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <Header />
         {children}
-        <Footer />
+        <Footer locale={locale as Locale} />
         <Toaster />
       </body>
     </html>

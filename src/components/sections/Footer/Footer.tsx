@@ -1,7 +1,8 @@
 import { Container, Section, Link } from '@/components/ui';
 import styles from './Footer.module.scss';
+import { Locale } from '@/lib/locales/i18n-config';
 
-export function Footer() {
+export function Footer({ locale }: { locale: Locale }) {
   const currentYear = new Date().getFullYear();
 
   const links = {
@@ -102,7 +103,7 @@ export function Footer() {
               © {currentYear} Client Name. All rights reserved.
             </p>
             <div className={styles.bottomLinks}>
-              <Link href="#privacy" className={styles.bottomLink}>
+              <Link href={`/privacy`} className={styles.bottomLink}>
                 Privacy
               </Link>
               <Link href="#terms" className={styles.bottomLink}>

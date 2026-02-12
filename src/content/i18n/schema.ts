@@ -26,6 +26,11 @@ export type ProductsDictionary = {
   items: Record<ProductId, ProductDictionaryItem>;
 };
 
+export type PrivacySection = {
+  heading: string;
+  content: string;
+};
+
 export type Dictionary = {
   name: string;
   // Common translations
@@ -55,6 +60,11 @@ export type Dictionary = {
   contact: {
     title: string;
   };
+  privacy: {
+    title: string;
+    lastUpdated: string;
+    sections: PrivacySection[];
+  };
   // Site-wide SEO defaults (layout / home fallback)
   seo: {
     title: string;
@@ -72,5 +82,6 @@ export type Dictionary = {
     about: PageSeo;
     contact: PageSeo;
     products: PageSeo;
+    privacy: PageSeo;
   };
 };

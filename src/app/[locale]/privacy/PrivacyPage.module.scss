@@ -1,0 +1,45 @@
+.privacy {
+  max-width: 48rem;
+  margin: 0 auto;
+}
+
+.title {
+  margin-bottom: 0.5rem;
+}
+
+.lastUpdated {
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+  margin-bottom: 2.5rem;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.section {
+  & + & {
+    padding-top: 0;
+  }
+}
+
+.sectionHeading {
+  margin-bottom: 0.75rem;
+  font-size: 1.125rem;
+
+  @media (min-width: 768px) {
+    font-size: 1.25rem;
+  }
+}
+
+.sectionContent {
+  color: var(--color-text);
+  line-height: 1.6;
+  font-size: 0.9375rem;
+
+  @media (min-width: 768px) {
+    font-size: 1rem;
+  }
+}
