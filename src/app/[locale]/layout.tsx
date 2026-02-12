@@ -10,6 +10,7 @@ import {
 } from '@/lib/locales/i18n-config';
 import { getDictionary } from '@/lib/locales/locales';
 import { getBaseUrl } from '@/lib/site-url';
+import { Toaster } from 'react-hot-toast';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -91,6 +92,7 @@ export default async function LocaleLayout({ children, params }: Props) {
         <Header />
         {children}
         <Footer />
+        <Toaster />
       </body>
     </html>
   );
