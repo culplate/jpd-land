@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import '@/styles/globals.scss';
-import { Header } from '@/components/sections/Header/Header';
-import { Footer } from '@/components/sections/Footer/Footer';
+import { Header } from '@/components/sections/common/Header/Header';
+import { Footer } from '@/components/sections/common/Footer/Footer';
 import {
   LOCALES,
   DEFAULT_LOCALE,
