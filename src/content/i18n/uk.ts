@@ -9,9 +9,57 @@ const uk: Dictionary = {
     cancel: 'Скасувати',
   },
   nav: {
-    home: 'Головна',
+    products: 'Продукти',
     about: 'Про нас',
     contact: 'Контакти',
+    login: 'Увійти',
+    contactUs: 'Зв’язатися',
+  },
+  footer: {
+    brand: {
+      name: 'Назва клієнта',
+      description:
+        'Замініть це на короткий опис компанії клієнта або слоган. Коротко та запам’ятовувано.',
+    },
+    groups: {
+      services: {
+        title: 'Послуги',
+        links: [
+          { label: 'Послуги', href: '#services' },
+          { label: 'Портфоліо', href: '#portfolio' },
+          { label: 'Рішення', href: '#solutions' },
+          { label: 'Ресурси', href: '#resources' },
+        ],
+      },
+      company: {
+        title: 'Компанія',
+        links: [
+          { label: 'Про нас', href: '#about' },
+          { label: 'Команда', href: '#team' },
+          { label: 'Кар’єра', href: '#careers' },
+          { label: 'Контакти', href: '#contact' },
+        ],
+      },
+      legal: {
+        title: 'Правова інформація',
+        links: [
+          { label: 'Політика конфіденційності', href: '#privacy' },
+          { label: 'Умови використання', href: '#terms' },
+          { label: 'Політика cookies', href: '#cookies' },
+          { label: 'Карта сайту', href: '#sitemap' },
+        ],
+      },
+    },
+    social: [
+      { label: 'Twitter', href: '#' },
+      { label: 'LinkedIn', href: '#' },
+      { label: 'Facebook', href: '#' },
+      { label: 'Instagram', href: '#' },
+    ],
+    copyright: '© {year} Назва клієнта. Усі права захищені.',
+    privacy: 'Конфіденційність',
+    terms: 'Умови',
+    cookies: 'Cookies',
   },
   main: {
     hero: {

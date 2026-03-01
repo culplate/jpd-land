@@ -31,6 +31,33 @@ export type PrivacySection = {
   content: string;
 };
 
+export type FooterLink = {
+  label: string;
+  href: string;
+};
+
+export type FooterGroup = {
+  title: string;
+  links: FooterLink[];
+};
+
+export type FooterDictionary = {
+  brand: {
+    name: string;
+    description: string;
+  };
+  groups: {
+    services: FooterGroup;
+    company: FooterGroup;
+    legal: FooterGroup;
+  };
+  social: FooterLink[];
+  copyright: string;
+  privacy: string;
+  terms: string;
+  cookies: string;
+};
+
 export type Dictionary = {
   name: string;
   // Common translations
@@ -40,12 +67,15 @@ export type Dictionary = {
     submit: string;
     cancel: string;
   };
-  // Navigation
+  // Navigation (header)
   nav: {
-    home: string;
+    products: string;
     about: string;
     contact: string;
+    login: string;
+    contactUs: string;
   };
+  footer: FooterDictionary;
   main: {
     hero: {
       title: string;

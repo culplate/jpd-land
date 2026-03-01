@@ -10,9 +10,57 @@ const en: Dictionary = {
     cancel: 'Cancel',
   },
   nav: {
-    home: 'Home',
+    products: 'Products',
     about: 'About',
     contact: 'Contact',
+    login: 'Login',
+    contactUs: 'Contact Us',
+  },
+  footer: {
+    brand: {
+      name: 'Client Name',
+      description:
+        "Replace this with your client's brief company description or tagline. Keep it concise and memorable.",
+    },
+    groups: {
+      services: {
+        title: 'Services',
+        links: [
+          { label: 'Services', href: '#services' },
+          { label: 'Portfolio', href: '#portfolio' },
+          { label: 'Solutions', href: '#solutions' },
+          { label: 'Resources', href: '#resources' },
+        ],
+      },
+      company: {
+        title: 'Company',
+        links: [
+          { label: 'About', href: '#about' },
+          { label: 'Team', href: '#team' },
+          { label: 'Careers', href: '#careers' },
+          { label: 'Contact', href: '#contact' },
+        ],
+      },
+      legal: {
+        title: 'Legal',
+        links: [
+          { label: 'Privacy Policy', href: '#privacy' },
+          { label: 'Terms of Service', href: '#terms' },
+          { label: 'Cookie Policy', href: '#cookies' },
+          { label: 'Sitemap', href: '#sitemap' },
+        ],
+      },
+    },
+    social: [
+      { label: 'Twitter', href: '#' },
+      { label: 'LinkedIn', href: '#' },
+      { label: 'Facebook', href: '#' },
+      { label: 'Instagram', href: '#' },
+    ],
+    copyright: '© {year} Client Name. All rights reserved.',
+    privacy: 'Privacy',
+    terms: 'Terms',
+    cookies: 'Cookies',
   },
   main: {
     hero: {
