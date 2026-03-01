@@ -1,6 +1,6 @@
 // Configure your supported locales here
 // Example: ['en', 'es', 'fr', 'de', 'ja', etc.]
-export const LOCALES = ['en', 'uk'] as const;
+export const LOCALES = ['uk', 'en'] as const;
 export type Locale = (typeof LOCALES)[number];
 export const DEFAULT_LOCALE: Locale = 'uk';
 
