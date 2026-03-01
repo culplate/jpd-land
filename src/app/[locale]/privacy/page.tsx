@@ -43,14 +43,14 @@ export default async function Privacy({ params }: Props) {
     <Section padding="lg" background="white">
       <Container size="lg">
         <div className={styles.privacy}>
-          <Title as="h1" size="3xl" className={styles.title}>
+          <Title as="h1" className={styles.title}>
             {title}
           </Title>
           <p className={styles.lastUpdated}>{lastUpdated}</p>
           <div className={styles.content}>
             {sections.map((section, index) => (
               <div key={index} className={styles.section}>
-                <Title as="h2" size="xl" className={styles.sectionHeading}>
+                <Title as="h2" size="h3" className={styles.sectionHeading}>
                   {section.heading}
                 </Title>
                 <p className={styles.sectionContent}>{section.content}</p>

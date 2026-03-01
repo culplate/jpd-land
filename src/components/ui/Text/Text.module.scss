@@ -1,40 +1,24 @@
+// Base: margin only. Line-height and letter-spacing inherit from body (globals).
 .text {
   margin: 0;
-  line-height: 1.5;
-}
-
-// Sizes
-.xs {
-  font-size: 0.75rem;
-  line-height: 1rem;
 }
 
 .sm {
-  font-size: 0.875rem;
-  line-height: 1.25rem;
+  font-size: var(--text-sm-size);
 }
 
 .md {
-  font-size: 1rem;
-  line-height: 1.5rem;
+  font-size: var(--text-size);
 }
 
 .lg {
-  font-size: 1.125rem;
-  line-height: 1.75rem;
+  font-size: var(--text-lg-size);
 }
 
-.xl {
-  font-size: 1.25rem;
-  line-height: 1.875rem;
+.weight-light {
+  font-weight: 300;
 }
 
-.\32xl {
-  font-size: 1.5rem;
-  line-height: 2rem;
-}
-
-// Weights
 .weight-normal {
   font-weight: 400;
 }
@@ -43,15 +27,10 @@
   font-weight: 500;
 }
 
-.weight-semibold {
-  font-weight: 600;
-}
-
 .weight-bold {
   font-weight: 700;
 }
 
-// Alignment
 .align-left {
   text-align: left;
 }
@@ -64,32 +43,30 @@
   text-align: right;
 }
 
-// Colors
 .color-default {
-  color: var(--color-text, #1f2937);
+  color: var(--color-text);
 }
 
 .color-muted {
-  color: var(--color-text-muted, #6b7280);
+  color: var(--color-text-muted);
 }
 
 .color-primary {
-  color: var(--color-primary, #0066cc);
+  color: var(--color-primary);
 }
 
 .color-secondary {
-  color: var(--color-secondary, #6b7280);
+  color: var(--color-secondary);
 }
 
 .color-error {
-  color: var(--color-error, #dc2626);
+  color: var(--color-error);
 }
 
 .color-success {
-  color: var(--color-success, #16a34a);
+  color: var(--color-success);
 }
 
-// Truncation
 .truncate {
   @include truncate;
 }

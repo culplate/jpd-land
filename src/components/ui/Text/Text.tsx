@@ -4,8 +4,8 @@ import styles from './Text.module.scss';
 export interface TextProps extends HTMLAttributes<HTMLElement> {
   children: ReactNode;
   as?: 'p' | 'span' | 'div' | 'label';
-  size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl';
-  weight?: 'normal' | 'medium' | 'semibold' | 'bold';
+  size?: 'sm' | 'md' | 'lg';
+  weight?: 'light' | 'normal' | 'medium' | 'bold';
   align?: 'left' | 'center' | 'right';
   color?: 'default' | 'muted' | 'primary' | 'secondary' | 'error' | 'success';
   truncate?: boolean;

@@ -1,11 +1,17 @@
 'use client';
 
 import { useState } from 'react';
-import { Container, Button, NavLink } from '@/components/ui';
+import { Container, NavLink } from '@/components/ui';
+import { Link } from '@/components/ui/Link/Link';
 import { LanguageSwitcher } from '@/components/features';
 import styles from './Header.module.scss';
+import { icons } from '@/app/assets/icons';
+import type { Dictionary } from '@/content/i18n/schema';
+type HeaderProps = {
+  nav: Dictionary['nav'];
+};
 
-export function Header() {
+export function Header({ nav }: HeaderProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const toggleMobileMenu = () => {
@@ -16,41 +22,28 @@ export function Header() {
     <header className={styles.header}>
       <Container size="xl">
         <div className={styles.wrapper}>
-          <div className={styles.logo}>
-            <span className={styles.logoText}>Client Logo</span>
-          </div>
+          <Link href="/" className={styles.logo}>
+            <svg className={styles.logoIcon}>
+              <use xlinkHref={`${icons.src}#logo`}></use>
+            </svg>
+          </Link>
 
           <nav
             className={`${styles.nav} ${isMobileMenuOpen ? styles.navOpen : ''}`}
           >
             <ul className={styles.navList}>
               <li>
-                <NavLink href="/" exactMatch>
-                  Home
-                </NavLink>
+                <NavLink href="/products">{nav.products}</NavLink>
               </li>
               <li>
-                <NavLink href="/products">Products</NavLink>
+                <NavLink href="/about">{nav.about}</NavLink>
               </li>
               <li>
-                <NavLink href="/about">About</NavLink>
-              </li>
-              <li>
-                <NavLink href="/contact">Contact</NavLink>
+                <NavLink href="/contact">{nav.contact}</NavLink>
               </li>
             </ul>
           </nav>
-
-          <div className={styles.actions}>
-            <LanguageSwitcher />
-            <Button variant="ghost" size="sm" className={styles.signIn}>
-              Login
-            </Button>
-            <Button variant="cta" size="sm">
-              Contact Us
-            </Button>
-          </div>
-
+          <LanguageSwitcher />
           <button
             className={styles.mobileMenuToggle}
             onClick={toggleMobileMenu}
