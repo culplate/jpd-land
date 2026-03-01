@@ -1,3 +1,23 @@
+// Typography (UI Kit - Manrope)
+:root {
+  --text-line-height: 1.4;
+  --text-spacing-heading: 0.04em;
+  --text-spacing-body: 0.02em;
+  --text-heading-weight: 500;
+
+  --text-size: 1.5rem;
+  --text-sm-size: 1.333rem;
+  --text-button-weight: 700;
+
+  --text-h1-size: 5.33rem;
+  --text-h2-size: 3.33rem;
+  --text-h3-size: 2rem;
+}
+
+html {
+  box-sizing: border-box;
+}
+
 *,
 *::before,
 *::after {
@@ -10,7 +30,12 @@ body {
 }
 
 body {
+  --font-sans: var(--font-manrope), system-ui, sans-serif;
   overflow-x: hidden;
+  font-family: var(--font-sans);
+  font-size: var(--text-size);
+  line-height: var(--text-line-height);
+  letter-spacing: var(--text-spacing-body);
   color: var(--color-text);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -23,16 +48,29 @@ body {
 
 input,
 textarea,
-select {
+select,
+button {
   font: inherit;
   color: inherit;
+}
+
+:focus {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
 }
 
 button {
   border: none;
   padding: 0;
   font-family: inherit;
-  font-weight: 500;
+  font-size: var(--text-size);
+  font-weight: var(--text-button-weight);
+  line-height: var(--text-line-height);
+  letter-spacing: var(--text-spacing-body);
   font-style: normal;
   color: inherit;
   background: none;
@@ -56,8 +94,23 @@ h1,
 h2,
 h3,
 h4,
-h5 {
-  font-weight: 500;
+h5,
+h6 {
+  line-height: var(--text-line-height);
+  letter-spacing: var(--text-spacing-heading);
+  font-weight: var(--text-heading-weight);
+}
+
+h1 {
+  font-size: var(--text-h1-size);
+}
+
+h2 {
+  font-size: var(--text-h2-size);
+}
+
+h3 {
+  font-size: var(--text-h3-size);
 }
 
 ul,
@@ -66,9 +119,20 @@ ol {
   list-style: none;
 }
 
-img {
+fieldset {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  min-width: 0;
+}
+
+img,
+picture,
+video,
+svg {
   display: block;
-  width: 100%;
+  max-width: 100%;
+  height: auto;
 }
 
 a {
@@ -77,6 +141,16 @@ a {
 
   &:hover {
     color: inherit;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
 

@@ -1,40 +1,37 @@
-// CSS Custom Properties - Colors
+// CSS Custom Properties - Colors (UI Kit)
 :root {
-  // Primary Colors
-  --color-primary: #0066cc;
-  --color-primary-hover: #0052a3;
-  --color-cta: #ff6b35;
-  --color-cta-hover: #e85a2a;
-  --color-secondary: #6b7280;
-  --color-secondary-hover: #4b5563;
+  // Palette
+  --color-blue-700: #122351;
+  --color-red-700: #9b1523;
+  --color-red-900: #730002;
+  --color-beige-100: #fffcfa;
+  --color-beige-300: #eee7e2;
+  --color-beige-500: #cfc1b5;
 
-  // Text Colors
-  --color-text: #1f2937;
-  --color-text-muted: #6b7280;
-  --color-text-white: #ffffff;
+  // Semantic
+  --color-primary: var(--color-blue-700);
+  --color-primary-hover: var(--color-red-700);
+  --color-cta: var(--color-red-700);
+  --color-cta-hover: var(--color-red-900);
+  --color-secondary: var(--color-beige-500);
+  --color-secondary-hover: var(--color-beige-500);
 
-  // Background Colors
-  --color-white: #ffffff;
-  --color-background-gray: #f9fafb;
-  --color-background-hover: #f3f4f6;
+  // Text
+  --color-text: var(--color-blue-700);
+  --color-text-muted: var(--color-beige-500);
+  --color-text-white: var(--color-beige-100);
 
-  // Border Colors
-  --color-border: #d1d5db;
-  --color-border-hover: #9ca3af;
+  // Background
+  --color-bg-white: var(--color-beige-100);
+  --color-bg-gray: var(--color-beige-300);
 
-  // Semantic Colors
-  --color-error: #dc2626;
-  --color-success: #16a34a;
+  // Border
+  --color-border: var(--color-beige-500);
+
+  // Semantic
+  --color-error: var(--color-red-700);
+  --color-success: var(--color-red-900);
 
   // Focus
-  --color-focus: #005fcc;
-
-  // Gradient
-  --color-gradient-from: #0066cc;
-  --color-gradient-to: #ff6b35;
-
-  // Navigation
-  --color-nav: inherit;
-  --color-nav-hover: var(--color-primary);
-  --color-nav-active: var(--color-primary);
+  --color-focus: var(--color-blue-700);
 }

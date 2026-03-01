@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
+import { Geist, Geist_Mono, Manrope } from 'next/font/google';
 import '@/styles/globals.scss';
 import { Header } from '@/components/sections/common/Header/Header';
 import { Footer } from '@/components/sections/common/Footer/Footer';
@@ -20,6 +20,12 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: '--font-geist-mono',
   subsets: ['latin'],
+});
+
+const manrope = Manrope({
+  variable: '--font-manrope',
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '700'],
 });
 
 type LayoutProps = {
@@ -88,7 +94,7 @@ export default async function LocaleLayout({ children, params }: Props) {
 
   return (
     <html lang={locale}>
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className={`${manrope.variable} ${geistSans.variable} ${geistMono.variable}`}>
         <Header />
         {children}
         <Footer locale={locale as Locale} />
