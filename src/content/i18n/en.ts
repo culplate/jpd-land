@@ -71,46 +71,83 @@ const en: Dictionary = {
   },
   products: {
     title: 'Products',
-    items: {
+    page: {
       fujiyama: {
         name: 'Fujiyama',
-        title: 'Fujiyama — Staple',
-        description:
-          'Essential staple food for Japanese koi cultivation and breeding, inspired by Mount Fuji.',
+        features: 'Staple line, large pellets, high digestibility.',
+        benefits: 'Steady growth, ideal for everyday feeding.',
+        ingredients: 'Fish meal, wheat, vitamins and minerals.',
         nutrition:
           'Balanced formula for steady growth. High in protein, ideal for everyday feeding.',
+        imageLink: '/img/food/fujiyama-poster.jpg',
       },
       yamato: {
         name: 'Yamato',
-        title: 'Yamato — Color',
-        description:
-          'Color-enhancing formula for Yamato Nishiki and other koi. Promotes vibrant red and white patterns.',
+        features: 'Color enhancement, floating pellets, premium formula.',
+        benefits: 'Vibrant red and white patterns (Iroage).',
+        ingredients: 'Pigments, fish meal, natural additives.',
         nutrition:
-          'Breeding and color enhancement (Iroage). Rich in pigments for deeper, richer coloration.',
+          'Breeding and color enhancement. Rich in pigments for deeper, richer coloration.',
+        imageLink: '/img/food/yamato-poster.jpg',
       },
       shori: {
         name: 'Shori',
-        title: 'Shori — Gain Weight',
-        description:
-          'High weight-gain formula for show koi. Helps develop robust body mass and competitive condition.',
+        features: 'Rapid weight gain, super-premium, Katsugoi formula.',
+        benefits: 'Robust body mass, suited for show koi.',
+        ingredients: 'High-protein components, fats, vitamins.',
         nutrition:
-          'Katsugoi (victorious carp) formula. High calorie, supports rapid growth and body development.',
+          'High-calorie formula, supports rapid growth and body development.',
+        imageLink: '/img/food/shori-poster.jpg',
       },
       fujizakura: {
         name: 'Fujizakura',
-        title: 'Fujizakura — Health',
-        description:
-          'Health management formula combining growth support with wellness. Named after Mount Fuji cherry.',
+        features: 'Health and growth, combined formula.',
+        benefits: 'Digestion, vitality, overall koi well-being.',
+        ingredients: 'Premium grains, probiotics, vitamins.',
         nutrition:
-          'High-growth and health care. Supports digestion, vitality, and overall koi well-being.',
+          'High-growth and health care. Supports digestion and overall condition.',
+        imageLink: '/img/food/fujizakura-poster.jpg',
       },
       shogun: {
         name: 'Shogun',
-        title: 'Shogun — All Season',
-        description:
-          'Versatile all-season food suitable for both high and low water temperatures. Year-round feeding.',
+        features: 'All-season, digestible in cold and warm water.',
+        benefits: 'Year-round feeding without changing food.',
+        ingredients: 'Adaptive formula, balanced macronutrients.',
         nutrition:
           'Digestible in warm and cold water. Balanced nutrition for consistent feeding in any season.',
+        imageLink: '/img/food/shogun-poster.png',
+      },
+    },
+    card: {
+      fujiyama: {
+        name: 'Fujiyama',
+        japaneseName: '富士山',
+        description: 'Basic diet, easy digestion.',
+        imageLink: '/img/food/fujiyama-sq.png',
+      },
+      yamato: {
+        name: 'Yamato',
+        japaneseName: '大和錦',
+        description: 'Bright colors, natural coloring.',
+        imageLink: '/img/food/yamato-sq.png',
+      },
+      shori: {
+        name: 'Shori',
+        japaneseName: '勝鯉',
+        description: 'Fast growth, super-premium formula.',
+        imageLink: '/img/food/shori-sq.png',
+      },
+      fujizakura: {
+        name: 'Fujizakura',
+        japaneseName: '富士桜',
+        description: 'Immunity strengthening, health protection.',
+        imageLink: '/img/food/fujizakura-sq.png',
+      },
+      shogun: {
+        name: 'Shogun',
+        japaneseName: '将軍',
+        description: 'For cold water, all-season.',
+        imageLink: '/img/food/shogun-sq.png',
       },
     },
   },

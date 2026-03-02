@@ -14,16 +14,28 @@ export type ProductId =
   | 'fujizakura'
   | 'shogun';
 
-export type ProductDictionaryItem = {
+/** Product data for the product detail page (name, features, benefits, ingredients, nutrition, image) */
+export type ProductPageItem = {
   name: string;
-  title: string;
-  description: string;
+  features: string;
+  benefits: string;
+  ingredients: string;
   nutrition: string;
+  imageLink: string;
+};
+
+/** Product data for the product card (listing / grid) */
+export type ProductCardItem = {
+  name: string;
+  japaneseName: string;
+  description: string;
+  imageLink: string;
 };
 
 export type ProductsDictionary = {
   title: string;
-  items: Record<ProductId, ProductDictionaryItem>;
+  page: Record<ProductId, ProductPageItem>;
+  card: Record<ProductId, ProductCardItem>;
 };
 
 export type PrivacySection = {
