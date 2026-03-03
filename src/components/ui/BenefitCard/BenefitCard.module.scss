@@ -1,0 +1,36 @@
+.card {
+  background-color: rgba(0, 0, 0, 0.041);
+  padding: 3.375rem 1.5rem;
+  width: 304px;
+  height: 304px;
+  backdrop-filter: blur(10px);
+
+  @include media($bp-tablet) {
+    padding: 2.5rem 1rem;
+    width: 244px;
+    height: 244px;
+  }
+
+  @include media($bp-desktop) {
+    padding: 3.375rem 1.5rem;
+    width: 284px;
+    height: 284px;
+  }
+}
+
+.metric {
+  font-size: 4rem;
+  font-weight: var(--text-heading-weight);
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--color-border);
+  text-align: center;
+
+  @include media($bp-tablet) {
+    font-size: 3.5rem;
+  }
+}
+
+.description {
+  padding-top: 2rem;
+  text-align: center;
+}

@@ -120,6 +120,27 @@ const en: Dictionary = {
         },
       ],
     },
+    benefits: {
+      title: 'Modern JPD: The wisdom of generations in every pellet',
+      cards: [
+        {
+          metric: '207',
+          description: 'Years of tradition',
+        },
+        {
+          metric: '20+',
+          description: 'Countries of partners',
+        },
+        {
+          metric: '54',
+          description: 'Years of leadership',
+        },
+        {
+          metric: '100%',
+          description: 'Scientific approach',
+        },
+      ],
+    },
   },
   products: {
     title: 'Products',

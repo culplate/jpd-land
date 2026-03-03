@@ -123,6 +123,27 @@ const uk: Dictionary = {
         },
       ],
     },
+    benefits: {
+      title: 'Сучасне JPD: Досвід поколінь у кожній гранулі',
+      cards: [
+        {
+          metric: '207',
+          description: 'Років традиції',
+        },
+        {
+          metric: '20+',
+          description: 'Країн-партнерів',
+        },
+        {
+          metric: '54',
+          description: 'Роки лідерства',
+        },
+        {
+          metric: '100%',
+          description: 'Науковий підхід',
+        },
+      ],
+    },
   },
   products: {
     title: 'Продукти',

@@ -37,6 +37,11 @@ export type HistoryCardItem = {
   imageLink?: string | null;
 };
 
+export type BenefitsCardItem = {
+  metric: string;
+  description: string;
+};
+
 /** Product data for the product card (listing / grid) */
 export type ProductCardItem = {
   name: string;
@@ -114,6 +119,10 @@ export type Dictionary = {
     history: {
       title: string;
       cards: HistoryCardItem[];
+    };
+    benefits: {
+      title: string;
+      cards: BenefitsCardItem[];
     };
   };
   products: ProductsDictionary;
