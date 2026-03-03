@@ -11,7 +11,15 @@ export default async function Home({ params }: Props) {
 
   return (
     <>
-      <Hero dict={dict.main.hero} />
+      <Hero
+        dict={dict.main.hero}
+        locale={locale}
+        productCards={{
+          shori: dict.products.card.shori,
+          shogun: dict.products.card.shogun,
+          fujizakura: dict.products.card.fujizakura,
+        }}
+      />
     </>
   );
 }

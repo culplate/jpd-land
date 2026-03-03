@@ -1,88 +1,88 @@
 import {
+  Carousel,
   Container,
   Section,
   Title,
-  Text,
+  ProductCard,
   Button,
-  GradientText,
-  Animate,
-  AnimateItem,
 } from '@/components/ui';
 import styles from './Hero.module.scss';
-import { Dictionary } from '@/content/i18n/schema';
+import type { Dictionary, ProductCardItem } from '@/content/i18n/schema';
+import Image from 'next/image';
 
-export function Hero({ dict }: { dict: Dictionary['main']['hero'] }) {
+const HERO_PRODUCT_IDS = ['shori', 'shogun', 'fujizakura'] as const;
+
+export function Hero({
+  dict,
+  locale,
+  productCards,
+}: {
+  dict: Dictionary['main']['hero'];
+  locale: string;
+  productCards: {
+    shori: ProductCardItem;
+    shogun: ProductCardItem;
+    fujizakura: ProductCardItem;
+  };
+}) {
   return (
-    <Section id="hero" padding="xl" background="white">
-      <Container size="lg">
-        <div className={styles.hero}>
-          <div className={styles.content}>
-            <Animate variant="fadeInDown" delay={0.1}>
-              <div className={styles.badge}>
-                <span className={styles.badgeText}>
-                  ✨ Next.js Starter Template
-                </span>
-              </div>
-            </Animate>
-
-            <Animate variant="fadeInUp" delay={0.2}>
-              <Title as="h1" align="center" className={styles.title}>
-                Production-Ready Template
-                <GradientText> For Client Projects</GradientText>
-              </Title>
-            </Animate>
-
-            <Animate variant="fadeInUp" delay={0.3}>
-              <Text size="lg" align="center" className={styles.description}>
-                Internal agency template for building scalable, modern websites.
-                Pre-configured with best practices, component architecture, and
-                styling system ready for your next client project.
-              </Text>
-            </Animate>
-
-            <Animate variant="fadeInUp" delay={0.4} className={styles.actions}>
-              <Button variant="cta" size="lg">
-                Start New Project
-              </Button>
-              <Button variant="outlined" size="lg">
-                View Components
-              </Button>
-            </Animate>
-
-            <Animate stagger staggerDelay={0.15} delay={0.5}>
-              <div className={styles.stats}>
-                <AnimateItem variant="scaleIn">
-                  <div className={styles.stat}>
-                    <span className={styles.statValue}>SSR</span>
-                    <span className={styles.statLabel}>Server-Side Ready</span>
-                  </div>
-                </AnimateItem>
-                <AnimateItem variant="scaleIn">
-                  <div className={styles.stat}>
-                    <span className={styles.statValue}>SCSS</span>
-                    <span className={styles.statLabel}>
-                      Mobile-First Styling
-                    </span>
-                  </div>
-                </AnimateItem>
-                <AnimateItem variant="scaleIn">
-                  <div className={styles.stat}>
-                    <span className={styles.statValue}>TS</span>
-                    <span className={styles.statLabel}>Type-Safe Code</span>
-                  </div>
-                </AnimateItem>
-              </div>
-            </Animate>
-          </div>
-
-          <Animate variant="scaleIn" delay={0.4} className={styles.visual}>
-            <div className={styles.visualCard}>
-              <div className={styles.visualCardHeader}></div>
-              <div className={styles.visualCardContent}></div>
-            </div>
-          </Animate>
-        </div>
+    <Section
+      id="hero"
+      padding="sm"
+      background="white"
+      className={styles.section}
+    >
+      <Image
+        src="/img/sakura-L.png"
+        alt="Sakura branch left"
+        width={273.3}
+        height={163.6}
+        className={`${styles.bgImage} ${styles.sakuraLeft}`}
+      />
+      <Image
+        src="/img/sakura-R.png"
+        alt="Sakura branch right"
+        width={260}
+        height={124.8}
+        className={`${styles.bgImage} ${styles.sakuraRight}`}
+      />
+      <Image
+        src="/img/moon.png"
+        alt="red moon"
+        width={171}
+        height={251}
+        className={`${styles.bgImage} ${styles.moon}`}
+      />
+      <Container size="xl" className={styles.container}>
+        <Title as="h1" size="h1" align="center">
+          {/* TODO update font sizes */}
+          {dict.title}
+        </Title>
       </Container>
+
+      <Carousel
+        className={styles.productCards}
+        desktopMode="static"
+        ariaLabel={dict.title}
+      >
+        {HERO_PRODUCT_IDS.map((id) => {
+          const card = productCards[id];
+          return (
+            <ProductCard
+              key={id}
+              size="regular"
+              href={`/${locale}/products/${id}`}
+              name={card.name}
+              japaneseName={card.japaneseName}
+              description={card.description}
+              imageLink={card.imageLink}
+            />
+          );
+        })}
+      </Carousel>
+      <div className={styles.buttonWrapper}>
+        <Button href={`/${locale}/products`}>{dict.button}</Button>
+      </div>
     </Section>
   );
 }
