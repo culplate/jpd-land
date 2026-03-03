@@ -11,7 +11,7 @@ const LOCALE_NAMES: Record<string, string> = {
   uk: 'Українська',
 };
 
-export function LanguageSwitcher() {
+export function LanguageSwitcher({ className }: { className?: string }) {
   const router = useRouter();
   const pathname = usePathname();
   const currentLocale = useLocale();
@@ -35,7 +35,7 @@ export function LanguageSwitcher() {
   };
 
   return (
-    <div className={styles.switcher}>
+    <div className={`${styles.switcher} ${className}`}>
       {LOCALES.map((locale) => (
         <button
           key={locale}
