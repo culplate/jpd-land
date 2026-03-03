@@ -6,15 +6,15 @@ export interface SectionProps {
   id?: string;
   className?: string;
   padding?: 'sm' | 'md' | 'lg' | 'xl' | undefined;
-  background?: 'white' | 'gray' | 'primary' | 'transparent';
+  background?: 'white' | 'transparent';
 }
 
 export function Section({
   children,
   id,
   className = '',
-  padding = 'md',
-  background = 'transparent',
+  padding = 'sm',
+  background = 'white',
 }: SectionProps) {
   return (
     <section

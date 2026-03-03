@@ -1,36 +1,118 @@
-import { ButtonHTMLAttributes, ReactNode } from 'react';
+import NextLink from 'next/link';
+import {
+  AnchorHTMLAttributes,
+  ButtonHTMLAttributes,
+  ReactNode,
+} from 'react';
 import styles from './Button.module.scss';
+import { icons } from '@/app/assets/icons';
 
-export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  children: ReactNode;
-  variant?: 'cta' | 'primary' | 'secondary' | 'outlined' | 'ghost' | 'text';
-  size?: 'sm' | 'md' | 'lg';
-  fullWidth?: boolean;
+type BaseProps = {
+  children: string | ReactNode;
   loading?: boolean;
+  disabled?: boolean;
   className?: string;
+};
+
+type ButtonAsButton = BaseProps &
+  ButtonHTMLAttributes<HTMLButtonElement> & {
+    href?: never;
+  };
+
+type ButtonAsLink = BaseProps &
+  Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'href'> & {
+    href: string;
+  };
+
+export type ButtonProps = ButtonAsButton | ButtonAsLink;
+
+function isLinkProps(props: ButtonProps): props is ButtonAsLink {
+  return 'href' in props && typeof props.href === 'string';
 }
 
-export function Button({
-  children,
-  variant = 'primary',
-  size = 'md',
-  fullWidth = false,
-  loading = false,
-  disabled = false,
-  className = '',
-  type = 'button',
-  ...props
-}: ButtonProps) {
-  const classNames = [
-    styles.button,
-    styles[variant],
-    styles[size],
-    fullWidth && styles.fullWidth,
-    loading && styles.loading,
-    className,
-  ]
+export function Button(props: ButtonProps) {
+  const {
+    children,
+    loading = false,
+    disabled = false,
+    className = '',
+    ...rest
+  } = props;
+
+  const classNames = [styles.button, loading && styles.loading, className]
     .filter(Boolean)
     .join(' ');
+
+  const content = (
+    <>
+      {loading && <span className={styles.spinner} aria-hidden="true" />}
+      <span className={styles.content}>
+        {children}
+        <svg className={styles.arrow} aria-hidden>
+          <use xlinkHref={`${icons.src}#arrow`} />
+        </svg>
+      </span>
+    </>
+  );
+
+  if (isLinkProps(props)) {
+    const linkProps = props;
+    const { href, ...anchorProps } = linkProps;
+
+    const isExternal =
+      href.startsWith('http') || href.startsWith('//');
+    const isAnchor = href.startsWith('#');
+
+    const isDisabled = disabled || loading;
+
+    if (isAnchor) {
+      return (
+        <a
+          href={href}
+          className={classNames}
+          aria-disabled={isDisabled}
+          aria-busy={loading}
+          style={isDisabled ? { pointerEvents: 'none', cursor: 'default' } : undefined}
+          {...anchorProps}
+        >
+          {content}
+        </a>
+      );
+    }
+
+    if (isExternal) {
+      return (
+        <a
+          href={href}
+          className={classNames}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-disabled={isDisabled}
+          aria-busy={loading}
+          style={isDisabled ? { pointerEvents: 'none', cursor: 'default' } : undefined}
+          {...anchorProps}
+        >
+          {content}
+        </a>
+      );
+    }
+
+    return (
+      <NextLink
+        href={href as Parameters<typeof NextLink>[0]['href']}
+        className={classNames}
+        aria-disabled={isDisabled}
+        aria-busy={loading}
+        style={isDisabled ? { pointerEvents: 'none', cursor: 'default' } : undefined}
+        {...anchorProps}
+      >
+        {content}
+      </NextLink>
+    );
+  }
+
+  const buttonRest = rest as ButtonHTMLAttributes<HTMLButtonElement>;
+  const { type = 'button', ...buttonProps } = buttonRest;
 
   return (
     <button
@@ -38,10 +120,9 @@ export function Button({
       className={classNames}
       disabled={disabled || loading}
       aria-busy={loading}
-      {...props}
+      {...buttonProps}
     >
-      {loading && <span className={styles.spinner} aria-hidden="true" />}
-      <span className={loading ? styles.content : undefined}>{children}</span>
+      {content}
     </button>
   );
 }

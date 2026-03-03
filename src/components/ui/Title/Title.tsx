@@ -15,7 +15,7 @@ export function Title({
   children,
   as = 'h2',
   size,
-  weight = 'medium',
+  weight = 'bold',
   align = 'left',
   gradient = false,
   className = '',

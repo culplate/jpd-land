@@ -1,22 +1,24 @@
 .button {
   @include button-reset;
   @include focus-visible;
-  @include transition(
-    background-color,
-    color,
-    border-color,
-    opacity,
-    transform
-  );
+  @include transition(background-color, color, opacity, transform, padding);
 
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
-  font-weight: 500;
-  border-radius: 8px;
+  width: 100%;
+  max-width: 310px;
+  padding: 16px 40px;
+  min-height: 56px;
   position: relative;
   user-select: none;
+  background: var(--color-cta);
+  color: var(--color-text-white);
+
+  @include media($bp-tablet) {
+    min-width: 179px;
+    width: auto;
+  }
 
   &:disabled {
     cursor: not-allowed;
@@ -24,97 +26,42 @@
   }
 
   &:active:not(:disabled) {
-    transform: scale(0.98);
+    background: var(--color-cta-active);
   }
-}
 
-// Sizes
-.sm {
-  padding: 0.5rem 1rem;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-}
+  .content {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+  }
 
-.md {
-  padding: 0.75rem 1.5rem;
-  font-size: 1rem;
-  line-height: 1.5rem;
-}
-
-.lg {
-  padding: 1rem 2rem;
-  font-size: 1.125rem;
-  line-height: 1.75rem;
-}
-
-// Variants
-.cta {
-  background: var(--color-cta, #ff6b35);
-  color: var(--color-white, #ffffff);
-  border: 2px solid transparent;
+  .arrow {
+    position: absolute;
+    left: 100%;
+    margin-left: 8px;
+    top: 50%;
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+    opacity: 0;
+    transform: translateY(-50%) translateX(8px);
+    transition:
+      opacity 0.2s ease,
+      transform 0.2s ease;
+    pointer-events: none;
+  }
 
   @include hover {
-    background: var(--color-cta-hover, #e85a2a);
+    // idle padding is 40px; on hover we add space for: 8px gap + 24px arrow
+    // and shift content left by adjusting left/right padding.
+    padding-left: 32px;
+    padding-right: 60px;
+
+    .arrow {
+      opacity: 1;
+      transform: translateY(-50%) translateX(0px);
+    }
   }
-}
-
-.primary {
-  background: var(--color-primary, #0066cc);
-  color: var(--color-white, #ffffff);
-  border: 2px solid transparent;
-
-  @include hover {
-    background: var(--color-primary-hover, #0052a3);
-  }
-}
-
-.secondary {
-  background: var(--color-secondary, #6b7280);
-  color: var(--color-white, #ffffff);
-  border: 2px solid transparent;
-
-  @include hover {
-    background: var(--color-secondary-hover, #4b5563);
-  }
-}
-
-.outlined {
-  background: transparent;
-  color: var(--color-text, #1f2937);
-  border: 2px solid var(--color-border, #d1d5db);
-
-  @include hover {
-    background: var(--color-background-hover, #f3f4f6);
-    border-color: var(--color-border-hover, #9ca3af);
-  }
-}
-
-.ghost {
-  background: transparent;
-  color: var(--color-text, #1f2937);
-  border: 2px solid transparent;
-
-  @include hover {
-    background: var(--color-background-hover, #f3f4f6);
-  }
-}
-
-.text {
-  background: transparent;
-  color: var(--color-primary, #0066cc);
-  border: 2px solid transparent;
-  padding-left: 0.25rem;
-  padding-right: 0.25rem;
-
-  @include hover {
-    color: var(--color-primary-hover, #0052a3);
-    text-decoration: underline;
-  }
-}
-
-// Full width
-.fullWidth {
-  width: 100%;
 }
 
 // Loading state
