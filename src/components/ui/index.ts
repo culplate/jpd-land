@@ -28,3 +28,11 @@ export type { NavLinkProps } from './Link/NavLink';
 // Animation Components
 export { Animate, AnimateItem } from './Animate';
 export type { AnimateProps } from './Animate';
+
+// Product Components
+export { ProductCard } from './ProductCard/ProductCard';
+export type { ProductCardProps, ProductCardSize } from './ProductCard/ProductCard';
+
+// Layout / Interaction Components
+export { Carousel } from './Carousel/Carousel';
+export type { CarouselProps } from './Carousel/Carousel';

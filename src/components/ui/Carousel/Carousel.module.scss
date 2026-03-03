@@ -1,0 +1,48 @@
+.carousel {
+  width: 100%;
+}
+
+.track {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: 1rem;
+  padding-bottom: 0.25rem;
+  padding-left: 1rem;
+  padding-right: 2.5rem;
+  -webkit-overflow-scrolling: touch;
+
+  // Hide scrollbars while keeping scroll behavior
+  scrollbar-width: none; // Firefox
+
+  &::-webkit-scrollbar {
+    display: none; // WebKit
+  }
+}
+
+.item {
+  flex: 0 0 auto;
+  scroll-snap-align: center;
+}
+
+// On laptop+ we can switch between static row and scrollable row.
+
+.desktopStatic {
+  .track {
+    @include media($bp-laptop) {
+      overflow-x: visible;
+      scroll-snap-type: none;
+      justify-content: center;
+    }
+  }
+}
+
+.desktopScroll {
+  .track {
+    @include media($bp-laptop) {
+      // Keep scrollable behavior on larger screens
+      scroll-snap-type: x mandatory;
+    }
+  }
+}
