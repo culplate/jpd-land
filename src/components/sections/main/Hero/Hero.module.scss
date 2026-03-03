@@ -35,6 +35,7 @@
     @include media($bp-laptop) {
       right: 0;
       top: 1.5rem;
+      transform: rotate(0deg);
     }
   }
 
@@ -52,7 +53,7 @@
       right: 0;
       top: 11rem;
       width: 171px;
-      height: 251px;
+      height: 254px;
     }
   }
 }
