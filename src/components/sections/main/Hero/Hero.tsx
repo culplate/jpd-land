@@ -12,11 +12,7 @@ import Image from 'next/image';
 
 const HERO_PRODUCT_IDS = ['shori', 'shogun', 'fujizakura'] as const;
 
-export function Hero({
-  dict,
-  locale,
-  productCards,
-}: {
+type HeroProps = {
   dict: Dictionary['main']['hero'];
   locale: string;
   productCards: {
@@ -24,7 +20,9 @@ export function Hero({
     shogun: ProductCardItem;
     fujizakura: ProductCardItem;
   };
-}) {
+};
+
+export function Hero({ dict, locale, productCards }: HeroProps) {
   return (
     <Section
       id="hero"
