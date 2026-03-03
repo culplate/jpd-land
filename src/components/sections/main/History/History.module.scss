@@ -16,6 +16,7 @@
 
   @include media($bp-tablet) {
     font-weight: 700;
+    max-width: 430px;
   }
 
   @include media($bp-laptop) {
