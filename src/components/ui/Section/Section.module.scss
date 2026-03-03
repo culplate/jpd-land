@@ -4,12 +4,12 @@
 
 // Padding sizes - mobile first with nested media queries
 .sm {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
 
   @include media($bp-tablet) {
-    padding-top: 2.5rem;
-    padding-bottom: 2.5rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
   }
 }
 

@@ -1,11 +1,68 @@
 .card {
   position: relative;
+  max-width: 380px;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid var(--color-border-light);
+
+  @include media($bp-tablet) {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1.5rem;
+    max-width: 690px;
+  }
+  @include media($bp-laptop) {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+}
+
+.contentWrapper {
+  @include media($bp-tablet) {
+    max-width: 430px;
+  }
 }
 
 .icon {
   position: absolute;
-  top: 0;
+  top: 2.5rem;
   right: 0;
   width: 24px;
   height: 24px;
+  fill: var(--color-text-muted);
+  transition: fill 0.2s ease;
+  @include media($bp-laptop) {
+    top: 4rem;
+  }
+}
+
+.title {
+  transition: color 0.2s ease;
+  margin-top: 1.5rem;
+
+  @include media($bp-tablet) {
+    margin-top: 0;
+  }
+}
+
+.description {
+  margin-top: 0.5rem;
+}
+
+.link {
+  display: inline-block;
+  @include media($bp-tablet) {
+    width: 690px;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .link:hover .icon,
+  .link:hover .title,
+  .link:focus .icon,
+  .link:focus .title {
+    fill: var(--color-primary-hover);
+    color: var(--color-primary-hover);
+  }
 }

@@ -52,6 +52,5 @@
 
 .container {
   @include media($bp-desktop) {
-    padding: 0;
   }
 }

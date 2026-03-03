@@ -1,5 +1,5 @@
 import { Hero } from '@/components/sections';
-import { Reviews } from '@/components/sections/main/Benefits/Reviews';
+import { Reviews } from '@/components/sections/main/Reviews/Reviews';
 import { History } from '@/components/sections/main/History/History';
 import { getDictionary, Locale } from '@/lib/locales/locales';
 

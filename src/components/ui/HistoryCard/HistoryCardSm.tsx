@@ -13,20 +13,29 @@ type HistoryCardSmProps = {
 
 export function HistoryCardSm({ locale, card }: HistoryCardSmProps) {
   return (
-    <NextLink href={`/${locale}/about`}>
+    <NextLink href={`/${locale}/about`} className={styles.link}>
       <div className={styles.card}>
         <svg className={styles.icon}>
           <use xlinkHref={`${icons.src}#arrow`} />
         </svg>
+
         <Text className={styles.year} size="md" weight="medium">
           {card.year}
         </Text>
-        <Text className={styles.title} size="md" weight="medium">
-          {card.title}
-        </Text>
-        <Text className={styles.description} size="md" weight="light">
-          {card.description}
-        </Text>
+
+        <div className={styles.contentWrapper}>
+          <Text className={styles.title} size="md" weight="medium">
+            {card.title}
+          </Text>
+          <Text
+            className={styles.description}
+            size="md"
+            weight="light"
+            lineClamp={5}
+          >
+            {card.description}
+          </Text>
+        </div>
       </div>
     </NextLink>
   );

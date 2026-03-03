@@ -18,7 +18,7 @@ export function Reviews({ dict }: { dict: Dictionary['main']['reviews'] }) {
         quality={100}
         className={styles.koi}
       />
-      <Container size="lg" className={styles.container}>
+      <Container size="xl" className={styles.container}>
         <Title as="h2" size="h1" className={styles.title}>
           {dict.title}
         </Title>

@@ -12,16 +12,6 @@ import { getDictionary } from '@/lib/locales/locales';
 import { getBaseUrl } from '@/lib/site-url';
 import { Toaster } from 'react-hot-toast';
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
-  subsets: ['latin'],
-});
-
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
-});
-
 const manrope = Manrope({
   variable: '--font-manrope',
   subsets: ['latin'],
@@ -95,9 +85,7 @@ export default async function LocaleLayout({ children, params }: Props) {
 
   return (
     <html lang={locale}>
-      <body
-        className={`${manrope.variable} ${geistSans.variable} ${geistMono.variable}`}
-      >
+      <body className={`${manrope.variable}`}>
         <Header nav={dict.nav} />
         {children}
         <Footer locale={locale as Locale} footer={dict.footer} />
