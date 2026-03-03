@@ -5,6 +5,7 @@ import { LOCALES } from '@/lib/locales/i18n-config';
 import type { Locale } from '@/lib/locales/i18n-config';
 import { getBaseUrl } from '@/lib/site-url';
 import type { ProductId } from '@/content/i18n/schema';
+import { ProductCard } from '@/components/ui/ProductCard/ProductCard';
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -48,18 +49,25 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function Products({ params }: Props) {
   const { locale } = await params;
   const dict = await getDictionary(locale);
-  const products = dict.products.items;
+  const cards = dict.products.card;
 
   return (
     <main>
       <h1>{dict.products.title}</h1>
       <ul>
         {PRODUCT_IDS.map((id) => {
-          const product = products[id];
+          const product = cards[id];
 
           return (
             <li key={id}>
-              <Link href={`/${locale}/products/${id}`}>{product.name}</Link>
+              <ProductCard
+                href={`/products/${id}`}
+                name={product.name}
+                japaneseName={product.japaneseName}
+                description={product.description}
+                imageLink={product.imageLink}
+                imageAlt={`${product.name} JPD koi food product photo`}
+              />
             </li>
           );
         })}

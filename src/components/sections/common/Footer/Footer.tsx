@@ -1,50 +1,29 @@
 import { Container, Section, Link } from '@/components/ui';
 import styles from './Footer.module.scss';
 import { Locale } from '@/lib/locales/i18n-config';
+import type { FooterDictionary } from '@/content/i18n/schema';
 
-export function Footer({ locale }: { locale: Locale }) {
+type FooterProps = {
+  locale: Locale;
+  footer: FooterDictionary;
+};
+
+export function Footer({ locale, footer }: FooterProps) {
   const currentYear = new Date().getFullYear();
-
-  const links = {
-    product: [
-      { label: 'Services', href: '#services' },
-      { label: 'Portfolio', href: '#portfolio' },
-      { label: 'Solutions', href: '#solutions' },
-      { label: 'Resources', href: '#resources' },
-    ],
-    company: [
-      { label: 'About', href: '#about' },
-      { label: 'Team', href: '#team' },
-      { label: 'Careers', href: '#careers' },
-      { label: 'Contact', href: '#contact' },
-    ],
-    legal: [
-      { label: 'Privacy Policy', href: '#privacy' },
-      { label: 'Terms of Service', href: '#terms' },
-      { label: 'Cookie Policy', href: '#cookies' },
-      { label: 'Sitemap', href: '#sitemap' },
-    ],
-    social: [
-      { label: 'Twitter', href: '#' },
-      { label: 'LinkedIn', href: '#' },
-      { label: 'Facebook', href: '#' },
-      { label: 'Instagram', href: '#' },
-    ],
-  };
+  const copyright = footer.copyright.replace('{year}', String(currentYear));
 
   return (
     <Section padding="lg" background="white">
-      <Container size="xl">
+      <Container size="full">
         <footer className={styles.footer}>
           <div className={styles.content}>
             <div className={styles.brand}>
-              <h3 className={styles.brandName}>Client Name</h3>
+              <h3 className={styles.brandName}>{footer.brand.name}</h3>
               <p className={styles.brandDescription}>
-                Replace this with your client&apos;s brief company description
-                or tagline. Keep it concise and memorable.
+                {footer.brand.description}
               </p>
               <div className={styles.social}>
-                {links.social.map((link) => (
+                {footer.social.map((link) => (
                   <Link
                     key={link.label}
                     href={link.href}
@@ -58,9 +37,11 @@ export function Footer({ locale }: { locale: Locale }) {
 
             <div className={styles.linksGrid}>
               <div className={styles.linkGroup}>
-                <h4 className={styles.linkGroupTitle}>Services</h4>
+                <h4 className={styles.linkGroupTitle}>
+                  {footer.groups.services.title}
+                </h4>
                 <ul className={styles.linkList}>
-                  {links.product.map((link) => (
+                  {footer.groups.services.links.map((link) => (
                     <li key={link.label}>
                       <Link href={link.href} className={styles.link}>
                         {link.label}
@@ -71,9 +52,11 @@ export function Footer({ locale }: { locale: Locale }) {
               </div>
 
               <div className={styles.linkGroup}>
-                <h4 className={styles.linkGroupTitle}>Company</h4>
+                <h4 className={styles.linkGroupTitle}>
+                  {footer.groups.company.title}
+                </h4>
                 <ul className={styles.linkList}>
-                  {links.company.map((link) => (
+                  {footer.groups.company.links.map((link) => (
                     <li key={link.label}>
                       <Link href={link.href} className={styles.link}>
                         {link.label}
@@ -84,9 +67,11 @@ export function Footer({ locale }: { locale: Locale }) {
               </div>
 
               <div className={styles.linkGroup}>
-                <h4 className={styles.linkGroupTitle}>Legal</h4>
+                <h4 className={styles.linkGroupTitle}>
+                  {footer.groups.legal.title}
+                </h4>
                 <ul className={styles.linkList}>
-                  {links.legal.map((link) => (
+                  {footer.groups.legal.links.map((link) => (
                     <li key={link.label}>
                       <Link href={link.href} className={styles.link}>
                         {link.label}
@@ -99,18 +84,16 @@ export function Footer({ locale }: { locale: Locale }) {
           </div>
 
           <div className={styles.bottom}>
-            <p className={styles.copyright}>
-              © {currentYear} Client Name. All rights reserved.
-            </p>
+            <p className={styles.copyright}>{copyright}</p>
             <div className={styles.bottomLinks}>
-              <Link href={`/privacy`} className={styles.bottomLink}>
-                Privacy
+              <Link href={`/${locale}/privacy`} className={styles.bottomLink}>
+                {footer.privacy}
               </Link>
               <Link href="#terms" className={styles.bottomLink}>
-                Terms
+                {footer.terms}
               </Link>
               <Link href="#cookies" className={styles.bottomLink}>
-                Cookies
+                {footer.cookies}
               </Link>
             </div>
           </div>
