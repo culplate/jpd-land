@@ -10,6 +10,11 @@ export interface CarouselProps {
   children: ReactNode;
   className?: string;
   /**
+   * When true, reduces track padding on the right so cards can scroll off the viewport edge.
+   * Use when carousel is inside a container with breakout (negative margin).
+   */
+  breakout?: boolean;
+  /**
    * Controls behavior on laptop+ breakpoints.
    * - 'static': items are laid out side-by-side without horizontal scroll
    * - 'scroll': horizontal scroll is available on desktop as well
@@ -28,6 +33,7 @@ function flattenChildren(children: ReactNode): ReactNode[] {
 export function Carousel({
   children,
   className = '',
+  breakout = false,
   desktopMode = 'scroll',
   ariaLabel,
 }: CarouselProps) {
@@ -56,8 +62,9 @@ export function Carousel({
 
   const modeClass =
     desktopMode === 'static' ? styles.desktopStatic : styles.desktopScroll;
+  const breakoutClass = breakout ? styles.breakout : '';
 
-  const rootClassName = [styles.carousel, modeClass, className]
+  const rootClassName = [styles.carousel, modeClass, breakoutClass, className]
     .filter(Boolean)
     .join(' ');
 

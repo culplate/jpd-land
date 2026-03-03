@@ -1,5 +1,6 @@
 .carousel {
   width: 100%;
+  max-width: 1240px;
 }
 
 .track {
@@ -9,8 +10,8 @@
   scroll-snap-type: x mandatory;
   scroll-padding-inline: 1rem;
   padding-bottom: 0.25rem;
-  padding-left: 1rem;
-  padding-right: 2.5rem;
+  padding-left: var(--carousel-track-padding-start, 2rem);
+  padding-right: var(--carousel-track-padding-end, 2rem);
   -webkit-overflow-scrolling: touch;
 
   // Hide scrollbars while keeping scroll behavior
@@ -18,6 +19,24 @@
 
   &::-webkit-scrollbar {
     display: none; // WebKit
+  }
+  @include media($bp-laptop) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.breakout .track {
+  --carousel-track-padding-start: 1rem;
+  --carousel-track-padding-end: 1rem;
+
+  @include media($bp-tablet) {
+    --carousel-track-padding-start: 1.5rem;
+  }
+
+  @include media($bp-laptop) {
+    --carousel-track-padding-start: 2rem;
+    --carousel-track-padding-end: 0;
   }
 }
 
