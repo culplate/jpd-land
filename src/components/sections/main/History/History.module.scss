@@ -1,0 +1,36 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  @include media($bp-laptop) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}
+
+.title {
+  font-weight: 600;
+  max-width: 380px;
+
+  @include media($bp-tablet) {
+    font-weight: 700;
+  }
+
+  @include media($bp-laptop) {
+    font-size: var(--text-h2-size);
+    text-align: left;
+  }
+
+  @include media($bp-desktop) {
+    max-width: 486px;
+    font-size: var(--text-h1-size);
+  }
+}
+
+.cards {
+  text-align: right;
+
+  max-width: 690px;
+}
