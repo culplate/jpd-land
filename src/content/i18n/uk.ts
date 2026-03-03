@@ -67,7 +67,7 @@ const uk: Dictionary = {
       description: 'Це опис нашого сайту',
       button: 'Переглянути всі',
     },
-    benefits: {
+    reviews: {
       title: 'Наші замовники цінують в JPD',
       reviews: [
         {
@@ -87,6 +87,39 @@ const uk: Dictionary = {
           review:
             'Lorem ipsum dolor sit amet consectetur. Accumsan sapien tellus eros eros est vitae mi laoreet neque. Scelerisque felis nullam arcu id nunc ut congue quam.',
           author: 'Олександр Б.',
+        },
+      ],
+    },
+    history: {
+      title: 'JPD - понад 200 років традицій',
+      cards: [
+        {
+          year: '1819',
+          title: 'Початок родинної династії Yoshida',
+          description:
+            'У 1819 році в Японії родина Yoshida розпочала діяльність у сфері розведення та продажу декоративних золотих риб. Це стало основою для формування багатовікової традиції, відомої увагою до якості та добробуту риб.',
+          imageLink: null,
+        },
+        {
+          year: '1940-ві',
+          title: 'Yoshida Fish Farm',
+          description:
+            'У середині XX століття діяльність трансформується у структуроване господарство – Yoshida Fish Farm. Ферма спеціалізується на професійному розведенні декоративних риб та вдосконаленні методів їх утримання.',
+          imageLink: null,
+        },
+        {
+          year: '1969',
+          title: 'Заснування Japan Pet Design (JPD)',
+          description:
+            '1 липня 1969 року компанія 日本動物薬品株式会社 починає роботу як виробник, який системно розвиває напрям продукції для декоративних риб. Саме з цього моменту формується те, що сьогодні відоме як бренд JPD.',
+          imageLink: null,
+        },
+        {
+          year: '1970-1990-ті',
+          title: 'Інновації та розвиток',
+          description:
+            'JPD формує асортимент, який асоціюється з японською точністю та дисципліною якості. Бренд посилює напрями профілактики та лікування, розвиває наукові підходи до здоровʼя декоративних риб.',
+          imageLink: null,
         },
       ],
     },

@@ -68,7 +68,7 @@ const en: Dictionary = {
       description: 'This is a description of our website',
       button: 'Get started',
     },
-    benefits: {
+    reviews: {
       title: 'Our customers value in JPD',
       reviews: [
         {
@@ -88,6 +88,35 @@ const en: Dictionary = {
           review:
             'Lorem ipsum dolor sit amet consectetur. Accumsan sapien tellus eros eros est vitae mi laoreet neque. Scelerisque felis nullam arcu id nunc ut congue quam.',
           author: 'Oleksandr B.',
+        },
+      ],
+    },
+    history: {
+      title: 'JPD – over 200 years of tradition',
+      cards: [
+        {
+          year: '1819',
+          title: 'Beginning of the Yoshida family dynasty',
+          description:
+            'In 1819 in Japan, the Yoshida family began breeding and selling ornamental goldfish. This laid the foundation for a centuries-long tradition renowned for its focus on quality and the well-being of the fish.',
+        },
+        {
+          year: '1940s',
+          title: 'Yoshida Fish Farm',
+          description:
+            'In the mid-20th century, the activity transformed into a structured operation – Yoshida Fish Farm. The farm specialized in professional breeding of ornamental fish and refining methods for their care and husbandry.',
+        },
+        {
+          year: '1969',
+          title: 'Founding of Japan Pet Design (JPD)',
+          description:
+            'On July 1, 1969, the company 日本動物薬品株式会社 began operating as a manufacturer systematically developing products for ornamental fish. From this point, the foundation was laid for what is now known as the JPD brand.',
+        },
+        {
+          year: '1970–1990s',
+          title: 'Innovation and development',
+          description:
+            'JPD shaped a product range associated with Japanese precision and disciplined quality. The brand strengthened its focus on prevention and treatment, developing scientific approaches to the health of ornamental fish.',
         },
       ],
     },

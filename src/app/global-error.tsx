@@ -31,7 +31,9 @@ export default function GlobalError({
           color: 'var(--color-text, #111)',
         }}
       >
-        <div style={{ textAlign: 'center', padding: '2rem', maxWidth: '28rem' }}>
+        <div
+          style={{ textAlign: 'center', padding: '2rem', maxWidth: '28rem' }}
+        >
           <h1 style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>
             {messages.serverError.title}
           </h1>

@@ -29,9 +29,15 @@ export type { NavLinkProps } from './Link/NavLink';
 export { Animate, AnimateItem } from './Animate';
 export type { AnimateProps } from './Animate';
 
-// Product Components
+// Cards
+export { HistoryCardSm } from './HistoryCard/HistoryCardSm';
+export { HistoryCardLg } from './HistoryCard/HistoryCardLg';
+export { ReviewCard } from './ReviewCard/ReviewCard';
 export { ProductCard } from './ProductCard/ProductCard';
-export type { ProductCardProps, ProductCardSize } from './ProductCard/ProductCard';
+export type {
+  ProductCardProps,
+  ProductCardSize,
+} from './ProductCard/ProductCard';
 
 // Layout / Interaction Components
 export { Carousel } from './Carousel/Carousel';

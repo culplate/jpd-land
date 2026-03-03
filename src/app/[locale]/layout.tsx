@@ -3,7 +3,11 @@ import { Geist, Geist_Mono, Manrope } from 'next/font/google';
 import '@/styles/globals.scss';
 import { Header } from '@/components/sections/common/Header/Header';
 import { Footer } from '@/components/sections/common/Footer/Footer';
-import { LOCALES, DEFAULT_LOCALE, type Locale } from '@/lib/locales/i18n-config';
+import {
+  LOCALES,
+  DEFAULT_LOCALE,
+  type Locale,
+} from '@/lib/locales/i18n-config';
 import { getDictionary } from '@/lib/locales/locales';
 import { getBaseUrl } from '@/lib/site-url';
 import { Toaster } from 'react-hot-toast';
@@ -91,7 +95,9 @@ export default async function LocaleLayout({ children, params }: Props) {
 
   return (
     <html lang={locale}>
-      <body className={`${manrope.variable} ${geistSans.variable} ${geistMono.variable}`}>
+      <body
+        className={`${manrope.variable} ${geistSans.variable} ${geistMono.variable}`}
+      >
         <Header nav={dict.nav} />
         {children}
         <Footer locale={locale as Locale} footer={dict.footer} />

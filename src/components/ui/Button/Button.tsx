@@ -1,9 +1,5 @@
 import NextLink from 'next/link';
-import {
-  AnchorHTMLAttributes,
-  ButtonHTMLAttributes,
-  ReactNode,
-} from 'react';
+import { AnchorHTMLAttributes, ButtonHTMLAttributes, ReactNode } from 'react';
 import styles from './Button.module.scss';
 import { icons } from '@/app/assets/icons';
 
@@ -59,8 +55,7 @@ export function Button(props: ButtonProps) {
     const linkProps = props;
     const { href, ...anchorProps } = linkProps;
 
-    const isExternal =
-      href.startsWith('http') || href.startsWith('//');
+    const isExternal = href.startsWith('http') || href.startsWith('//');
     const isAnchor = href.startsWith('#');
 
     const isDisabled = disabled || loading;
@@ -72,7 +67,11 @@ export function Button(props: ButtonProps) {
           className={classNames}
           aria-disabled={isDisabled}
           aria-busy={loading}
-          style={isDisabled ? { pointerEvents: 'none', cursor: 'default' } : undefined}
+          style={
+            isDisabled
+              ? { pointerEvents: 'none', cursor: 'default' }
+              : undefined
+          }
           {...anchorProps}
         >
           {content}
@@ -89,7 +88,11 @@ export function Button(props: ButtonProps) {
           rel="noopener noreferrer"
           aria-disabled={isDisabled}
           aria-busy={loading}
-          style={isDisabled ? { pointerEvents: 'none', cursor: 'default' } : undefined}
+          style={
+            isDisabled
+              ? { pointerEvents: 'none', cursor: 'default' }
+              : undefined
+          }
           {...anchorProps}
         >
           {content}
@@ -103,7 +106,9 @@ export function Button(props: ButtonProps) {
         className={classNames}
         aria-disabled={isDisabled}
         aria-busy={loading}
-        style={isDisabled ? { pointerEvents: 'none', cursor: 'default' } : undefined}
+        style={
+          isDisabled ? { pointerEvents: 'none', cursor: 'default' } : undefined
+        }
         {...anchorProps}
       >
         {content}

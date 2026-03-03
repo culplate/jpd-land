@@ -24,10 +24,17 @@ export type ProductPageItem = {
   imageLink: string;
 };
 
-export type BenefitsCardItem = {
+export type ReviewCardItem = {
   title: string;
   review: string;
   author: string;
+};
+
+export type HistoryCardItem = {
+  year: string;
+  title: string;
+  description: string;
+  imageLink?: string | null;
 };
 
 /** Product data for the product card (listing / grid) */
@@ -100,9 +107,13 @@ export type Dictionary = {
       description: string;
       button: string;
     };
-    benefits: {
+    reviews: {
       title: string;
-      reviews: BenefitsCardItem[];
+      reviews: ReviewCardItem[];
+    };
+    history: {
+      title: string;
+      cards: HistoryCardItem[];
     };
   };
   products: ProductsDictionary;
