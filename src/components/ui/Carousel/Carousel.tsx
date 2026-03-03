@@ -10,8 +10,9 @@ export interface CarouselProps {
   children: ReactNode;
   className?: string;
   /**
-   * When true, reduces track padding on the right so cards can scroll off the viewport edge.
-   * Use when carousel is inside a container with breakout (negative margin).
+   * When true, breaks out of container padding (negative margins) so cards can scroll off the
+   * viewport edges, and adjusts track padding so the first card aligns with surrounding content.
+   * Reusable anywhere a carousel should extend to the viewport edges.
    */
   breakout?: boolean;
   /**

@@ -22,13 +22,11 @@ export function Reviews({ dict }: { dict: Dictionary['main']['reviews'] }) {
         <Title as="h2" size="h1" className={styles.title}>
           {dict.title}
         </Title>
-        <div className={styles.carouselWrapper}>
-          <Carousel breakout>
-            {dict.reviews.map((review) => (
-              <ReviewCard key={review.author} review={review} />
-            ))}
-          </Carousel>
-        </div>
+        <Carousel breakout>
+          {dict.reviews.map((review) => (
+            <ReviewCard key={review.author} review={review} />
+          ))}
+        </Carousel>
       </Container>
     </Section>
   );

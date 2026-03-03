@@ -26,17 +26,50 @@
   }
 }
 
-.breakout .track {
-  --carousel-track-padding-start: 1rem;
-  --carousel-track-padding-end: 1rem;
+// Breakout: extends carousel to viewport edges so cards can scroll off both sides.
+// Negative margins + width extend the track into padding area; track padding aligns first card.
+.breakout {
+  margin-left: -1rem;
+  margin-right: -1rem;
+  margin-top: 1.5rem;
+  width: calc(100% + 2rem);
+  max-width: none;
 
   @include media($bp-tablet) {
-    --carousel-track-padding-start: 1.5rem;
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+    margin-top: 2.5rem;
+    width: calc(100% + 3rem);
   }
 
   @include media($bp-laptop) {
-    --carousel-track-padding-start: 2rem;
-    --carousel-track-padding-end: 0;
+    margin-left: -2rem;
+    margin-right: -2rem;
+    width: calc(100% + 4rem);
+  }
+
+  @include media($bp-desktop) {
+    margin-left: -2.5rem;
+    margin-right: -2.5rem;
+    width: calc(100% + 5rem);
+  }
+
+  .track {
+    --carousel-track-padding-start: 1rem;
+    --carousel-track-padding-end: 1rem;
+
+    @include media($bp-tablet) {
+      --carousel-track-padding-start: 1.5rem;
+    }
+
+    @include media($bp-laptop) {
+      padding-left: 2rem;
+      padding-right: 0;
+    }
+
+    @include media($bp-desktop) {
+      padding-left: 2.5rem;
+    }
   }
 }
 

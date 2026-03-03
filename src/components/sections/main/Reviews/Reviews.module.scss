@@ -31,26 +31,3 @@
   }
 }
 
-// Breakout: extends carousel to viewport edges so cards can scroll off both sides
-// instead of being clipped by container padding. Track padding aligns first card with title.
-.carouselWrapper {
-  margin-left: -1rem;
-  margin-right: -1rem;
-  margin-top: 1.5rem;
-
-  @include media($bp-tablet) {
-    margin-left: -1.5rem;
-    margin-right: -1.5rem;
-    margin-top: 2.5rem;
-  }
-
-  @include media($bp-laptop) {
-    margin-left: 0;
-    margin-right: 0;
-  }
-}
-
-.container {
-  @include media($bp-desktop) {
-  }
-}
