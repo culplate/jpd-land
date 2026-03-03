@@ -1,4 +1,5 @@
 import { Hero } from '@/components/sections';
+import { Benefits } from '@/components/sections/main/benefits/Benefits';
 import { getDictionary } from '@/lib/locales/locales';
 
 type Props = {
@@ -20,6 +21,7 @@ export default async function Home({ params }: Props) {
           fujizakura: dict.products.card.fujizakura,
         }}
       />
+      <Benefits dict={dict.main.benefits} />
     </>
   );
 }

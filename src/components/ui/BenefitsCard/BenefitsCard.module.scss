@@ -1,0 +1,19 @@
+.card {
+  background-color: var(--color-bg-white);
+  max-width: 340px;
+  padding: 24px;
+
+  @include media($bp-laptop) {
+    max-width: 282px;
+  }
+}
+
+.review {
+  margin-top: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.author {
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--color-border-light);
+}

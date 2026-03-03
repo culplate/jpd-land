@@ -1,0 +1,57 @@
+.section {
+  background-color: var(--color-red-700);
+  overflow: hidden;
+  position: relative;
+  padding-top: 340px;
+
+  @include media($bp-laptop) {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+}
+
+.koi {
+  position: absolute;
+  top: -210px;
+  right: 0;
+  width: 365px;
+
+  @include media($bp-laptop) {
+    top: 40px;
+    width: 320px;
+  }
+}
+
+.title {
+  color: var(--color-text-white);
+  font-weight: 600;
+
+  @include media($bp-laptop) {
+    font-size: var(--text-h2-size);
+  }
+}
+
+// Breakout: extends carousel to viewport edges so cards can scroll off both sides
+// instead of being clipped by container padding. Track padding aligns first card with title.
+.carouselWrapper {
+  margin-left: -1rem;
+  margin-right: -1rem;
+  margin-top: 1.5rem;
+
+  @include media($bp-tablet) {
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+    margin-top: 2.5rem;
+  }
+
+  @include media($bp-laptop) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+.container {
+  @include media($bp-desktop) {
+    padding: 0;
+  }
+}

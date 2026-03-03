@@ -67,6 +67,29 @@ const uk: Dictionary = {
       description: 'Це опис нашого сайту',
       button: 'Переглянути всі',
     },
+    benefits: {
+      title: 'Наші замовники цінують в JPD',
+      reviews: [
+        {
+          title: 'Відгук',
+          review:
+            'Lorem ipsum dolor sit amet consectetur. Accumsan sapien tellus eros eros est vitae mi laoreet neque. Scelerisque felis nullam arcu id nunc ut congue quam.',
+          author: 'Владислав Б.',
+        },
+        {
+          title: 'Відгук',
+          review:
+            'Lorem ipsum dolor sit amet consectetur. Accumsan sapien tellus eros eros est vitae mi laoreet neque. Scelerisque felis nullam arcu id nunc ut congue quam.',
+          author: 'Віталій Б.',
+        },
+        {
+          title: 'Відгук',
+          review:
+            'Lorem ipsum dolor sit amet consectetur. Accumsan sapien tellus eros eros est vitae mi laoreet neque. Scelerisque felis nullam arcu id nunc ut congue quam.',
+          author: 'Олександр Б.',
+        },
+      ],
+    },
   },
   products: {
     title: 'Продукти',

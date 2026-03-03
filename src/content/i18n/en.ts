@@ -68,6 +68,29 @@ const en: Dictionary = {
       description: 'This is a description of our website',
       button: 'Get started',
     },
+    benefits: {
+      title: 'Our customers value in JPD',
+      reviews: [
+        {
+          title: 'Review',
+          review:
+            'Lorem ipsum dolor sit amet consectetur. Accumsan sapien tellus eros eros est vitae mi laoreet neque. Scelerisque felis nullam arcu id nunc ut congue quam.',
+          author: 'Vladyslav B.',
+        },
+        {
+          title: 'Review',
+          review:
+            'Lorem ipsum dolor sit amet consectetur. Accumsan sapien tellus eros eros est vitae mi laoreet neque. Scelerisque felis nullam arcu id nunc ut congue quam.',
+          author: 'Vitalii B.',
+        },
+        {
+          title: 'Review',
+          review:
+            'Lorem ipsum dolor sit amet consectetur. Accumsan sapien tellus eros eros est vitae mi laoreet neque. Scelerisque felis nullam arcu id nunc ut congue quam.',
+          author: 'Oleksandr B.',
+        },
+      ],
+    },
   },
   products: {
     title: 'Products',
