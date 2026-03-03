@@ -1,13 +1,13 @@
+import styles from './Reviews.module.scss';
 import { Dictionary } from '@/content/i18n/schema';
-import styles from './Benefits.module.scss';
 import { Carousel } from '@/components/ui/Carousel/Carousel';
-import { BenefitsCard } from '@/components/ui/BenefitsCard/BenefitsCard';
+import { ReviewCard } from '@/components/ui/ReviewCard/ReviewCard';
 import { Section } from '@/components/ui/Section/Section';
 import { Container } from '@/components/ui/Container/Container';
 import { Title } from '@/components/ui/Title/Title';
 import Image from 'next/image';
 
-export function Benefits({ dict }: { dict: Dictionary['main']['benefits'] }) {
+export function Reviews({ dict }: { dict: Dictionary['main']['reviews'] }) {
   return (
     <Section className={styles.section}>
       <Image
@@ -25,7 +25,7 @@ export function Benefits({ dict }: { dict: Dictionary['main']['benefits'] }) {
         <div className={styles.carouselWrapper}>
           <Carousel breakout>
             {dict.reviews.map((review) => (
-              <BenefitsCard key={review.title} benefitData={review} />
+              <ReviewCard key={review.author} review={review} />
             ))}
           </Carousel>
         </div>

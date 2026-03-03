@@ -1,23 +1,18 @@
-import { Title } from '../Title/Title';
 import { Text } from '../Text/Text';
-import styles from './BenefitsCard.module.scss';
-import { BenefitsCardItem } from '@/content/i18n/schema';
+import styles from './ReviewCard.module.scss';
+import { ReviewCardItem } from '@/content/i18n/schema';
 
-export function BenefitsCard({
-  benefitData,
-}: {
-  benefitData: BenefitsCardItem;
-}) {
+export function ReviewCard({ review }: { review: ReviewCardItem }) {
   return (
     <div className={styles.card}>
       <Text as="p" size="md" weight="medium" className={styles.title}>
-        {benefitData.title}
+        {review.title}
       </Text>
       <Text as="p" size="md" weight="light" className={styles.review}>
-        {benefitData.review}
+        {review.review}
       </Text>
       <Text as="p" size="md" weight="light" className={styles.author}>
-        {benefitData.author}
+        {review.author}
       </Text>
     </div>
   );

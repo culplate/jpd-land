@@ -1,9 +1,10 @@
 import { Hero } from '@/components/sections';
-import { Benefits } from '@/components/sections/main/benefits/Benefits';
-import { getDictionary } from '@/lib/locales/locales';
+import { Reviews } from '@/components/sections/main/Benefits/Reviews';
+import { History } from '@/components/sections/main/History/History';
+import { getDictionary, Locale } from '@/lib/locales/locales';
 
 type Props = {
-  params: Promise<{ locale: string }>;
+  params: Promise<{ locale: Locale }>;
 };
 
 export default async function Home({ params }: Props) {
@@ -21,7 +22,8 @@ export default async function Home({ params }: Props) {
           fujizakura: dict.products.card.fujizakura,
         }}
       />
-      <Benefits dict={dict.main.benefits} />
+      <Reviews dict={dict.main.reviews} />
+      <History locale={locale} dict={dict.main.history} />
     </>
   );
 }
