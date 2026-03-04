@@ -3,8 +3,7 @@ import { Locale } from '@/lib/locales/locales';
 import type { HistoryCardItem } from '@/content/i18n/schema';
 import { icons } from '@/app/assets/icons';
 import { Text } from '../Text/Text';
-
-import NextLink from 'next/link';
+import { Link } from '@/components/ui';
 
 type HistoryCardSmProps = {
   locale: Locale;
@@ -13,7 +12,7 @@ type HistoryCardSmProps = {
 
 export function HistoryCardSm({ locale, card }: HistoryCardSmProps) {
   return (
-    <NextLink href={`/${locale}/about`} className={styles.link}>
+    <Link href="/about" className={styles.link}>
       <div className={styles.card}>
         <svg className={styles.icon}>
           <use xlinkHref={`${icons.src}#arrow`} />
@@ -37,6 +36,6 @@ export function HistoryCardSm({ locale, card }: HistoryCardSmProps) {
           </Text>
         </div>
       </div>
-    </NextLink>
+    </Link>
   );
 }

@@ -6,6 +6,7 @@ import {
   ProductCard,
   Button,
 } from '@/components/ui';
+import type { Locale } from '@/lib/locales/i18n-config';
 import styles from './Hero.module.scss';
 import type { Dictionary, ProductCardItem } from '@/content/i18n/schema';
 import Image from 'next/image';
@@ -14,7 +15,7 @@ const HERO_PRODUCT_IDS = ['shori', 'shogun', 'fujizakura'] as const;
 
 type HeroProps = {
   dict: Dictionary['main']['hero'];
-  locale: string;
+  locale: Locale;
   productCards: {
     shori: ProductCardItem;
     shogun: ProductCardItem;
@@ -69,7 +70,7 @@ export function Hero({ dict, locale, productCards }: HeroProps) {
             <ProductCard
               key={id}
               size="regular"
-              href={`/${locale}/products/${id}`}
+              href={`/products/${id}`}
               name={card.name}
               japaneseName={card.japaneseName}
               description={card.description}
@@ -79,7 +80,7 @@ export function Hero({ dict, locale, productCards }: HeroProps) {
         })}
       </Carousel>
       <div className={styles.buttonWrapper}>
-        <Button href={`/${locale}/products`}>{dict.button}</Button>
+        <Button href="/products">{dict.button}</Button>
       </div>
     </Section>
   );

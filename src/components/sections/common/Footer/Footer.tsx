@@ -1,6 +1,6 @@
 import { Container, Section, Link } from '@/components/ui';
 import styles from './Footer.module.scss';
-import { Locale } from '@/lib/locales/i18n-config';
+import type { Locale } from '@/lib/locales/i18n-config';
 import type { FooterDictionary } from '@/content/i18n/schema';
 
 type FooterProps = {
@@ -86,7 +86,7 @@ export function Footer({ locale, footer }: FooterProps) {
           <div className={styles.bottom}>
             <p className={styles.copyright}>{copyright}</p>
             <div className={styles.bottomLinks}>
-              <Link href={`/${locale}/privacy`} className={styles.bottomLink}>
+              <Link href={'/privacy'} className={styles.bottomLink}>
                 {footer.privacy}
               </Link>
               <Link href="#terms" className={styles.bottomLink}>

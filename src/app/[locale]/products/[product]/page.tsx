@@ -5,9 +5,8 @@ import { LOCALES } from '@/lib/locales/i18n-config';
 import type { Locale } from '@/lib/locales/i18n-config';
 import { getBaseUrl } from '@/lib/site-url';
 import type { ProductId } from '@/content/i18n/schema';
-import Link from 'next/link';
 import Image from 'next/image';
-import { Container, Section } from '@/components/ui';
+import { Container, Section, Link } from '@/components/ui';
 
 type Props = {
   params: Promise<{ locale: string; product: string }>;
@@ -68,7 +67,7 @@ export default async function ProductPage({ params }: Props) {
     <main>
       <Section>
         <Container>
-          <Link href={`/${locale}/products`}>Back to products</Link>
+          <Link href="/products">Back to products</Link>
           <h1>{product.name}</h1>
           <Image
             src={product.imageLink}
