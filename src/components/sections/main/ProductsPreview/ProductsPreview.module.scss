@@ -1,0 +1,21 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  margin-bottom: 2rem;
+}
+
+.productCards {
+  padding-top: 0.5rem;
+  backdrop-filter: blur(8px);
+}
+
+.buttonWrapper {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+}
