@@ -6,7 +6,21 @@ import type { Locale } from '@/lib/locales/i18n-config';
 import { getBaseUrl } from '@/lib/site-url';
 import type { ProductId } from '@/content/i18n/schema';
 import Image from 'next/image';
-import { Container, Section, Link } from '@/components/ui';
+import {
+  Text,
+  Title,
+  Link,
+  Accordion,
+  Section,
+  Container,
+} from '@/components/ui';
+import type { AccordionItem } from '@/components/ui';
+import {
+  ProductMobile,
+  ProductDesktop,
+} from '@/components/sections/products/ProductDetail';
+import { ProductsCarousel } from '@/components/sections/about/ProductsCarousel/ProductsCarousel';
+import styles from './page.module.scss';
 
 type Props = {
   params: Promise<{ locale: string; product: string }>;
@@ -23,6 +37,22 @@ const PRODUCT_IDS: ProductId[] = [
 function isProductId(value: string): value is ProductId {
   return (PRODUCT_IDS as readonly string[]).includes(value);
 }
+
+const MOBILE_HERO: Record<ProductId, string> = {
+  fujiyama: '/img/food/fujiyama-sq.png',
+  yamato: '/img/food/yamato-sq.png',
+  shori: '/img/food/shori-sq.png',
+  fujizakura: '/img/food/fujizakura-sq.png',
+  shogun: '/img/food/shogun-sq.png',
+};
+
+const DESKTOP_HERO: Record<ProductId, string> = {
+  fujiyama: '/img/food/fujiyama-poster.jpg',
+  yamato: '/img/food/yamato-poster.jpg',
+  shori: '/img/food/shori-poster.jpg',
+  fujizakura: '/img/food/fujizakura-poster.jpg',
+  shogun: '/img/food/shogun-poster.png',
+};
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale: localeParam, product: productParam } = await params;
@@ -62,33 +92,103 @@ export default async function ProductPage({ params }: Props) {
 
   const dict = await getDictionary(locale);
   const product = dict.products.page[productParam];
+  const productCard = dict.products.card[productParam];
+
+  const mobileHero = MOBILE_HERO[productParam];
+  const desktopHero = DESKTOP_HERO[productParam];
+  const relatedProductIds = PRODUCT_IDS.filter((id) => id !== productParam);
+
+  const accordionItems: AccordionItem[] = [
+    {
+      id: 'features',
+      title: dict.products.sections.features,
+      content: (
+        <Text as="p" size="md">
+          {product.features}
+        </Text>
+      ),
+    },
+    {
+      id: 'benefits',
+      title: dict.products.sections.benefits,
+      content: (
+        <Text as="p" size="md">
+          {product.benefits}
+        </Text>
+      ),
+    },
+    {
+      id: 'ingredients',
+      title: dict.products.sections.ingredients,
+      content: (
+        <Text as="p" size="md">
+          {product.ingredients}
+        </Text>
+      ),
+    },
+    {
+      id: 'nutrition',
+      title: dict.products.sections.nutrition,
+      content: (
+        <Text as="p" size="md">
+          {product.nutrition}
+        </Text>
+      ),
+    },
+  ];
 
   return (
     <main>
-      <Section>
-        <Container>
-          <Link href="/products">Back to products</Link>
-          <h1>{product.name}</h1>
-          <Image
-            src={product.imageLink}
-            alt={`${product.name} JPD koi food product photo`}
-            width={400}
-            height={400}
-          />
-          <p>
-            <strong>Features:</strong> {product.features}
-          </p>
-          <p>
-            <strong>Benefits:</strong> {product.benefits}
-          </p>
-          <p>
-            <strong>Ingredients:</strong> {product.ingredients}
-          </p>
-          <p>
-            <strong>Nutrition:</strong> {product.nutrition}
-          </p>
+      <Section padding="sm" className={styles.section}>
+        <Container size="xl" className={styles.container}>
+          <div className={styles.bgWrapper}>
+            <Image
+              src="/img/bg/bg-product.png"
+              alt=""
+              fill
+              sizes="(min-width: 768px) 50vw, 0px"
+              className={styles.bgImage}
+              quality={100}
+              loading="lazy"
+            />
+          </div>
+          <div className={styles.mobileOnly}>
+            <ProductMobile
+              product={product}
+              japaneseName={productCard.japaneseName}
+              mobileHero={mobileHero}
+            />
+          </div>
+          <div className={styles.content}>
+            <div className={styles.desktopOnly}>
+              <ProductDesktop product={product} desktopHero={desktopHero} />
+            </div>
+            <div className={styles.contentMain}>
+              <Title as="h1" size="h1" className={styles.productName}>
+                {product.name}
+              </Title>
+              <Link
+                href="/products"
+                className={styles.breadcrumb}
+                variant="underline"
+                size="sm"
+              >
+                {dict.products.sections.breadcrumb}
+              </Link>
+              <Accordion items={accordionItems} className={styles.accordion} />
+            </div>
+          </div>
         </Container>
       </Section>
+
+      <ProductsCarousel
+        dict={{
+          ...dict.about.productsCarousel,
+          title: dict.products.sections.relatedProducts,
+        }}
+        productCards={dict.products.card}
+        productIds={relatedProductIds}
+      />
     </main>
   );
 }

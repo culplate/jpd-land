@@ -3,6 +3,8 @@ import { getDictionary } from '@/lib/locales/locales';
 import { LOCALES } from '@/lib/locales/i18n-config';
 import type { Locale } from '@/lib/locales/i18n-config';
 import { getBaseUrl } from '@/lib/site-url';
+import { History } from '@/components/sections/about/History/History';
+import { ProductsCarousel } from '@/components/sections/about/ProductsCarousel/ProductsCarousel';
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -38,7 +40,11 @@ export default async function About({ params }: Props) {
 
   return (
     <>
-      <h1>About page</h1>
+      <History dict={dict.about.history} />
+      <ProductsCarousel
+        dict={dict.about.productsCarousel}
+        productCards={dict.products.card}
+      />
     </>
   );
 }

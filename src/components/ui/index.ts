@@ -1,3 +1,6 @@
+// Utility Components
+export { CurrentYear } from './CurrentYear/CurrentYear';
+
 // Layout Components
 export { Container } from './Container/Container';
 export type { ContainerProps } from './Container/Container';
@@ -42,3 +45,6 @@ export type {
 // Layout / Interaction Components
 export { Carousel } from './Carousel/Carousel';
 export type { CarouselProps } from './Carousel/Carousel';
+
+export { Accordion } from './Accordion/Accordion';
+export type { AccordionProps, AccordionItem } from './Accordion/Accordion';

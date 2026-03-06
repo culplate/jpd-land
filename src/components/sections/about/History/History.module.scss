@@ -1,0 +1,88 @@
+.section {
+  padding-top: 0;
+}
+
+.layout {
+  @include media($bp-laptop) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+}
+
+.illustration {
+  position: relative;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  aspect-ratio: 390 / 240;
+  flex-shrink: 0;
+  overflow: hidden;
+
+  @include media($bp-tablet) {
+    max-height: min(45vh, 480px);
+  }
+
+  @include media($bp-laptop) {
+    width: 40%;
+    max-width: 532px;
+    margin-left: 0;
+    max-height: none;
+    aspect-ratio: auto;
+    min-height: 600px;
+    align-self: stretch;
+  }
+}
+
+.illustrationImage {
+  object-fit: cover;
+  object-position: center top;
+
+  @include media($bp-laptop) {
+    object-fit: contain;
+    object-position: left top;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @include media($bp-laptop) {
+    align-items: flex-start;
+    flex: 1;
+    min-width: 0;
+  }
+}
+
+.title {
+  font-weight: 600;
+  margin-top: 1.5rem;
+
+  @include media($bp-tablet) {
+    font-weight: 700;
+    max-width: 430px;
+  }
+
+  @include media($bp-laptop) {
+    font-size: var(--text-h2-size);
+    text-align: left;
+    margin-top: 0;
+  }
+
+  @include media($bp-desktop) {
+    font-size: var(--text-h1-size);
+  }
+}
+
+.cards {
+  text-align: right;
+  max-width: 690px;
+
+  @include media($bp-laptop) {
+    flex: 1;
+    min-width: 0;
+    max-width: 100%;
+  }
+}

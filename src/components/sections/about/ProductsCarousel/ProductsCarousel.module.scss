@@ -1,0 +1,62 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.header {
+  width: 100%;
+}
+
+.title {
+  margin-bottom: 1.5rem;
+
+  @include media($bp-tablet) {
+    margin-bottom: 2rem;
+  }
+}
+
+.carouselWrapper {
+  width: 100%;
+  margin-top: 0.5rem;
+  --carousel-track-padding-start: 1rem;
+  --carousel-track-padding-end: 1rem;
+
+  @include media($bp-tablet) {
+    --carousel-track-padding-start: 1.5rem;
+    --carousel-track-padding-end: 1.5rem;
+  }
+
+  @include media($bp-laptop) {
+    --carousel-track-padding-start: 2rem;
+    --carousel-track-padding-end: 2rem;
+  }
+
+  @include media($bp-desktop) {
+    --carousel-track-padding-start: 2.5rem;
+    --carousel-track-padding-end: 2.5rem;
+  }
+
+  // Override Carousel track padding so first/last cards align with container content
+  .carousel > div {
+    padding-left: var(--carousel-track-padding-start) !important;
+    padding-right: var(--carousel-track-padding-end) !important;
+
+    @include media($bp-laptop) {
+      justify-content: safe center;
+    }
+  }
+}
+
+.carousel {
+  width: 100% !important;
+  max-width: none !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+
+  @include media($bp-laptop) {
+    max-width: 1240px;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}

@@ -7,22 +7,41 @@
   display: flex;
   gap: 1rem;
   overflow-x: auto;
-  scroll-snap-type: x mandatory;
+  scroll-snap-type: x proximity;
+  scroll-behavior: smooth;
   scroll-padding-inline: 1rem;
   padding-bottom: 0.25rem;
   padding-left: var(--carousel-track-padding-start, 2rem);
   padding-right: var(--carousel-track-padding-end, 2rem);
   -webkit-overflow-scrolling: touch;
+  cursor: grab;
+  -webkit-user-drag: none;
 
-  // Hide scrollbars while keeping scroll behavior
-  scrollbar-width: none; // Firefox
+  scrollbar-width: none;
 
   &::-webkit-scrollbar {
-    display: none; // WebKit
+    display: none;
   }
+
   @include media($bp-laptop) {
     padding-left: 0;
     padding-right: 0;
+  }
+
+  img,
+  a {
+    -webkit-user-drag: none;
+    user-select: none;
+  }
+}
+
+.dragging {
+  cursor: grabbing;
+  scroll-snap-type: none !important;
+  user-select: none;
+
+  * {
+    pointer-events: none;
   }
 }
 
@@ -63,7 +82,6 @@
     }
 
     @include media($bp-laptop) {
-      // padding-left: 2rem;
       padding-right: 0;
     }
 
@@ -85,7 +103,7 @@
     @include media($bp-laptop) {
       overflow-x: visible;
       scroll-snap-type: none;
-      justify-content: center;
+      justify-content: safe center;
     }
   }
 }
@@ -93,8 +111,7 @@
 .desktopScroll {
   .track {
     @include media($bp-laptop) {
-      // Keep scrollable behavior on larger screens
-      scroll-snap-type: x mandatory;
+      scroll-snap-type: x proximity;
     }
   }
 }

@@ -124,3 +124,36 @@
     height: 320px;
   }
 }
+
+// Grid variant: fluid sizing for products page
+.grid {
+  width: 100%;
+  min-width: 0;
+
+  // .japaneseName {
+  //   margin-right: 0.75rem;
+
+  //   @include media($bp-laptop) {
+  //     margin-right: 1rem;
+  //   }
+  // }
+
+  .content {
+    flex: 1;
+    min-width: 0;
+    max-width: 320px;
+  }
+
+  .imageWrapper {
+    width: 100%;
+    aspect-ratio: 1;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}

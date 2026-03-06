@@ -3,7 +3,7 @@ import { Title, Text, Link } from '@/components/ui';
 import styles from './ProductCard.module.scss';
 import { icons } from '@/app/assets/icons';
 
-export type ProductCardSize = 'sm' | 'regular';
+export type ProductCardSize = 'sm' | 'regular' | 'grid';
 
 export interface ProductCardProps {
   name: string;
@@ -20,6 +20,7 @@ const IMAGE_SIZES: Record<ProductCardSize, { width: number; height: number }> =
   {
     sm: { width: 234, height: 234 },
     regular: { width: 320, height: 320 },
+    grid: { width: 400, height: 400 },
   };
 
 export function ProductCard({
@@ -49,7 +50,13 @@ export function ProductCard({
             height={height}
             className={styles.image}
             quality={100}
-            sizes={size === 'sm' ? '234px' : '356px'}
+            sizes={
+              size === 'sm'
+                ? '234px'
+                : size === 'grid'
+                  ? '(min-width: 1024px) 320px, (min-width: 768px) 50vw, 100vw'
+                  : '356px'
+            }
           />
         </span>
         <span className={styles.nameRow}>

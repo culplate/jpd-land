@@ -17,50 +17,15 @@ const en: Dictionary = {
     contactUs: 'Contact Us',
   },
   footer: {
-    brand: {
-      name: 'Client Name',
-      description:
-        "Replace this with your client's brief company description or tagline. Keep it concise and memorable.",
-    },
-    groups: {
-      services: {
-        title: 'Services',
-        links: [
-          { label: 'Services', href: '#services' },
-          { label: 'Portfolio', href: '#portfolio' },
-          { label: 'Solutions', href: '#solutions' },
-          { label: 'Resources', href: '#resources' },
-        ],
-      },
-      company: {
-        title: 'Company',
-        links: [
-          { label: 'About', href: '#about' },
-          { label: 'Team', href: '#team' },
-          { label: 'Careers', href: '#careers' },
-          { label: 'Contact', href: '#contact' },
-        ],
-      },
-      legal: {
-        title: 'Legal',
-        links: [
-          { label: 'Privacy Policy', href: '#privacy' },
-          { label: 'Terms of Service', href: '#terms' },
-          { label: 'Cookie Policy', href: '#cookies' },
-          { label: 'Sitemap', href: '#sitemap' },
-        ],
-      },
-    },
-    social: [
-      { label: 'Twitter', href: '#' },
-      { label: 'LinkedIn', href: '#' },
-      { label: 'Facebook', href: '#' },
-      { label: 'Instagram', href: '#' },
-    ],
-    copyright: '© {year} Client Name. All rights reserved.',
-    privacy: 'Privacy',
-    terms: 'Terms',
-    cookies: 'Cookies',
+    contactsTitle: 'Contact Us',
+    phone: '+48666777333',
+    email: 'example@example.com',
+    address: 'Kyiv, Yaroslaviv Val St 15',
+    description:
+      'Official representative office of JPD in Ukraine. Full range of premium lines. Direct deliveries from Japan, guaranteeing originality and freshness of the product.',
+    privacy: 'Privacy Policy',
+    terms: 'Terms&Agreements',
+    designCopyright: '© {year} Japan Pet Design. All rights reserved.',
   },
   main: {
     hero: {
@@ -144,6 +109,14 @@ const en: Dictionary = {
   },
   products: {
     title: 'Products',
+    sections: {
+      benefits: 'Benefits',
+      ingredients: 'Composition',
+      nutrition: 'Nutritional value',
+      features: 'Features',
+      breadcrumb: 'Main',
+      relatedProducts: 'Related products',
+    },
     page: {
       fujiyama: {
         name: 'Fujiyama',
@@ -226,6 +199,63 @@ const en: Dictionary = {
   },
   about: {
     title: 'About',
+    history: {
+      title: 'JPD History',
+      cards: [
+        {
+          year: '1819',
+          title: 'Beginning of the Yoshida family dynasty',
+          description:
+            'In 1819 in Japan, the Yoshida family began breeding and selling ornamental goldfish. This laid the foundation for a centuries-old tradition known as "Kingyo no Yoshida" - one of the oldest dynasties of goldfish breeders in Japan. This period laid the foundation for expertise in fish health and ornamental fish keeping.',
+          imageLink: null,
+        },
+        {
+          year: '1895',
+          title: 'Recognition in Ranchu breeding',
+          description:
+            'By the end of the 19th century, the Yoshida family was already participating in professional Ranchu rankings and exhibitions - one of the most prestigious breeds of goldfish. This confirms the high level of breeding work and the professional status of the family in ornamental fish farming.',
+          imageLink: null,
+        },
+        {
+          year: '1940s',
+          title: 'Yoshida Fish Farm',
+          description:
+            'In the mid-20th century, the activity transformed into a structured farm - Yoshida Fish Farm. The farm specializes in professional breeding and care of ornamental fish, which became a practical basis for the further development of fish health products.',
+          imageLink: null,
+        },
+        {
+          year: '1956',
+          title: 'Start of product manufacturing',
+          description:
+            'In 1966, Yoshida Shoten emerged, marking a step from a family business to a market-oriented enterprise. During this period, ornamental fish breeding and care practices were transformed into commercial products and recommendations for aquarists.',
+          imageLink: null,
+        },
+        {
+          year: '1959',
+          title: 'Founding of Japan Pet Design (JPD)',
+          description:
+            'On July 1, 1969, the company 日本動物薬品株式会社 began operating as a manufacturer systematically developing products for ornamental fish. From this moment, what is known today as Japan Pet Design (JPD) - feeds, health preparations for fish, and solutions for stable aquarium environments - was formed.',
+          imageLink: null,
+        },
+        {
+          year: '1970-90s',
+          title: 'Innovation and development',
+          description:
+            'During these years, JPD shaped an assortment associated with Japanese precision and quality discipline. The brand strengthened its focus on prevention and treatment, developed scientific approaches to fish health, and introduced new lines for aquaristics, notably the famous Green F series. It solidified its reputation as a manufacturer trusted by koi and goldfish owners.',
+          imageLink: null,
+        },
+        {
+          year: '2000s',
+          title: 'International presence',
+          description:
+            'JPD actively participates in international exhibitions and industry events: Interzoo (Germany), CIPS (China), Aquarama (Singapore), Japan Pet Fair. The brand enters the European and global markets.',
+          imageLink: null,
+        },
+      ],
+    },
+    productsCarousel: {
+      title: 'JPD Feeds in Ukraine',
+    },
   },
   contact: {
     title: 'Contact',

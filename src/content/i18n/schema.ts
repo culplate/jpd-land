@@ -50,8 +50,18 @@ export type ProductCardItem = {
   imageLink: string;
 };
 
+export type ProductPageSections = {
+  benefits: string;
+  ingredients: string;
+  nutrition: string;
+  features: string;
+  breadcrumb: string;
+  relatedProducts: string;
+};
+
 export type ProductsDictionary = {
   title: string;
+  sections: ProductPageSections;
   page: Record<ProductId, ProductPageItem>;
   card: Record<ProductId, ProductCardItem>;
 };
@@ -61,31 +71,15 @@ export type PrivacySection = {
   content: string;
 };
 
-export type FooterLink = {
-  label: string;
-  href: string;
-};
-
-export type FooterGroup = {
-  title: string;
-  links: FooterLink[];
-};
-
 export type FooterDictionary = {
-  brand: {
-    name: string;
-    description: string;
-  };
-  groups: {
-    services: FooterGroup;
-    company: FooterGroup;
-    legal: FooterGroup;
-  };
-  social: FooterLink[];
-  copyright: string;
+  contactsTitle: string;
+  phone: string;
+  email: string;
+  address: string;
+  description: string;
   privacy: string;
   terms: string;
-  cookies: string;
+  designCopyright: string;
 };
 
 export type Dictionary = {
@@ -128,6 +122,13 @@ export type Dictionary = {
   products: ProductsDictionary;
   about: {
     title: string;
+    history: {
+      title: string;
+      cards: HistoryCardItem[];
+    };
+    productsCarousel: {
+      title: string;
+    };
   };
   contact: {
     title: string;

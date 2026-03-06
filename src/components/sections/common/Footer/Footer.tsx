@@ -1,7 +1,15 @@
-import { Container, Section, Link } from '@/components/ui';
+import {
+  Container,
+  Section,
+  Link,
+  CurrentYear,
+  Text,
+  Title,
+} from '@/components/ui';
 import styles from './Footer.module.scss';
 import type { Locale } from '@/lib/locales/i18n-config';
 import type { FooterDictionary } from '@/content/i18n/schema';
+import { icons } from '@/app/assets/icons/index';
 
 type FooterProps = {
   locale: Locale;
@@ -9,96 +17,80 @@ type FooterProps = {
 };
 
 export function Footer({ locale, footer }: FooterProps) {
-  const currentYear = new Date().getFullYear();
-  const copyright = footer.copyright.replace('{year}', String(currentYear));
+  const [prefix, suffix] = footer.designCopyright.split('{year}');
 
   return (
-    <Section padding="lg" background="white">
-      <Container size="full">
-        <footer className={styles.footer}>
+    <Section background="white">
+      <footer aria-label="Site footer">
+        <Container size="xl" className={styles.footer}>
+          <svg
+            width="146"
+            height="56"
+            className={styles.cloudLarge}
+            aria-hidden="true"
+          >
+            <use xlinkHref={`${icons.src}#cloud2`} />
+          </svg>
+          <svg
+            width="96"
+            height="31"
+            className={styles.cloudSmall}
+            aria-hidden="true"
+          >
+            <use xlinkHref={`${icons.src}#cloud1`} />
+          </svg>
           <div className={styles.content}>
-            <div className={styles.brand}>
-              <h3 className={styles.brandName}>{footer.brand.name}</h3>
-              <p className={styles.brandDescription}>
-                {footer.brand.description}
-              </p>
-              <div className={styles.social}>
-                {footer.social.map((link) => (
-                  <Link
-                    key={link.label}
-                    href={link.href}
-                    className={styles.socialLink}
-                  >
-                    {link.label}
-                  </Link>
-                ))}
-              </div>
+            <Title
+              as="h2"
+              size="h2"
+              id="footer-contacts"
+              className={styles.contactsTitle}
+            >
+              {footer.contactsTitle}
+            </Title>
+
+            <div className={styles.mainRow}>
+              <address
+                className={styles.address}
+                aria-labelledby="footer-contacts"
+              >
+                <a
+                  href={`tel:${footer.phone.replace(/\s/g, '')}`}
+                  className={styles.contactItem}
+                  aria-label={`Phone: ${footer.phone}`}
+                >
+                  {footer.phone}
+                </a>
+                <a
+                  href={`mailto:${footer.email}`}
+                  className={styles.contactItem}
+                  aria-label={`Email: ${footer.email}`}
+                >
+                  {footer.email}
+                </a>
+                <Text as="p" size="md">
+                  {footer.address}
+                </Text>
+              </address>
+              <Text as="p" size="md" className={styles.description}>
+                {footer.description}
+              </Text>
             </div>
 
-            <div className={styles.linksGrid}>
-              <div className={styles.linkGroup}>
-                <h4 className={styles.linkGroupTitle}>
-                  {footer.groups.services.title}
-                </h4>
-                <ul className={styles.linkList}>
-                  {footer.groups.services.links.map((link) => (
-                    <li key={link.label}>
-                      <Link href={link.href} className={styles.link}>
-                        {link.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className={styles.linkGroup}>
-                <h4 className={styles.linkGroupTitle}>
-                  {footer.groups.company.title}
-                </h4>
-                <ul className={styles.linkList}>
-                  {footer.groups.company.links.map((link) => (
-                    <li key={link.label}>
-                      <Link href={link.href} className={styles.link}>
-                        {link.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className={styles.linkGroup}>
-                <h4 className={styles.linkGroupTitle}>
-                  {footer.groups.legal.title}
-                </h4>
-                <ul className={styles.linkList}>
-                  {footer.groups.legal.links.map((link) => (
-                    <li key={link.label}>
-                      <Link href={link.href} className={styles.link}>
-                        {link.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+            <div className={styles.bottom}>
+              <nav className={styles.bottomLinks} aria-label="Legal">
+                <Link href="/privacy">{footer.privacy}</Link>
+                <Link href="#terms">{footer.terms}</Link>
+              </nav>
+              <Text as="p" size="sm" weight="light">
+                {prefix}
+                <CurrentYear />
+                {suffix}
+              </Text>
             </div>
           </div>
-
-          <div className={styles.bottom}>
-            <p className={styles.copyright}>{copyright}</p>
-            <div className={styles.bottomLinks}>
-              <Link href={'/privacy'} className={styles.bottomLink}>
-                {footer.privacy}
-              </Link>
-              <Link href="#terms" className={styles.bottomLink}>
-                {footer.terms}
-              </Link>
-              <Link href="#cookies" className={styles.bottomLink}>
-                {footer.cookies}
-              </Link>
-            </div>
-          </div>
-        </footer>
-      </Container>
+        </Container>
+      </footer>
     </Section>
   );
 }
