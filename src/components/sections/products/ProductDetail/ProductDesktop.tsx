@@ -7,20 +7,17 @@ export type ProductDesktopProps = {
   desktopHero: string;
 };
 
-export function ProductDesktop({
-  product,
-  desktopHero,
-}: ProductDesktopProps) {
+export function ProductDesktop({ product, desktopHero }: ProductDesktopProps) {
   return (
     <div className={styles.productImageWrapper}>
       <Image
-          src={desktopHero}
-          alt={`${product.name} JPD koi food product photo`}
-          width={400}
-          height={500}
-          className={styles.productImage}
-          quality={100}
-          sizes="(min-width: 768px) 40vw, 0px"
+        src={desktopHero}
+        alt={`${product.name} JPD koi food product photo`}
+        width={361}
+        height={600}
+        className={styles.productImage}
+        quality={100}
+        sizes="(min-width: 768px) 40vw, 0px"
       />
     </div>
   );

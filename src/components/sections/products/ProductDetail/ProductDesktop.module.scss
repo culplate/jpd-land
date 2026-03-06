@@ -1,25 +1,13 @@
 .productImageWrapper {
-  position: absolute;
-  bottom: 0;
-  z-index: 1;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60%;
-  max-width: 280px;
-  aspect-ratio: 1;
+  position: relative;
+  width: 361px;
+  height: 600px;
   flex-shrink: 0;
-
-  @include media($bp-tablet) {
-    width: 70%;
-    max-width: 320px;
-    left: 1rem;
-    transform: none;
-  }
 }
 
 .productImage {
-  width: 100%;
-  height: 100%;
+  width: 361px !important;
+  height: 600px !important;
   object-fit: contain;
   object-position: bottom center;
 }
