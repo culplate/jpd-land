@@ -100,11 +100,10 @@
 }
 
 .breadcrumb {
-  display: block;
   margin-top: 0.5rem;
-  text-align: center;
+
   padding-bottom: 0.5rem;
-  border-bottom: 1px solid var(--color-text-muted, #cfc1b5);
+
   color: var(--color-text-muted, var(--color-text));
 
   @include media($bp-tablet) {
@@ -119,4 +118,23 @@
   @include media($bp-tablet) {
     margin-top: 1.5rem;
   }
+}
+
+.accordionContent {
+  white-space: pre-line;
+}
+
+.nutritionItem {
+  display: flex;
+  gap: 3rem;
+  justify-content: space-between;
+  align-items: baseline;
+
+  &:not(:last-child) {
+    margin-bottom: 0.5rem;
+  }
+}
+
+.nutritionValue {
+  text-align: right;
 }

@@ -38,21 +38,22 @@
   width: 24px;
   height: 24px;
   fill: var(--color-text-muted, var(--color-text));
-  transition: transform 0.3s ease;
-}
+  transform: rotate(90deg);
+  transition: transform 0.2s ease;
 
-.contentWrapper {
-  display: grid;
-  grid-template-rows: 0fr;
-  transition: grid-template-rows 0.3s ease;
-
-  &.open {
-    grid-template-rows: 1fr;
+  &.arrowOpen {
+    transform: rotate(-90deg);
   }
 }
 
-.contentInner {
+.contentWrapper {
+  height: 0;
   overflow: hidden;
+  transition: height 0.2s ease;
+
+  &.open {
+    height: var(--content-height, 0);
+  }
 }
 
 .contentInner > * {

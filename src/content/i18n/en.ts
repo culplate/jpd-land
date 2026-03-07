@@ -111,10 +111,10 @@ const en: Dictionary = {
     title: 'Products',
     sections: {
       benefits: 'Benefits',
-      ingredients: 'Composition',
+      ingredients: 'Ingredients',
       nutrition: 'Nutritional value',
       features: 'Features',
-      breadcrumb: 'Main',
+      breadcrumb: 'Back to products',
       relatedProducts: 'Related products',
     },
     page: {
@@ -122,45 +122,116 @@ const en: Dictionary = {
         name: 'Fujiyama',
         features: 'Staple line, large pellets, high digestibility.',
         benefits: 'Steady growth, ideal for everyday feeding.',
-        ingredients: 'Fish meal, wheat, vitamins and minerals.',
-        nutrition:
-          'Balanced formula for steady growth. High in protein, ideal for everyday feeding.',
+        ingredients:
+          'Fish meal, tofu, corn, wheat, rice husks, wheat chaff, vitamins, minerals.',
+        nutrition: [
+          {
+            title: 'Crude Protein',
+            value: 'min 35%',
+          },
+          {
+            title: 'Crude Fat',
+            value: 'min 5%',
+          },
+          {
+            title: 'Crude Fiber',
+            value: 'max 2.7%',
+          },
+          {
+            title: 'Crude Ash',
+            value: 'max 13%',
+          },
+          {
+            title: 'Moisture',
+            value: 'max 10%',
+          },
+          {
+            title: 'Phosphorus',
+            value: '0.7%',
+          },
+          {
+            title: 'Calcium',
+            value: '0.4%',
+          },
+          {
+            title: 'Sodium',
+            value: '0.1%',
+          },
+        ],
         imageLink: '/img/food/fujiyama-poster.jpg',
       },
       yamato: {
         name: 'Yamato',
-        features: 'Color enhancement, floating pellets, premium formula.',
-        benefits: 'Vibrant red and white patterns (Iroage).',
-        ingredients: 'Pigments, fish meal, natural additives.',
-        nutrition:
-          'Breeding and color enhancement. Rich in pigments for deeper, richer coloration.',
+        features:
+          'JPD Yamato is a high-quality koi food made from natural ingredients and designed to keep koi in excellent condition.\n\nThe formula is based on high-quality aquatic animal protein sources that provide balanced nutrition and support healthy koi growth.\n\nThe food contains natural color enhancers, including astaxanthin and microalgae components, which help maintain the bright, natural coloration of koi.\n\nThe pellets are floating, keep their shape for a long time in water, and produce minimal waste. \n\n Do not feed this food in water which is, or will soon be below 55°F (13°C).',
+        benefits:
+          'A highly nutritious formula supports active growth and helps maintain koi in excellent physical condition.\n\nNatural ingredients and appetite stimulants improve feed intake.\n\nAstaxanthin and other natural pigments enhance the coloration of the fish.\n\nLactoferrin helps improve the fish’s natural resistance to diseases.\n\nThe pellets do not break apart in the water, helping to maintain better water quality.',
+        ingredients:
+          'Fish Meal, Cuttlefish Meal, Wheat Flour, Corn, Bean Oil Cake, Sodium phosphate, vitamins, minerals, and astaxanthin.',
+        nutrition: [
+          { title: 'Crude Protein', value: 'min 34.0%' },
+          { title: 'Crude Fat', value: 'min 7.0%' },
+          { title: 'Crude Fiber', value: 'max 3.0%' },
+          { title: 'Crude Ash', value: 'max 10.0%' },
+          { title: 'Moisture', value: 'max 10.0%' },
+        ],
         imageLink: '/img/food/yamato-poster.jpg',
       },
       shori: {
         name: 'Shori',
-        features: 'Rapid weight gain, super-premium, Katsugoi formula.',
-        benefits: 'Robust body mass, suited for show koi.',
-        ingredients: 'High-protein components, fats, vitamins.',
-        nutrition:
-          'High-calorie formula, supports rapid growth and body development.',
+        features:
+          'JPD Shori is a premium koi food manufactured with rich nutrition of high protein and high fat for maximum koi growth. Fortified with astaxanthin, which is necessary for koi color enhancement. This food contains Probiotics (Toyoserin) which helps digestion.',
+        benefits:
+          'All ingredients in this food are selected carefully with dietician studies and JPD technology. This food is formulated with high quality fish and plant protein which makes a good digestibility for koi.\n\n It should be noted that this food is high in protein (45%) but also low in ash (8.5%). The ash is digested slowly because high protein fish meal is used. Astaxanthin makes reds redder and vitamin C makes whites whiter. These ingredients make for a shinier, beautiful body. \n\n This food is formulated with probiotics which reduces the waste in the water and regulates the functions of the intestines. This food does not degrade the water quality, because the pellet keeps its shape for a long time in the water.',
+        ingredients:
+          'Fish Meal, Krill Meal, Wheat Flour, Soybean Cake, Corn, Gluten Meal, Defatted Rice Bran, Fish Oil, Calcium Phosphate, Garlic Powder, Salt, Toyoserin (Probiotics), Astaxanthin.\n\n Vitamins: Vitamin A, Vitamin D3, Vitamin E, Vitamin B1, Vitamin B2, Pantothenic Acid, Vitamin B12, Niacin, Vitamin B6, Folic Acid, Biotin, Para Amino Benzoic Acid, Inositol, Heat-resistant Vitamin C, Vitamin K3, Choline.\n\n Minerals: Ferric Sulfate, Copper Sulfate, Manganese Carbonate, Zinc Carbonate, Cobalt Carbonate, Calcium Iodate, Magnesium Carbonate.',
+        nutrition: [
+          { title: 'Crude Protein', value: 'min 45.0%' },
+          { title: 'Crude Fat', value: 'min 8.0%' },
+          { title: 'Crude Fiber', value: 'max 4.0%' },
+          { title: 'Moisture', value: 'max 11.0%' },
+          { title: 'Crude Ash', value: 'max 15.0%' },
+          { title: 'Phosphorous', value: 'min 1.2%' },
+          { title: 'Calcium', value: 'max 1.7%' },
+        ],
         imageLink: '/img/food/shori-poster.jpg',
       },
       fujizakura: {
         name: 'Fujizakura',
-        features: 'Health and growth, combined formula.',
-        benefits: 'Digestion, vitality, overall koi well-being.',
-        ingredients: 'Premium grains, probiotics, vitamins.',
-        nutrition:
-          'High-growth and health care. Supports digestion and overall condition.',
+        features:
+          'JPD Fujizakura - is a premium koi food enriched with heat-resistant vitamin C, Torula yeast and β-glucan, which support fish health and immunity.\n\nContains astaxanthin, which enhances natural koi coloration and makes colours more saturated.\n\nMade from high-quality fish meal and krill meal, making the food highly palatable and appetising for koi.',
+        benefits:
+          "This food contains specially selected additives, including seaweed extract, β-glucan and yeast cell wall components, which act as natural immunostimulants. They support the fish's immune system and help it respond faster to external stimuli.\n\nThis food is especially recommended when fish are under stress due to environmental changes. It is also well suited for maintaining the condition of koi being prepared for shows.\n\nPellets retain their shape in water for a long time, so the food does not degrade water quality.\n\nStress is one of the main causes of disease in fish. The food is enriched with stable vitamin C, which helps reduce the impact of stress.\n\nAstaxanthin enhances red tones, and vitamin C makes white colours brighter. This gives koi bodies a natural shine and saturated, harmonious coloration.",
+        ingredients:
+          'Wheat flour, fish meal, squid meal, soybean cake, corn gluten, defatted rice bran, wheat germ, fish oil, calcium phosphate, salt, Toyoserin (probiotics).\n\nVitamins: A, D3, E, K3, B1, B2, pantothenic acid, B12, niacin, B6, folic acid, biotin.\n\nMinerals: cobalt carbonate, calcium iodate, magnesium carbonate.',
+        nutrition: [
+          { title: 'Crude Protein', value: 'min 37.0%' },
+          { title: 'Crude Fat', value: 'min 6.0%' },
+          { title: 'Crude Fiber', value: 'max 4.0%' },
+          { title: 'Moisture', value: 'max 11.0%' },
+          { title: 'Crude Ash', value: 'max 14.0%' },
+          { title: 'Phosphorous', value: 'min 1.2%' },
+          { title: 'Calcium', value: 'max 1.7%' },
+        ],
         imageLink: '/img/food/fujizakura-poster.jpg',
       },
       shogun: {
         name: 'Shogun',
-        features: 'All-season, digestible in cold and warm water.',
-        benefits: 'Year-round feeding without changing food.',
-        ingredients: 'Adaptive formula, balanced macronutrients.',
-        nutrition:
-          'Digestible in warm and cold water. Balanced nutrition for consistent feeding in any season.',
+        features:
+          'JPD Shogun - is a premium koi food enriched with wheat germ and probiotics, suitable for year-round use.\n\nContains probiotics that help keep the aquatic environment clean.\n\nMade from high-quality fish meal and cuttlefish meal, making the food particularly attractive and tasty for koi.',
+        benefits:
+          'This is a basic daily food from the affordable range, designed for regular feeding. Thanks to its balanced formula, it can also be combined with other JPD foods.\n\nThe recipe combines fish meal, feed oils and grain components that stimulate koi appetite and promote active food consumption.\n\nVitamin C helps maintain a clean white colour on the fish body. Pellets retain their shape in water for a long time, so the food does not degrade water quality.',
+        ingredients:
+          'Wheat flour, fish meal, soybean cake, cuttlefish meal, Haematococcus (microalgae), lactoferrin, natural astaxanthin, vitamins and minerals.',
+        nutrition: [
+          { title: 'Crude Protein', value: 'min 36.0%' },
+          { title: 'Crude Fat', value: 'min 7.0%' },
+          { title: 'Crude Fiber', value: 'max 2.5%' },
+          { title: 'Moisture', value: 'max 10.0%' },
+          { title: 'Crude Ash', value: 'max 7.1%' },
+          { title: 'Phosphorous', value: 'min 0.9%' },
+          { title: 'Calcium', value: 'max 1.3%' },
+        ],
         imageLink: '/img/food/shogun-poster.png',
       },
     },
@@ -180,7 +251,7 @@ const en: Dictionary = {
       shori: {
         name: 'Shori',
         japaneseName: '勝鯉',
-        description: 'Fast growth, super-premium formula.',
+        description: 'Premium growth formula with astaxanthin and probiotics.',
         imageLink: '/img/food/shori-sq.png',
       },
       fujizakura: {

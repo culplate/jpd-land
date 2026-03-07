@@ -4,7 +4,7 @@ import { getDictionary } from '@/lib/locales/locales';
 import { LOCALES } from '@/lib/locales/i18n-config';
 import type { Locale } from '@/lib/locales/i18n-config';
 import { getBaseUrl } from '@/lib/site-url';
-import type { ProductId } from '@/content/i18n/schema';
+import type { ProductId, NutritionItem } from '@/content/i18n/schema';
 import Image from 'next/image';
 import {
   Text,
@@ -103,7 +103,7 @@ export default async function ProductPage({ params }: Props) {
       id: 'features',
       title: dict.products.sections.features,
       content: (
-        <Text as="p" size="md">
+        <Text as="p" size="md" className={styles.accordionContent}>
           {product.features}
         </Text>
       ),
@@ -112,7 +112,7 @@ export default async function ProductPage({ params }: Props) {
       id: 'benefits',
       title: dict.products.sections.benefits,
       content: (
-        <Text as="p" size="md">
+        <Text as="p" size="md" className={styles.accordionContent}>
           {product.benefits}
         </Text>
       ),
@@ -121,7 +121,7 @@ export default async function ProductPage({ params }: Props) {
       id: 'ingredients',
       title: dict.products.sections.ingredients,
       content: (
-        <Text as="p" size="md">
+        <Text as="p" size="md" className={styles.accordionContent}>
           {product.ingredients}
         </Text>
       ),
@@ -130,9 +130,29 @@ export default async function ProductPage({ params }: Props) {
       id: 'nutrition',
       title: dict.products.sections.nutrition,
       content: (
-        <Text as="p" size="md">
-          {product.nutrition}
-        </Text>
+        <div className={styles.accordionContent}>
+          {product.nutrition.map((item: NutritionItem, index: number) =>
+            item.title ? (
+              <div key={index} className={styles.nutritionItem}>
+                <Text as="span" size="md" weight="medium">
+                  {item.title}
+                </Text>
+                <Text
+                  as="span"
+                  size="md"
+                  weight="light"
+                  className={styles.nutritionValue}
+                >
+                  {item.value}
+                </Text>
+              </div>
+            ) : (
+              <Text key={index} as="p" size="md">
+                {item.value}
+              </Text>
+            )
+          )}
+        </div>
       ),
     },
   ];

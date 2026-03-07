@@ -14,13 +14,18 @@ export type ProductId =
   | 'fujizakura'
   | 'shogun';
 
+export type NutritionItem = {
+  title: string;
+  value: string;
+};
+
 /** Product data for the product detail page (name, features, benefits, ingredients, nutrition, image) */
 export type ProductPageItem = {
   name: string;
   features: string;
   benefits: string;
   ingredients: string;
-  nutrition: string;
+  nutrition: NutritionItem[];
   imageLink: string;
 };
 
