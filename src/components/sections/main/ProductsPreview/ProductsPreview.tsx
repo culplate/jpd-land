@@ -1,4 +1,10 @@
-import { Carousel, Section, ProductCard, Button } from '@/components/ui';
+import {
+  Carousel,
+  Section,
+  ProductCard,
+  Button,
+  Container,
+} from '@/components/ui';
 import type { Locale } from '@/lib/locales/i18n-config';
 import styles from './ProductsPreview.module.scss';
 import type { Dictionary, ProductCardItem } from '@/content/i18n/schema';
@@ -29,8 +35,8 @@ export function ProductsPreview({
     >
       <Carousel
         className={styles.productCards}
-        desktopMode="static"
-        ariaLabel={dict.title}
+        desktopMode="auto"
+        ariaLabel={dict.titleMain + ' ' + dict.titleSub}
       >
         {PRODUCTS_PREVIEW_IDS.map((id) => {
           const card = productCards[id];
@@ -47,9 +53,9 @@ export function ProductsPreview({
           );
         })}
       </Carousel>
-      <div className={styles.buttonWrapper}>
+      <Container className={styles.buttonWrapper}>
         <Button href="/products">{dict.button}</Button>
-      </div>
+      </Container>
     </Section>
   );
 }

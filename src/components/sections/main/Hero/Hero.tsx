@@ -82,9 +82,9 @@ export function Hero({ dict, locale, productCards }: HeroProps) {
           );
         })}
       </Carousel>
-      <div className={styles.buttonWrapper}>
+      <Container size="sm" className={styles.buttonWrapper}>
         <Button href="/products">{dict.button}</Button>
-      </div>
+      </Container>
     </Section>
   );
 }

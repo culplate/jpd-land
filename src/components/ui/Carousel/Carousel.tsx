@@ -1,10 +1,10 @@
 'use client';
 
-import { useEffect, useRef, useCallback } from 'react';
+import { useEffect, useRef, useCallback, useState } from 'react';
 import type { ReactNode, PointerEvent as ReactPointerEvent } from 'react';
 import styles from './Carousel.module.scss';
 
-type DesktopMode = 'static' | 'scroll';
+type DesktopMode = 'static' | 'scroll' | 'auto';
 
 export interface CarouselProps {
   children: ReactNode;
@@ -18,6 +18,7 @@ export interface CarouselProps {
    * Controls behavior on laptop+ breakpoints.
    * - 'static': items are laid out side-by-side without horizontal scroll
    * - 'scroll': horizontal scroll is available on desktop as well
+   * - 'auto': detects content overflow and switches between static (no overflow) and scroll (overflow)
    *
    * On mobile/tablet, the carousel is always scrollable.
    */
@@ -39,12 +40,13 @@ export function Carousel({
   children,
   className = '',
   breakout = false,
-  desktopMode = 'scroll',
+  desktopMode = 'auto',
   ariaLabel,
 }: CarouselProps) {
   const trackRef = useRef<HTMLDivElement>(null);
   const items = flattenChildren(children);
   const middleIndex = items.length > 0 ? Math.floor(items.length / 2) : 0;
+  const [needsScroll, setNeedsScroll] = useState(true);
 
   const drag = useRef({
     active: false,
@@ -62,8 +64,19 @@ export function Carousel({
     const track = trackRef.current;
     if (!track || items.length === 0) return;
 
-    const scrollToMiddle = () => {
-      if (track.scrollWidth <= track.clientWidth) return;
+    const updateLayout = () => {
+      const children = Array.from(track.children) as HTMLElement[];
+      if (children.length === 0) return;
+
+      const gap = parseFloat(getComputedStyle(track).columnGap) || 0;
+      const contentWidth =
+        children.reduce((sum, child) => sum + child.offsetWidth, 0) +
+        gap * Math.max(0, children.length - 1);
+      const overflow = contentWidth > track.clientWidth;
+
+      setNeedsScroll(overflow);
+
+      if (!overflow) return;
       const middleEl = track.children[middleIndex] as HTMLElement | undefined;
       if (!middleEl) return;
       const scrollLeft =
@@ -71,10 +84,21 @@ export function Carousel({
       track.scrollLeft = Math.max(0, scrollLeft);
     };
 
-    scrollToMiddle();
-    const ro = new ResizeObserver(scrollToMiddle);
+    const runAfterLayout = () => {
+      requestAnimationFrame(() => {
+        requestAnimationFrame(updateLayout);
+      });
+    };
+
+    runAfterLayout();
+    const ro = new ResizeObserver(updateLayout);
     ro.observe(track);
-    return () => ro.disconnect();
+    const mo = new MutationObserver(runAfterLayout);
+    mo.observe(track, { childList: true });
+    return () => {
+      ro.disconnect();
+      mo.disconnect();
+    };
   }, [items.length, middleIndex]);
 
   useEffect(() => {
@@ -236,8 +260,10 @@ export function Carousel({
     [startMomentum]
   );
 
+  const effectiveMode =
+    desktopMode === 'auto' ? (needsScroll ? 'scroll' : 'static') : desktopMode;
   const modeClass =
-    desktopMode === 'static' ? styles.desktopStatic : styles.desktopScroll;
+    effectiveMode === 'static' ? styles.desktopStatic : styles.desktopScroll;
   const breakoutClass = breakout ? styles.breakout : '';
 
   const rootClassName = [styles.carousel, modeClass, breakoutClass, className]
