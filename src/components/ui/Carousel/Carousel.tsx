@@ -105,11 +105,8 @@ export function Carousel({
       const target =
         closest.offsetLeft - track.clientWidth / 2 + closest.offsetWidth / 2;
       track.style.scrollSnapType = '';
-      track.style.scrollBehavior = 'smooth';
+      track.style.scrollBehavior = 'auto';
       track.scrollLeft = Math.max(0, target);
-      requestAnimationFrame(() => {
-        track.style.scrollBehavior = '';
-      });
     }
   }, []);
 

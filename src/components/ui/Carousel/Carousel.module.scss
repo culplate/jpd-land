@@ -7,7 +7,7 @@
   display: flex;
   gap: 1rem;
   overflow-x: auto;
-  scroll-snap-type: x proximity;
+  scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   scroll-padding-inline: 1rem;
   padding-bottom: 0.25rem;
@@ -111,7 +111,7 @@
 .desktopScroll {
   .track {
     @include media($bp-laptop) {
-      scroll-snap-type: x proximity;
+      scroll-snap-type: x mandatory;
     }
   }
 }
