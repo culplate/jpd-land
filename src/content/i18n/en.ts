@@ -91,18 +91,38 @@ const en: Dictionary = {
         {
           metric: '207',
           description: 'Years of tradition',
+          fullInfo: {
+            title: 'Yoshida Family Tradition',
+            description:
+              'Traditional koi care knowledge passed down through six generations of the Yoshida family since 1819.',
+          },
         },
         {
           metric: '20+',
           description: 'Countries of partners',
+          fullInfo: {
+            title: 'International recognition',
+            description:
+              'Premium koi feed trusted by professional breeders and showcased at major Koi Shows around the world.',
+          },
         },
         {
           metric: '54',
           description: 'Years of leadership',
+          fullInfo: {
+            title: 'Brand Heritage',
+            description:
+              'Decades of expertise that helped establish JPD as a globally respected standard in koi nutrition.',
+          },
         },
         {
           metric: '100%',
           description: 'Scientific approach',
+          fullInfo: {
+            title: 'Health and Growth',
+            description:
+              'Formulated with input from scientists at Mie University and the National Fisheries University, supporting optimal growth and strong natural immunity in koi.',
+          },
         },
       ],
     },

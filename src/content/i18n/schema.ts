@@ -45,6 +45,10 @@ export type HistoryCardItem = {
 export type BenefitsCardItem = {
   metric: string;
   description: string;
+  fullInfo: {
+    title: string;
+    description: string;
+  };
 };
 
 /** Product data for the product card (listing / grid) */
