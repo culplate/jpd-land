@@ -24,7 +24,11 @@ export function Reviews({ dict }: { dict: Dictionary['main']['reviews'] }) {
         </Title>
         <Carousel breakout className={styles.carousel}>
           {dict.reviews.map((review) => (
-            <ReviewCard key={review.author} review={review} buttonText={dict.button} />
+            <ReviewCard
+              key={review.author}
+              review={review}
+              buttonText={dict.button}
+            />
           ))}
         </Carousel>
       </Container>
