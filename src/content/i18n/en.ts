@@ -29,9 +29,10 @@ const en: Dictionary = {
   },
   main: {
     hero: {
-      title: 'Welcome to our website',
+      titleMain: 'JPD:',
+      titleSub: 'The Imperial Standard of Koi Care',
       description: 'This is a description of our website',
-      button: 'Get started',
+      button: 'View all',
     },
     reviews: {
       title: 'Our customers value in JPD',

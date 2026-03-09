@@ -5,6 +5,7 @@ import {
   Title,
   ProductCard,
   Button,
+  Text,
 } from '@/components/ui';
 import type { Locale } from '@/lib/locales/i18n-config';
 import styles from './Hero.module.scss';
@@ -53,16 +54,18 @@ export function Hero({ dict, locale, productCards }: HeroProps) {
         className={`${styles.bgImage} ${styles.moon}`}
       />
       <Container size="xl" className={styles.container}>
-        <Title as="h1" size="h1" align="center">
+        <Title as="h1" size="h1" align="center" className={styles.titleMain}>
           {/* TODO update font sizes */}
-          {dict.title}
+          {dict.titleMain}
+          <br />
+          <span>{dict.titleSub}</span>
         </Title>
       </Container>
 
       <Carousel
         className={styles.productCards}
-        desktopMode="static"
-        ariaLabel={dict.title}
+        desktopMode="auto"
+        ariaLabel={dict.titleMain + ' ' + dict.titleSub}
       >
         {HERO_PRODUCT_IDS.map((id) => {
           const card = productCards[id];

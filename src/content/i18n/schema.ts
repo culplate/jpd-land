@@ -111,7 +111,8 @@ export type Dictionary = {
   footer: FooterDictionary;
   main: {
     hero: {
-      title: string;
+      titleMain: string;
+      titleSub: string;
       description: string;
       button: string;
     };

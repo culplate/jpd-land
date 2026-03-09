@@ -28,7 +28,8 @@ const uk: Dictionary = {
   },
   main: {
     hero: {
-      title: 'JPD: Імператорський стандарт харчування для Коі',
+      titleMain: 'JPD:',
+      titleSub: 'Імператорський стандарт харчування Коі',
       description: 'Це опис нашого сайту',
       button: 'Переглянути всі',
     },
