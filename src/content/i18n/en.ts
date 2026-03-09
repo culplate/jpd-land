@@ -36,6 +36,7 @@ const en: Dictionary = {
     },
     reviews: {
       title: 'Our customers value in JPD',
+      button: 'Choose food',
       reviews: [
         {
           title: 'Review',

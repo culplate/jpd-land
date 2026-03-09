@@ -30,3 +30,11 @@
     font-size: var(--text-h2-size);
   }
 }
+
+.carousel {
+  [class*='track'] {
+    @include media($bp-laptop) {
+      justify-content: flex-start;
+    }
+  }
+}

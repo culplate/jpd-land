@@ -118,6 +118,7 @@ export type Dictionary = {
     };
     reviews: {
       title: string;
+      button: string;
       reviews: ReviewCardItem[];
     };
     history: {

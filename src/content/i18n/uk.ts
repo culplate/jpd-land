@@ -35,6 +35,7 @@ const uk: Dictionary = {
     },
     reviews: {
       title: 'Наші замовники цінують в JPD',
+      button: 'Підібрати корм',
       reviews: [
         {
           title: 'Відгук',

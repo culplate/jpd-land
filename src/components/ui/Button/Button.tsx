@@ -52,8 +52,11 @@ export function Button(props: ButtonProps) {
   );
 
   if (isLinkProps(props)) {
-    const linkProps = props;
-    const { href, ...anchorProps } = linkProps;
+    const { href } = props;
+    const anchorRest = rest as Omit<
+      AnchorHTMLAttributes<HTMLAnchorElement>,
+      'href'
+    >;
 
     const isExternal = href.startsWith('http') || href.startsWith('//');
     const isAnchor = href.startsWith('#');
@@ -63,6 +66,7 @@ export function Button(props: ButtonProps) {
     if (isAnchor) {
       return (
         <a
+          {...anchorRest}
           href={href}
           className={classNames}
           aria-disabled={isDisabled}
@@ -72,7 +76,6 @@ export function Button(props: ButtonProps) {
               ? { pointerEvents: 'none', cursor: 'default' }
               : undefined
           }
-          {...anchorProps}
         >
           {content}
         </a>
@@ -82,6 +85,7 @@ export function Button(props: ButtonProps) {
     if (isExternal) {
       return (
         <a
+          {...anchorRest}
           href={href}
           className={classNames}
           target="_blank"
@@ -93,7 +97,6 @@ export function Button(props: ButtonProps) {
               ? { pointerEvents: 'none', cursor: 'default' }
               : undefined
           }
-          {...anchorProps}
         >
           {content}
         </a>
@@ -102,6 +105,7 @@ export function Button(props: ButtonProps) {
 
     return (
       <NextLink
+        {...anchorRest}
         href={href as Parameters<typeof NextLink>[0]['href']}
         className={classNames}
         aria-disabled={isDisabled}
@@ -109,7 +113,6 @@ export function Button(props: ButtonProps) {
         style={
           isDisabled ? { pointerEvents: 'none', cursor: 'default' } : undefined
         }
-        {...anchorProps}
       >
         {content}
       </NextLink>
