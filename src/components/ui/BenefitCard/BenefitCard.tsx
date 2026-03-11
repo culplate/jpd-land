@@ -51,7 +51,12 @@ export function BenefitCard({ benefit }: BenefitCardProps) {
     >
       <div className={styles.front}>
         <p className={styles.metric}>{benefit.metric}</p>
-        <Text size="lg" weight="medium" className={styles.description}>
+        <Text
+          size="lg"
+          weight="medium"
+          align="center"
+          className={styles.description}
+        >
           {benefit.description}
         </Text>
       </div>

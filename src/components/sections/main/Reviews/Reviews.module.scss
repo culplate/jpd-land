@@ -2,11 +2,11 @@
   background-color: var(--color-red-700);
   overflow: hidden;
   position: relative;
-  padding-top: 340px;
+  padding-top: 340px !important;
 
   @include media($bp-laptop) {
-    padding-top: 4rem;
-    padding-bottom: 4rem;
+    padding-top: 4rem !important;
+    padding-bottom: 4rem !important;
   }
 }
 
