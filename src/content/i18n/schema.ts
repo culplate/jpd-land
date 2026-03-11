@@ -26,6 +26,7 @@ export type ProductPageItem = {
   benefits: string;
   ingredients: string;
   nutrition: NutritionItem[];
+  packaging: string;
   imageLink: string;
 };
 
@@ -64,6 +65,7 @@ export type ProductPageSections = {
   ingredients: string;
   nutrition: string;
   features: string;
+  packaging: string;
   breadcrumb: string;
   relatedProducts: string;
 };
@@ -143,16 +145,29 @@ export type Dictionary = {
   };
   contact: {
     title: string;
+    form: {
+      namePlaceholder: string;
+      emailPlaceholder: string;
+      phonePlaceholder: string;
+      messagePlaceholder: string;
+      submit: string;
+      sending: string;
+      successMessage: string;
+      errorMessage: string;
+    };
+    validation: {
+      nameMin: string;
+      nameMax: string;
+      emailInvalid: string;
+      emailMax: string;
+      phoneInvalid: string;
+      phoneMax: string;
+    };
   };
   privacy: {
     title: string;
     lastUpdated: string;
     sections: PrivacySection[];
-  };
-  // Site-wide SEO defaults (layout / home fallback)
-  seo: {
-    title: string;
-    description: string;
   };
   // Default Open Graph
   og: {

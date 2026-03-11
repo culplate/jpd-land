@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { getDictionary } from '@/lib/locales/locales';
 import { LOCALES } from '@/lib/locales/i18n-config';
 import type { Locale } from '@/lib/locales/i18n-config';
-import { getBaseUrl } from '@/lib/site-url';
+import { buildPageMetadata } from '@/lib/locales/metadata';
 import { Section, Container, Title } from '@/components/ui';
 import styles from './PrivacyPage.module.scss';
 
@@ -13,25 +13,17 @@ type Props = {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale: localeParam } = await params;
   const locale = localeParam as Locale;
+
   if (!LOCALES.includes(locale)) return {};
+
   const dict = await getDictionary(locale);
-  const baseUrl = getBaseUrl();
-  const page = dict.pages.privacy;
-  return {
-    title: page.title,
-    description: page.description,
-    openGraph: {
-      title: page.title,
-      description: page.description,
-      url: `${baseUrl}/${locale}/privacy`,
-      siteName: dict.og.siteName,
-      locale,
-      type: 'website',
-    },
-    alternates: {
-      canonical: `${baseUrl}/${locale}/privacy`,
-    },
-  };
+
+  return buildPageMetadata(
+    locale,
+    '/privacy',
+    dict.pages.privacy,
+    dict.og.siteName
+  );
 }
 
 export default async function Privacy({ params }: Props) {

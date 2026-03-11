@@ -16,10 +16,10 @@ const uk: Dictionary = {
     contactUs: 'Зв’язатися',
   },
   footer: {
-    contactsTitle: 'Зв’язатися з нами',
-    phone: '+48666777333',
-    email: 'example@example.com',
-    address: 'м. Київ, вул. Ярославів Вал 15',
+    contactsTitle: 'Контакти для консультації',
+    phone: '+380674441177',
+    email: 'info@jpd-koi.com.ua',
+    address: 'м. Київ, пр-т Академіка Палладіна, 48',
     description:
       'Офіційне представництво JPD в Україні. Повний асортимент преміальних лінійок. Прямі поставки з Японії, що гарантують оригінальність та свіжість продукту.',
     privacy: 'Privacy Policy',
@@ -139,6 +139,7 @@ const uk: Dictionary = {
       ingredients: 'Склад',
       nutrition: 'Поживна цінність',
       features: 'Особливості',
+      packaging: 'Форма випуску',
       breadcrumb: 'Назад до продуктів',
       relatedProducts: 'Схожі товари',
     },
@@ -185,6 +186,8 @@ const uk: Dictionary = {
             value: '0.1%',
           },
         ],
+        packaging:
+          'Доступні фасування: 5 кг, 10 кг.\n\n Розміри гранул: M - 4 мм, L - 7 мм',
         imageLink: '/img/food/fujiyama-poster.jpg',
       },
       yamato: {
@@ -202,6 +205,8 @@ const uk: Dictionary = {
           { title: 'Зольність', value: 'не більше 10%' },
           { title: 'Вологість', value: 'не більше 10%' },
         ],
+        packaging:
+          'Доступні фасування: 5 кг, 10 кг.\n\n Розміри гранул: M - 4 мм, L - 7 мм',
         imageLink: '/img/food/yamato-poster.jpg',
       },
       shori: {
@@ -221,6 +226,8 @@ const uk: Dictionary = {
           { title: 'Фосфор', value: 'не менше 1.2%' },
           { title: 'Кальцій', value: 'не більше 1.7%' },
         ],
+        packaging:
+          'Доступні фасування: 5 кг, 10 кг.\n\n Розміри гранул: M - 4 мм, L - 7 мм',
         imageLink: '/img/food/shori-poster.jpg',
       },
       fujizakura: {
@@ -261,6 +268,8 @@ const uk: Dictionary = {
             value: 'не більше 1.7%',
           },
         ],
+        packaging:
+          'Доступні фасування: 5 кг, 10 кг.\n\n Розміри гранул: M - 4 мм, L - 7 мм',
         imageLink: '/img/food/fujizakura-poster.jpg',
       },
       shogun: {
@@ -301,6 +310,8 @@ const uk: Dictionary = {
             value: 'не більше 1.3%',
           },
         ],
+        packaging:
+          'Доступні фасування: 5 кг, 10 кг.\n\n Розміри гранул: M - 4 мм, L - 7 мм',
         imageLink: '/img/food/shogun-poster.png',
       },
     },
@@ -400,6 +411,24 @@ const uk: Dictionary = {
   },
   contact: {
     title: 'Контакти',
+    form: {
+      namePlaceholder: 'Ім\u2019я',
+      emailPlaceholder: 'Електронна пошта',
+      phonePlaceholder: 'Телефон (необов\u2019язково)',
+      messagePlaceholder: 'Повідомлення (необов\u2019язково)',
+      submit: 'Надіслати',
+      sending: 'Надсилання...',
+      successMessage: 'Повідомлення надіслано успішно',
+      errorMessage: 'Щось пішло не так. Спробуйте ще раз.',
+    },
+    validation: {
+      nameMin: 'Ім\u2019я має містити щонайменше 2 символи',
+      nameMax: 'Ім\u2019я має містити щонайбільше 50 символів',
+      emailInvalid: 'Будь ласка, введіть дійсну електронну адресу',
+      emailMax: 'Електронна адреса може містити щонайбільше 50 символів',
+      phoneInvalid: 'Будь ласка, введіть дійсний номер телефону',
+      phoneMax: 'Номер телефону може містити щонайбільше 30 символів',
+    },
   },
   privacy: {
     title: 'Політика конфіденційності',
@@ -437,34 +466,35 @@ const uk: Dictionary = {
       },
     ],
   },
-  seo: {
-    title: 'Next Starter | Головна',
-    description: 'Мета-опис сайту та головної сторінки за замовчуванням.',
-  },
   og: {
-    title: 'Next Starter',
-    description: 'Опис за замовчуванням для Open Graph та соцмереж.',
-    siteName: 'Next Starter',
+    title: 'Japan Pet Design | JPD - преміальні корми для коі',
+    description:
+      'Japan Pet Design (JPD) в Україні - преміальні японські корми для коі, оригінальна продукція Japan Pet Design та професійні рішення від бренду з Японії.',
+    siteName: 'Japan Pet Design Ukraine',
   },
   pages: {
     home: {
-      title: 'Next Starter | Головна',
-      description: 'Ласкаво просимо на наш сайт. Це головна сторінка.',
+      title: 'Преміальні корми для коі JPD | Japan Pet Design',
+      description:
+        'Представництво JPD в Україні. Преміальні корми для коропів коі, оригінальна продукція Japan Pet Design та професійні рішення для догляду за декоративними рибами прямо з Японії.',
     },
     about: {
-      title: 'Про нас | Next Starter',
-      description: 'Дізнайтеся більше про нас та нашу діяльність.',
+      title: 'Історія бренду JPD | Japan Pet Design',
+      description:
+        'Історія бренду Japan Pet Design (JPD): традиція Yoshida з 1819 року, японська експертиза у сфері декоративних риб і сучасні преміальні рішення для коі.',
     },
     contact: {
-      title: 'Контакти | Next Starter',
-      description: 'Зв’яжіться з нами.',
+      title: 'Контакти JPD в Україні | Japan Pet Design',
+      description:
+        'Контакти представництва Japan Pet Design в Україні. Звертайтеся для консультації, інформації про продукцію JPD та щодо співпраці.',
     },
     products: {
-      title: 'Продукти | Next Starter',
-      description: 'Перегляньте наші продукти та послуги.',
+      title: 'Продукція JPD - корми для коі | Japan Pet Design',
+      description:
+        'Асортимент Japan Pet Design: преміальні корми для коі, японська продукція для декоративних риб, рішення для догляду, росту та здоров’я коропів коі.',
     },
     privacy: {
-      title: 'Політика конфіденційності | Next Starter',
+      title: 'Політика конфіденційності | Japan Pet Design | JPD',
       description:
         'Ознайомтеся з нашою політикою конфіденційності та дізнайтеся, як ми збираємо, використовуємо та захищаємо ваші дані.',
     },

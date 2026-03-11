@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { getDictionary } from '@/lib/locales/locales';
 import { LOCALES } from '@/lib/locales/i18n-config';
 import type { Locale } from '@/lib/locales/i18n-config';
-import { getBaseUrl } from '@/lib/site-url';
+import { buildPageMetadata } from '@/lib/locales/metadata';
 import { ProductsList } from '@/components/sections/products/ProductsList/ProductsList';
 
 type Props = {
@@ -16,24 +16,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!LOCALES.includes(locale)) return {};
 
   const dict = await getDictionary(locale);
-  const baseUrl = getBaseUrl();
-  const page = dict.pages.products;
 
-  return {
-    title: page.title,
-    description: page.description,
-    openGraph: {
-      title: page.title,
-      description: page.description,
-      url: `${baseUrl}/${locale}/products`,
-      siteName: dict.og.siteName,
-      locale,
-      type: 'website',
-    },
-    alternates: {
-      canonical: `${baseUrl}/${locale}/products`,
-    },
-  };
+  return buildPageMetadata(
+    locale,
+    '/products',
+    dict.pages.products,
+    dict.og.siteName
+  );
 }
 
 export default async function Products({ params }: Props) {

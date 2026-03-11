@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation';
 import { getDictionary } from '@/lib/locales/locales';
 import { LOCALES } from '@/lib/locales/i18n-config';
 import type { Locale } from '@/lib/locales/i18n-config';
-import { getBaseUrl } from '@/lib/site-url';
+import { buildPageMetadata } from '@/lib/locales/metadata';
 import type { ProductId, NutritionItem } from '@/content/i18n/schema';
 import Image from 'next/image';
 import {
@@ -63,24 +63,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   const dict = await getDictionary(locale);
-  const baseUrl = getBaseUrl();
   const product = dict.products.page[productParam];
 
-  return {
-    title: `${product.name} | JPD`,
-    description: product.benefits,
-    openGraph: {
-      title: `${product.name} | JPD`,
-      description: product.benefits,
-      url: `${baseUrl}/${locale}/products/${productParam}`,
-      siteName: dict.og.siteName,
-      locale,
-      type: 'website',
-    },
-    alternates: {
-      canonical: `${baseUrl}/${locale}/products/${productParam}`,
-    },
-  };
+  return buildPageMetadata(
+    locale,
+    `/products/${productParam}`,
+    { title: `${product.name} | JPD`, description: product.benefits },
+    dict.og.siteName
+  );
 }
 
 export default async function ProductPage({ params }: Props) {

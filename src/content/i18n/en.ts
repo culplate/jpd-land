@@ -17,10 +17,10 @@ const en: Dictionary = {
     contactUs: 'Contact Us',
   },
   footer: {
-    contactsTitle: 'Contact Us',
-    phone: '+48666777333',
-    email: 'example@example.com',
-    address: 'Kyiv, Yaroslaviv Val St 15',
+    contactsTitle: 'Contacts for consultation',
+    phone: '+380674441177',
+    email: 'info@jpd-koi.com.ua',
+    address: 'Akademika Palladina Ave, 48, Kyiv, Ukraine',
     description:
       'Official representative office of JPD in Ukraine. Full range of premium lines. Direct deliveries from Japan, guaranteeing originality and freshness of the product.',
     privacy: 'Privacy Policy',
@@ -137,6 +137,7 @@ const en: Dictionary = {
       nutrition: 'Nutritional value',
       features: 'Features',
       breadcrumb: 'Back to products',
+      packaging: 'Packaging',
       relatedProducts: 'Related products',
     },
     page: {
@@ -180,6 +181,8 @@ const en: Dictionary = {
             value: '0.1%',
           },
         ],
+        packaging:
+          'Available packaging: 5 kg, 10 kg.\n\nPellet sizes: M - 4 mm, L - 7 mm',
         imageLink: '/img/food/fujiyama-poster.jpg',
       },
       yamato: {
@@ -197,6 +200,8 @@ const en: Dictionary = {
           { title: 'Crude Ash', value: 'max 10.0%' },
           { title: 'Moisture', value: 'max 10.0%' },
         ],
+        packaging:
+          'Available packaging: 5 kg, 10 kg.\n\nPellet sizes: M - 4 mm, L - 7 mm',
         imageLink: '/img/food/yamato-poster.jpg',
       },
       shori: {
@@ -216,6 +221,8 @@ const en: Dictionary = {
           { title: 'Phosphorous', value: 'min 1.2%' },
           { title: 'Calcium', value: 'max 1.7%' },
         ],
+        packaging:
+          'Available packaging: 5 kg, 10 kg.\n\nPellet sizes: M - 4 mm, L - 7 mm',
         imageLink: '/img/food/shori-poster.jpg',
       },
       fujizakura: {
@@ -235,6 +242,8 @@ const en: Dictionary = {
           { title: 'Phosphorous', value: 'min 1.2%' },
           { title: 'Calcium', value: 'max 1.7%' },
         ],
+        packaging:
+          'Available packaging: 5 kg, 10 kg.\n\nPellet sizes: M - 4 mm, L - 7 mm',
         imageLink: '/img/food/fujizakura-poster.jpg',
       },
       shogun: {
@@ -254,6 +263,8 @@ const en: Dictionary = {
           { title: 'Phosphorous', value: 'min 0.9%' },
           { title: 'Calcium', value: 'max 1.3%' },
         ],
+        packaging:
+          'Available packaging: 5 kg, 10 kg.\n\nPellet sizes: M - 4 mm, L - 7 mm',
         imageLink: '/img/food/shogun-poster.png',
       },
     },
@@ -352,6 +363,24 @@ const en: Dictionary = {
   },
   contact: {
     title: 'Contact',
+    form: {
+      namePlaceholder: 'Name',
+      emailPlaceholder: 'Email',
+      phonePlaceholder: 'Phone (optional)',
+      messagePlaceholder: 'Message (optional)',
+      submit: 'Submit',
+      sending: 'Sending...',
+      successMessage: 'Message sent successfully',
+      errorMessage: 'Something went wrong. Please try again.',
+    },
+    validation: {
+      nameMin: 'Name must be at least 2 characters',
+      nameMax: 'Name must be less than 50 characters',
+      emailInvalid: 'Please enter a valid email address',
+      emailMax: 'Email must be less than 50 characters',
+      phoneInvalid: 'Please enter a valid phone number',
+      phoneMax: 'Phone number must be less than 30 characters',
+    },
   },
   privacy: {
     title: 'Privacy Policy',
@@ -389,36 +418,37 @@ const en: Dictionary = {
       },
     ],
   },
-  seo: {
-    title: 'Next Starter | Home',
-    description: 'Default meta description for the site and home page.',
-  },
   og: {
-    title: 'Next Starter',
-    description: 'Default Open Graph description for social sharing.',
-    siteName: 'Next Starter',
+    title: 'Japan Pet Design | JPD - premium koi food',
+    description:
+      'Japan Pet Design (JPD) in Ukraine. Discover premium koi food from Japan Pet Design and explore original products for ornamental fish care directly from Japan.',
+    siteName: 'Japan Pet Design Ukraine',
   },
   pages: {
     home: {
-      title: 'Next Starter | Home',
-      description: 'Welcome to our website. This is the home page.',
+      title: 'Premium Koi Food JPD | Japan Pet Design',
+      description:
+        'JPD representative in Ukraine. Discover premium koi food from Japan Pet Design and explore original products for ornamental fish care.',
     },
     about: {
-      title: 'About | Next Starter',
-      description: 'Learn more about us and what we do.',
+      title: 'About JPD | Japan Pet Design',
+      description:
+        'Discover the story of Japan Pet Design (JPD): the Yoshida tradition since 1819, Japanese expertise in ornamental fish, and modern premium solutions for koi care.',
     },
     contact: {
-      title: 'Contact | Next Starter',
-      description: 'Get in touch with us.',
+      title: 'JPD Contacts in Ukraine | Japan Pet Design',
+      description:
+        'Contact the Japan Pet Design representative in Ukraine for consultation, product information, and partnership inquiries regarding JPD products.',
     },
     products: {
-      title: 'Products | Next Starter',
-      description: 'Browse our products and services.',
+      title: 'JPD Products - Premium Koi Food | Japan Pet Design',
+      description:
+        'Explore the Japan Pet Design range: premium koi food, Japanese products for ornamental fish, and solutions for care, growth, and the health of koi carp.',
     },
     privacy: {
-      title: 'Privacy Policy | Next Starter',
+      title: 'Privacy Policy | Japan Pet Design | JPD',
       description:
-        'Read our privacy policy and learn how we collect, use, and protect your data.',
+        'Read our privacy policy to learn how we collect, use, and protect your personal data.',
     },
   },
 };
