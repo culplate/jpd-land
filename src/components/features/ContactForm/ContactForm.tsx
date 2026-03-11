@@ -8,6 +8,7 @@ import {
 } from '@/lib/validations/contact';
 import type { Dictionary } from '@/content/i18n/schema';
 import s from './ContactForm.module.scss';
+import { Button } from '@/components/ui/Button/Button';
 
 type Props = {
   dict: Dictionary['contact'];
@@ -137,9 +138,9 @@ export function ContactForm({ dict }: Props) {
         />
       </div>
 
-      <button type="submit" disabled={loading}>
+      <Button type="submit" disabled={loading}>
         {loading ? dict.form.sending : dict.form.submit}
-      </button>
+      </Button>
     </form>
   );
 }

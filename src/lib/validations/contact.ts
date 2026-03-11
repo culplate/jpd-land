@@ -7,6 +7,7 @@ export type ContactValidationMessages = {
   nameMax: string;
   emailInvalid: string;
   emailMax: string;
+  phoneRequired: string;
   phoneInvalid: string;
   phoneMax: string;
 };
@@ -16,6 +17,7 @@ const DEFAULT_MESSAGES: ContactValidationMessages = {
   nameMax: 'Name must be less than 50 characters',
   emailInvalid: 'Please enter a valid email address',
   emailMax: 'Email must be less than 50 characters',
+  phoneRequired: 'Phone number is required',
   phoneInvalid: 'Please enter a valid phone number',
   phoneMax: 'Phone number must be less than 30 characters',
 };
@@ -33,10 +35,11 @@ export function createContactFormSchema(
       .max(50, { error: messages.emailMax }),
     phone: z
       .string()
-      .refine((val) => val === '' || PHONE_REGEX.test(val), {
+      .min(1, { error: messages.phoneRequired })
+      .max(30, { error: messages.phoneMax })
+      .refine((val) => PHONE_REGEX.test(val), {
         error: messages.phoneInvalid,
-      })
-      .max(30, { error: messages.phoneMax }),
+      }),
     message: z.string().optional(),
     website: z.string(),
   });

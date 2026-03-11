@@ -164,6 +164,7 @@ export type Dictionary = {
       nameMax: string;
       emailInvalid: string;
       emailMax: string;
+      phoneRequired: string;
       phoneInvalid: string;
       phoneMax: string;
     };
