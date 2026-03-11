@@ -25,12 +25,7 @@ type HeroProps = {
 
 export function Hero({ dict, locale, productCards }: HeroProps) {
   return (
-    <Section
-      id="hero"
-      padding="sm"
-      background="white"
-      className={styles.section}
-    >
+    <Section id="hero" padding="sm" className={styles.section}>
       <Image
         src="/img/sakura-L.png"
         alt="Sakura branch left"

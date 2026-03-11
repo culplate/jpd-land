@@ -32,7 +32,7 @@ export default async function Privacy({ params }: Props) {
   const { title, lastUpdated, sections } = dict.privacy;
 
   return (
-    <Section padding="lg" background="white">
+    <Section padding="lg">
       <Container size="lg">
         <div className={styles.privacy}>
           <Title as="h1" className={styles.title}>

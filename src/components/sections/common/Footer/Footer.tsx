@@ -20,7 +20,7 @@ export function Footer({ locale, footer }: FooterProps) {
   const [prefix, suffix] = footer.designCopyright.split('{year}');
 
   return (
-    <Section background="white">
+    <Section>
       <footer aria-label="Site footer">
         <Container size="xl" className={styles.footer}>
           <svg
