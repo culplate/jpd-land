@@ -32,12 +32,7 @@ export function ProductsCarousel({
   productIds = DEFAULT_PRODUCT_IDS,
 }: ProductsCarouselProps) {
   return (
-    <Section
-      id="products-carousel"
-      padding="sm"
-      background="white"
-      className={styles.section}
-    >
+    <Section id="products-carousel" padding="sm" className={styles.section}>
       <Container size="xl" className={styles.header}>
         <Title as="h2" size="h1" className={styles.title}>
           {dict.title}

@@ -17,12 +17,7 @@ type ProductsListProps = {
 
 export function ProductsList({ title, productCards }: ProductsListProps) {
   return (
-    <Section
-      id="products-list"
-      padding="sm"
-      background="white"
-      className={styles.section}
-    >
+    <Section id="products-list" padding="sm" className={styles.section}>
       <Container size="xl" className={styles.container}>
         <Title as="h1" size="h1" className={styles.title}>
           {title}

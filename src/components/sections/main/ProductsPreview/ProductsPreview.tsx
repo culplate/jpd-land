@@ -27,12 +27,7 @@ export function ProductsPreview({
   productCards,
 }: ProductsPreviewProps) {
   return (
-    <Section
-      id="products-preview"
-      padding="lg"
-      background="white"
-      className={styles.section}
-    >
+    <Section id="products-preview" padding="lg" className={styles.section}>
       <Carousel
         className={styles.productCards}
         desktopMode="auto"

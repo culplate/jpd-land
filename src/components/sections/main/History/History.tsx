@@ -16,7 +16,7 @@ type HistoryProps = {
 
 export function History({ locale, dict }: HistoryProps) {
   return (
-    <Section id="history" padding="sm" background="white">
+    <Section id="history" padding="sm">
       <Container size="xl" className={styles.container}>
         <Title as="h2" size="h1" className={styles.title}>
           {dict.title}
