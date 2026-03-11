@@ -67,10 +67,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const product = dict.products.page[productParam];
 
   return {
-    title: product.name,
+    title: `${product.name} | JPD`,
     description: product.benefits,
     openGraph: {
-      title: product.name,
+      title: `${product.name} | JPD`,
       description: product.benefits,
       url: `${baseUrl}/${locale}/products/${productParam}`,
       siteName: dict.og.siteName,
@@ -153,6 +153,15 @@ export default async function ProductPage({ params }: Props) {
             )
           )}
         </div>
+      ),
+    },
+    {
+      id: 'packaging',
+      title: dict.products.sections.packaging,
+      content: (
+        <Text as="p" size="md" className={styles.accordionContent}>
+          {product.packaging}
+        </Text>
       ),
     },
   ];

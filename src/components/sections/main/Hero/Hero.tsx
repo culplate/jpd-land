@@ -5,7 +5,6 @@ import {
   Title,
   ProductCard,
   Button,
-  Text,
 } from '@/components/ui';
 import type { Locale } from '@/lib/locales/i18n-config';
 import styles from './Hero.module.scss';
@@ -53,6 +52,7 @@ export function Hero({ dict, locale, productCards }: HeroProps) {
         height={251}
         className={`${styles.bgImage} ${styles.moon}`}
       />
+      <div className={styles.glassEffect}></div>
       <Container size="xl" className={styles.container}>
         <Title as="h1" size="h1" align="center" className={styles.titleMain}>
           {/* TODO update font sizes */}

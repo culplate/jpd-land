@@ -17,10 +17,20 @@ export type AccordionProps = {
 };
 
 export function Accordion({ items, className = '' }: AccordionProps) {
-  const [openId, setOpenId] = useState<string | null>('features');
+  const [openIds, setOpenIds] = useState<Set<string>>(
+    () => new Set(['features'])
+  );
 
   const toggle = (id: string) => {
-    setOpenId((prev) => (prev === id ? null : id));
+    setOpenIds((prev) => {
+      const next = new Set(prev);
+      if (next.has(id)) {
+        next.delete(id);
+      } else {
+        next.add(id);
+      }
+      return next;
+    });
   };
 
   return (
@@ -29,7 +39,7 @@ export function Accordion({ items, className = '' }: AccordionProps) {
         <AccordionPanel
           key={item.id}
           item={item}
-          isOpen={openId === item.id}
+          isOpen={openIds.has(item.id)}
           onToggle={toggle}
         />
       ))}
@@ -74,7 +84,12 @@ function AccordionPanel({ item, isOpen, onToggle }: AccordionPanelProps) {
         aria-controls={`accordion-content-${item.id}`}
         id={`accordion-header-${item.id}`}
       >
-        <Text as="span" size="md" weight="medium" className={styles.title}>
+        <Text
+          as="span"
+          size="md"
+          weight="medium"
+          className={`${styles.title} ${isOpen ? styles.titleOpen : ''}`}
+        >
           {item.title}
         </Text>
         <svg

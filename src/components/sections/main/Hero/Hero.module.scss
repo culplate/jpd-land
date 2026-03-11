@@ -8,6 +8,27 @@
   justify-content: center;
 }
 
+.glassEffect {
+  position: absolute;
+  top: 12.5%;
+  left: -20%;
+  width: 100%;
+  backdrop-filter: blur(8px);
+  height: 30%;
+  // background-color: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+
+  @include media($bp-laptop) {
+    top: 42%;
+    left: 0;
+    width: 100vw;
+    backdrop-filter: blur(8px);
+    height: 20%;
+    // background-color: rgba(0, 0, 0, 0.5);
+    z-index: 0;
+  }
+}
+
 .bgImage {
   user-select: none;
   pointer-events: none;
@@ -51,7 +72,7 @@
       transform: rotate(0deg);
       left: auto;
       right: 0;
-      top: 11rem;
+      top: 13rem;
       width: 171px;
       height: 254px;
     }
@@ -91,7 +112,6 @@
 .productCards {
   margin-top: 2rem;
   padding-top: 0.5rem;
-  backdrop-filter: blur(8px);
 }
 
 .buttonWrapper {

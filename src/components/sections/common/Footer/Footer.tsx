@@ -42,7 +42,7 @@ export function Footer({ locale, footer }: FooterProps) {
           <div className={styles.content}>
             <Title
               as="h2"
-              size="h2"
+              size="h1"
               id="footer-contacts"
               className={styles.contactsTitle}
             >
@@ -59,20 +59,30 @@ export function Footer({ locale, footer }: FooterProps) {
                   className={styles.contactItem}
                   aria-label={`Phone: ${footer.phone}`}
                 >
-                  {footer.phone}
+                  <Text as="span" size="md" weight="medium">
+                    {footer.phone}
+                  </Text>
                 </a>
                 <a
                   href={`mailto:${footer.email}`}
                   className={styles.contactItem}
                   aria-label={`Email: ${footer.email}`}
                 >
-                  {footer.email}
+                  <Text as="span" size="md" weight="medium">
+                    {footer.email}
+                  </Text>
                 </a>
-                <Text as="p" size="md">
+
+                <Text as="span" size="md" weight="medium">
                   {footer.address}
                 </Text>
               </address>
-              <Text as="p" size="md" className={styles.description}>
+              <Text
+                as="p"
+                size="md"
+                weight="light"
+                className={styles.description}
+              >
                 {footer.description}
               </Text>
             </div>
