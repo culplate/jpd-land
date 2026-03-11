@@ -38,21 +38,21 @@ const uk: Dictionary = {
       button: 'Підібрати корм',
       reviews: [
         {
-          title: 'Відгук',
+          title: '',
           review:
-            'Lorem ipsum dolor sit amet consectetur. Accumsan sapien tellus eros eros est vitae mi laoreet neque. Scelerisque felis nullam arcu id nunc ut congue quam.',
+            'Після кількох років використання JPD можу відзначити хорошу якість гранул і стабільну поведінку корму у воді. Добре підходить для регулярного годування кої.',
           author: 'Владислав Б.',
         },
         {
-          title: 'Відгук',
+          title: '',
           review:
-            'Lorem ipsum dolor sit amet consectetur. Accumsan sapien tellus eros eros est vitae mi laoreet neque. Scelerisque felis nullam arcu id nunc ut congue quam.',
+            'Після переходу на корм JPD кої стали активнішими, а їхні кольори виглядають більш насиченими. Корм добре тримає форму у воді та не створює зайвого забруднення у ставку.',
           author: 'Віталій Б.',
         },
         {
-          title: 'Відгук',
+          title: '',
           review:
-            'Lorem ipsum dolor sit amet consectetur. Accumsan sapien tellus eros eros est vitae mi laoreet neque. Scelerisque felis nullam arcu id nunc ut congue quam.',
+            'Fujiyama використовую як основний корм для щоденного годування кої. Він добре підходить для риби різного розміру, легко засвоюється та підтримує стабільну якість води у ставку.',
           author: 'Олександр Б.',
         },
       ],
