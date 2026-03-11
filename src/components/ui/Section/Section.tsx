@@ -6,7 +6,6 @@ export interface SectionProps {
   id?: string;
   className?: string;
   padding?: 'sm' | 'md' | 'lg' | 'xl' | undefined;
-  background?: 'white' | 'transparent';
 }
 
 export function Section({
@@ -14,12 +13,11 @@ export function Section({
   id,
   className = '',
   padding = 'sm',
-  background = 'white',
 }: SectionProps) {
   return (
     <section
       id={id}
-      className={`${styles.section} ${styles[padding]} ${styles[background]} ${className}`}
+      className={`${styles.section} ${styles[padding]} ${className}`}
     >
       {children}
     </section>
