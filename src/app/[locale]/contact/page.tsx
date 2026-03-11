@@ -2,7 +2,11 @@ import type { Metadata } from 'next';
 import { getDictionary } from '@/lib/locales/locales';
 import { LOCALES } from '@/lib/locales/i18n-config';
 import type { Locale } from '@/lib/locales/i18n-config';
-import { getBaseUrl } from '@/lib/site-url';
+import { buildPageMetadata } from '@/lib/locales/metadata';
+import { ContactForm } from '@/components/features/ContactForm/ContactForm';
+import { Section } from '@/components/ui/Section/Section';
+import { Container } from '@/components/ui/Container/Container';
+import { Title } from '@/components/ui/Title/Title';
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -11,25 +15,17 @@ type Props = {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale: localeParam } = await params;
   const locale = localeParam as Locale;
+
   if (!LOCALES.includes(locale)) return {};
+
   const dict = await getDictionary(locale);
-  const baseUrl = getBaseUrl();
-  const page = dict.pages.contact;
-  return {
-    title: page.title,
-    description: page.description,
-    openGraph: {
-      title: page.title,
-      description: page.description,
-      url: `${baseUrl}/${locale}/contact`,
-      siteName: dict.og.siteName,
-      locale,
-      type: 'website',
-    },
-    alternates: {
-      canonical: `${baseUrl}/${locale}/contact`,
-    },
-  };
+
+  return buildPageMetadata(
+    locale,
+    '/contact',
+    dict.pages.contact,
+    dict.og.siteName
+  );
 }
 
 export default async function Contact({ params }: Props) {
@@ -38,7 +34,14 @@ export default async function Contact({ params }: Props) {
 
   return (
     <>
-      <h1>Contact page</h1>
+      <Section padding="xl">
+        <Container size="lg">
+          <Title as="h1" size="h1">
+            {dict.contact.title}
+          </Title>
+          <ContactForm dict={dict.contact} />
+        </Container>
+      </Section>
     </>
   );
 }
