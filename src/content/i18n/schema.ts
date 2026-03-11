@@ -146,9 +146,13 @@ export type Dictionary = {
   contact: {
     title: string;
     form: {
+      nameLabel: string;
       namePlaceholder: string;
+      emailLabel: string;
       emailPlaceholder: string;
+      phoneLabel: string;
       phonePlaceholder: string;
+      messageLabel: string;
       messagePlaceholder: string;
       submit: string;
       sending: string;
