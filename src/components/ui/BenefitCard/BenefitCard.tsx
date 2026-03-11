@@ -50,7 +50,7 @@ export function BenefitCard({ benefit }: BenefitCardProps) {
       className={`${styles.card} ${expanded ? styles.expanded : ''}`}
     >
       <div className={styles.front}>
-        <Text className={styles.metric}>{benefit.metric}</Text>
+        <p className={styles.metric}>{benefit.metric}</p>
         <Text size="lg" weight="medium" className={styles.description}>
           {benefit.description}
         </Text>

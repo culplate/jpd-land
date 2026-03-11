@@ -41,19 +41,19 @@ const en: Dictionary = {
         {
           title: 'Review',
           review:
-            'Lorem ipsum dolor sit amet consectetur. Accumsan sapien tellus eros eros est vitae mi laoreet neque. Scelerisque felis nullam arcu id nunc ut congue quam.',
+            'After several years of using JPD, I can note the high quality of the pellets and their stable behavior in water. It works well for regular koi feeding.',
           author: 'Vladyslav B.',
         },
         {
           title: 'Review',
           review:
-            'Lorem ipsum dolor sit amet consectetur. Accumsan sapien tellus eros eros est vitae mi laoreet neque. Scelerisque felis nullam arcu id nunc ut congue quam.',
+            'After switching to JPD feed, the koi became more active and their colors look more vibrant. The pellets hold their shape well and do not create excess pollution in the pond.',
           author: 'Vitalii B.',
         },
         {
           title: 'Review',
           review:
-            'Lorem ipsum dolor sit amet consectetur. Accumsan sapien tellus eros eros est vitae mi laoreet neque. Scelerisque felis nullam arcu id nunc ut congue quam.',
+            'I use Fujiyama as the main feed for daily koi feeding. It works well for fish of different sizes, is easy to digest, and helps maintain stable water quality in the pond.',
           author: 'Oleksandr B.',
         },
       ],
