@@ -71,8 +71,8 @@ button {
   transition: outline-color 0.25s;
 }
 
-input:focus:not(:focus-visible),
-textarea:focus:not(:focus-visible) {
+input:focus-visible,
+textarea:focus-visible {
   outline: none;
 }
 
