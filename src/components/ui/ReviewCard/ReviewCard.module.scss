@@ -1,12 +1,13 @@
 .card {
   background-color: var(--color-bg-white);
   max-width: 340px;
+  min-height: 314px;
   padding: 24px;
   position: relative;
 
   @include media($bp-laptop) {
     max-width: 282px;
-
+    min-height: 338px;
     &:hover .button {
       opacity: 1;
       visibility: visible;
@@ -16,7 +17,7 @@
 
 .review {
   margin-top: 1rem;
-  margin-bottom: 2.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .button {

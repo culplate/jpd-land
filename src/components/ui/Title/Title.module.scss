@@ -1,7 +1,4 @@
 // Base: margin only. Size, line-height, letter-spacing, weight come from globals (h1–h3) or size override below.
-.title {
-  margin: 0;
-}
 
 .h1 {
   font-size: var(--text-h1-size);

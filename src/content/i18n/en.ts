@@ -53,7 +53,7 @@ const en: Dictionary = {
         {
           title: 'Review',
           review:
-            'I use Fujiyama as the main feed for daily koi feeding. It works well for fish of different sizes, is easy to digest, and helps maintain stable water quality in the pond.',
+            'JPD has proven to be a very stable feed for ornamental ponds. The pellets do not break apart in water, and the filtration system works without unnecessary strain.',
           author: 'Oleksandr B.',
         },
       ],
