@@ -11,7 +11,7 @@
 .glassEffect {
   position: absolute;
   top: 11%;
-  left: -20%;
+  left: -30%;
   width: 100%;
   backdrop-filter: blur(8px);
   height: 30%;
@@ -22,10 +22,19 @@
     top: 42%;
     left: 0;
     width: 100vw;
-    backdrop-filter: blur(8px);
+    backdrop-filter: blur(4px);
     height: 20%;
     // background-color: rgba(0, 0, 0, 0.5);
     z-index: 0;
+  }
+
+  @include media($bp-desktop) {
+    top: 39%;
+    height: 30%;
+  }
+
+  @include media($bp-desktop-xl) {
+    visibility: hidden;
   }
 }
 
@@ -74,7 +83,7 @@
       right: 0;
       top: 13rem;
       width: 171px;
-      height: 254px;
+      height: 260px;
     }
   }
 }
