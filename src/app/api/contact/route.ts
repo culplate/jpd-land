@@ -8,10 +8,7 @@ export async function POST(request: Request) {
     const result = contactFormSchema.safeParse(body);
 
     if (!result.success) {
-      return NextResponse.json(
-        { error: 'Validation failed' },
-        { status: 400 }
-      );
+      return NextResponse.json({ error: 'Validation failed' }, { status: 400 });
     }
 
     if (result.data.website !== '') {
