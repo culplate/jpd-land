@@ -87,6 +87,9 @@ const en: Dictionary = {
         },
       ],
     },
+    productsPreview: {
+      button: 'All products',
+    },
     benefits: {
       title: 'Modern JPD: The wisdom of generations in every pellet',
       cards: [
@@ -426,7 +429,7 @@ const en: Dictionary = {
   og: {
     title: 'Japan Pet Design | JPD - premium koi food',
     description:
-      'Japan Pet Design (JPD) in Ukraine. Discover premium koi food from Japan Pet Design and explore original products for ornamental fish care directly from Japan.',
+      'Japan Pet Design (JPD) in Ukraine. Discover premium koi food from Japan Pet Design and explore original products for ornamental fish care from Japan.',
     siteName: 'Japan Pet Design Ukraine',
   },
   pages: {

@@ -90,6 +90,9 @@ const uk: Dictionary = {
         },
       ],
     },
+    productsPreview: {
+      button: 'Усі продукти',
+    },
     benefits: {
       title: 'Сучасне JPD: Досвід поколінь у кожній гранулі',
       cards: [
@@ -481,7 +484,7 @@ const uk: Dictionary = {
     home: {
       title: 'Преміальні корми для коі JPD | Japan Pet Design',
       description:
-        'Представництво JPD в Україні. Преміальні корми для коропів коі, оригінальна продукція Japan Pet Design та професійні рішення для догляду за декоративними рибами прямо з Японії.',
+        'Представництво JPD в Україні. Преміальні корми для коропів коі від Japan Pet Design — оригінальна продукція з Японії.',
     },
     about: {
       title: 'Історія бренду JPD | Japan Pet Design',

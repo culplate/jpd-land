@@ -12,7 +12,7 @@ import type { Dictionary, ProductCardItem } from '@/content/i18n/schema';
 const PRODUCTS_PREVIEW_IDS = ['yamato', 'fujiyama', 'shori'] as const;
 
 type ProductsPreviewProps = {
-  dict: Dictionary['main']['hero'];
+  dict: Dictionary['main']['productsPreview'];
   locale: Locale;
   productCards: {
     yamato: ProductCardItem;
@@ -31,7 +31,7 @@ export function ProductsPreview({
       <Carousel
         className={styles.productCards}
         desktopMode="auto"
-        ariaLabel={dict.titleMain + ' ' + dict.titleSub}
+        ariaLabel="Products preview"
       >
         {PRODUCTS_PREVIEW_IDS.map((id) => {
           const card = productCards[id];

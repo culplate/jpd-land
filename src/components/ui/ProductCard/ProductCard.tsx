@@ -80,7 +80,7 @@ export function ProductCard({
 
   if (href) {
     return (
-      <Link href={href} className={classNames}>
+      <Link href={href} className={classNames} aria-label={name}>
         {content}
       </Link>
     );

@@ -131,6 +131,9 @@ export type Dictionary = {
       title: string;
       cards: BenefitsCardItem[];
     };
+    productsPreview: {
+      button: string;
+    };
   };
   products: ProductsDictionary;
   about: {

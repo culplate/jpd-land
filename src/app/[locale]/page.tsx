@@ -39,7 +39,7 @@ export default async function Home({ params }: Props) {
       <History locale={locale} dict={dict.main.history} />
       <Benefits dict={dict.main.benefits} />
       <ProductsPreview
-        dict={dict.main.hero}
+        dict={dict.main.productsPreview}
         locale={locale}
         productCards={{
           yamato: dict.products.card.yamato,
