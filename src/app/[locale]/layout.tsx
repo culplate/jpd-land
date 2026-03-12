@@ -63,7 +63,7 @@ export default async function LocaleLayout({ children, params }: Props) {
     <html lang={locale}>
       <body className={`${manrope.variable}`}>
         <Header nav={dict.nav} />
-        {children}
+        <main>{children}</main>
         <Footer locale={locale as Locale} footer={dict.footer} />
         <Toaster position="top-right" containerClassName="toast-container" />
       </body>

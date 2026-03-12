@@ -58,7 +58,7 @@ export function Header({ nav }: HeaderProps) {
             }
           }}
         >
-          <Link href="/" className={styles.menuLogo}>
+          <Link href="/" className={styles.menuLogo} aria-label="Home page">
             <svg className={styles.logoIconLg}>
               <use xlinkHref={`${icons.src}#logo`}></use>
             </svg>
@@ -95,7 +95,7 @@ export function Header({ nav }: HeaderProps) {
       {mobileMenuOverlay}
       <Container size="xl">
         <div className={styles.wrapper}>
-          <Link href="/" className={styles.logo}>
+          <Link href="/" className={styles.logo} aria-label="Home page">
             <svg className={`${styles.logoIconLg}`}>
               <use xlinkHref={`${icons.src}#logo`}></use>
             </svg>
