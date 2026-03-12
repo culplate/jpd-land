@@ -24,6 +24,8 @@ export interface CarouselProps {
    */
   desktopMode?: DesktopMode;
   ariaLabel?: string;
+  /** Index of the item that should be scrolled into view on mount (default: 0). */
+  initialIndex?: number;
 }
 
 function flattenChildren(children: ReactNode): ReactNode[] {
@@ -42,10 +44,11 @@ export function Carousel({
   breakout = false,
   desktopMode = 'auto',
   ariaLabel,
+  initialIndex = 0,
 }: CarouselProps) {
   const trackRef = useRef<HTMLDivElement>(null);
   const items = flattenChildren(children);
-  const middleIndex = items.length > 0 ? Math.floor(items.length / 2) : 0;
+  const focusIndex = Math.max(0, Math.min(initialIndex, items.length - 1));
   const [needsScroll, setNeedsScroll] = useState(true);
 
   const drag = useRef({
@@ -77,10 +80,10 @@ export function Carousel({
       setNeedsScroll(overflow);
 
       if (!overflow) return;
-      const middleEl = track.children[middleIndex] as HTMLElement | undefined;
-      if (!middleEl) return;
+      const focusEl = track.children[focusIndex] as HTMLElement | undefined;
+      if (!focusEl) return;
       const scrollLeft =
-        middleEl.offsetLeft - track.clientWidth / 2 + middleEl.offsetWidth / 2;
+        focusEl.offsetLeft - track.clientWidth / 2 + focusEl.offsetWidth / 2;
       track.scrollLeft = Math.max(0, scrollLeft);
     };
 
@@ -99,7 +102,7 @@ export function Carousel({
       ro.disconnect();
       mo.disconnect();
     };
-  }, [items.length, middleIndex]);
+  }, [items.length, focusIndex]);
 
   useEffect(() => {
     return () => cancelAnimationFrame(drag.current.rafId);

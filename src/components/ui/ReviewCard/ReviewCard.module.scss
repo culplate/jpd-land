@@ -1,4 +1,6 @@
 .card {
+  display: flex;
+  flex-direction: column;
   background-color: var(--color-bg-white);
   max-width: 340px;
   min-height: 314px;
@@ -36,6 +38,7 @@
 }
 
 .author {
+  margin-top: auto;
   padding-top: 0.5rem;
   border-top: 1px solid var(--color-border-light);
 }
