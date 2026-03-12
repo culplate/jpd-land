@@ -82,6 +82,7 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
+  max-width: 495px;
   min-width: 0;
 
   @include media($bp-tablet) {
@@ -93,6 +94,7 @@
 .productName {
   font-weight: 600;
   text-align: center;
+  align-self: flex-start;
 
   @include media($bp-tablet) {
     text-align: left;
@@ -101,7 +103,7 @@
 
 .breadcrumb {
   margin-top: 0.5rem;
-
+  align-self: flex-start;
   padding-bottom: 0.5rem;
 
   color: var(--color-text-muted, var(--color-text));

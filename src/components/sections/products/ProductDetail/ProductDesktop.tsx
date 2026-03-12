@@ -16,7 +16,7 @@ export function ProductDesktop({ product, desktopHero }: ProductDesktopProps) {
         width={361}
         height={600}
         className={styles.productImage}
-        quality={100}
+        quality={75}
         sizes="(min-width: 768px) 40vw, 0px"
       />
     </div>

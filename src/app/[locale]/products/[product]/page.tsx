@@ -163,7 +163,7 @@ export default async function ProductPage({ params }: Props) {
           <div className={styles.bgWrapper}>
             <Image
               src="/img/bg/bg-product.png"
-              alt=""
+              alt="Japanese old painting style background"
               fill
               sizes="(min-width: 768px) 50vw, 0px"
               className={styles.bgImage}

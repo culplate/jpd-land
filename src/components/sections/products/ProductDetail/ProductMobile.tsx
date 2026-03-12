@@ -25,7 +25,7 @@ export function ProductMobile({
           width={400}
           height={400}
           className={styles.image}
-          quality={100}
+          quality={90}
           priority
           sizes="100vw"
         />
