@@ -4,6 +4,11 @@ import type { Locale } from '@/lib/locales/i18n-config';
 import { LOCALES, DEFAULT_LOCALE } from '@/lib/locales/i18n-config';
 import { getBaseUrl } from '@/lib/site-url';
 
+function buildLocaleUrl(baseUrl: string, locale: Locale, path: string): string {
+  const prefix = locale === DEFAULT_LOCALE ? '' : `/${locale}`;
+  return path ? `${baseUrl}${prefix}${path}` : `${baseUrl}${prefix}`;
+}
+
 export function buildPageMetadata(
   locale: Locale,
   path: string,
@@ -11,12 +16,13 @@ export function buildPageMetadata(
   siteName: string
 ): Metadata {
   const baseUrl = getBaseUrl();
+  const pageUrl = buildLocaleUrl(baseUrl, locale, path);
 
   const languages: Record<string, string> = {};
   LOCALES.forEach((loc) => {
-    languages[loc] = `${baseUrl}/${loc}${path}`;
+    languages[loc] = buildLocaleUrl(baseUrl, loc, path);
   });
-  languages['x-default'] = `${baseUrl}/${DEFAULT_LOCALE}${path}`;
+  languages['x-default'] = buildLocaleUrl(baseUrl, DEFAULT_LOCALE, path);
 
   return {
     title: page.title,
@@ -24,13 +30,13 @@ export function buildPageMetadata(
     openGraph: {
       title: page.title,
       description: page.description,
-      url: `${baseUrl}/${locale}${path}`,
+      url: pageUrl,
       siteName,
       locale,
       type: 'website',
     },
     alternates: {
-      canonical: `${baseUrl}/${locale}${path}`,
+      canonical: pageUrl,
       languages,
     },
   };

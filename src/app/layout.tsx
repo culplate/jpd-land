@@ -1,12 +1,12 @@
-// Root layout - minimal wrapper for Next.js app structure
-// Actual content is handled in [locale]/layout.tsx
+import { DEFAULT_LOCALE } from '@/lib/locales/i18n-config';
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang={DEFAULT_LOCALE}>
       <body>{children}</body>
     </html>
   );
