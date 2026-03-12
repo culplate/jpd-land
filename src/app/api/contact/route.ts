@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { contactFormSchema } from '@/lib/validations/contact';
+import { sendContactEmail } from '@/lib/email/send-contact-email';
 
 export async function POST(request: Request) {
   try {
@@ -8,23 +9,25 @@ export async function POST(request: Request) {
 
     if (!result.success) {
       return NextResponse.json(
-        { error: 'Validation failed', issues: result.error.issues },
+        { error: 'Validation failed' },
         { status: 400 }
       );
     }
 
     if (result.data.website !== '') {
       console.log('Honeypot triggered', result.data.website);
-      return NextResponse.json({ success: true });
+      return NextResponse.json({ success: true }, { status: 200 });
     }
 
     const { name, email, phone, message } = result.data;
 
-    // TODO: Process the contact form (send email, save to DB, etc.)
     console.log('Contact form submission:', { name, email, phone, message });
 
-    return NextResponse.json({ success: true });
-  } catch {
+    await sendContactEmail(result.data);
+
+    return NextResponse.json({ success: true }, { status: 200 });
+  } catch (error) {
+    console.error('Internal server error at contact form submission', error);
     return NextResponse.json(
       { error: 'Internal server error' },
       { status: 500 }

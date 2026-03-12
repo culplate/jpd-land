@@ -65,7 +65,7 @@ export default async function LocaleLayout({ children, params }: Props) {
         <Header nav={dict.nav} />
         {children}
         <Footer locale={locale as Locale} footer={dict.footer} />
-        <Toaster />
+        <Toaster position="top-right" containerClassName="toast-container" />
       </body>
     </html>
   );
