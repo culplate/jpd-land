@@ -49,8 +49,8 @@ export function Hero({ dict, locale, productCards }: HeroProps) {
       <Image
         src="/img/moon.png"
         alt="red moon"
-        width={171}
-        height={260}
+        width={384}
+        height={626}
         className={`${styles.bgImage} ${styles.moon}`}
         quality={90}
         sizes="(min-width: 1024px) 171px, 90px"
