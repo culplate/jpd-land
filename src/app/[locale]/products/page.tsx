@@ -56,12 +56,12 @@ export default async function Products({ params }: Props) {
   };
 
   return (
-    <main>
+    <>
       <JsonLd data={itemListJsonLd} />
       <ProductsList
         title={dict.products.title}
         productCards={dict.products.card}
       />
-    </main>
+    </>
   );
 }
