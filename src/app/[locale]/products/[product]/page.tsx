@@ -71,7 +71,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return buildPageMetadata(
     locale,
     `/products/${productParam}`,
-    { title: `${product.name} — ${dict.products.jsonLd.category} | JPD`, description: product.benefits },
+    {
+      title: `${product.name} — ${dict.products.jsonLd.category} | JPD`,
+      description: product.benefits,
+    },
     dict.og.siteName,
     { ogImage: dict.products.card[productParam].imageLink }
   );
@@ -102,10 +105,7 @@ export default async function ProductPage({ params }: Props) {
     '@type': 'Product',
     name: product.name,
     description: product.benefits,
-    image: [
-      `${baseUrl}${productCard.imageLink}`,
-      `${baseUrl}${desktopHero}`,
-    ],
+    image: [`${baseUrl}${productCard.imageLink}`, `${baseUrl}${desktopHero}`],
     brand: {
       '@type': 'Brand',
       name: productJsonLdDict.brandName,
@@ -163,9 +163,11 @@ export default async function ProductPage({ params }: Props) {
         name: `${dict.products.sections.nutrition} — ${product.name}`,
         acceptedAnswer: {
           '@type': 'Answer',
-          text: product.nutrition.map((item: NutritionItem) =>
-            item.title ? `${item.title}: ${item.value}` : item.value
-          ).join('; '),
+          text: product.nutrition
+            .map((item: NutritionItem) =>
+              item.title ? `${item.title}: ${item.value}` : item.value
+            )
+            .join('; '),
         },
       },
       {
