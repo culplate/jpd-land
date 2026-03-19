@@ -32,6 +32,7 @@ export function Hero({ dict, locale, productCards }: HeroProps) {
         width={273.3}
         height={163.6}
         className={`${styles.bgImage} ${styles.sakuraLeft}`}
+        priority
       />
       <Image
         src="/img/sakura-R.png"
@@ -39,6 +40,7 @@ export function Hero({ dict, locale, productCards }: HeroProps) {
         width={260}
         height={124.8}
         className={`${styles.bgImage} ${styles.sakuraRight}`}
+        priority
       />
       <Image
         src="/img/moon.png"
@@ -46,6 +48,7 @@ export function Hero({ dict, locale, productCards }: HeroProps) {
         width={171}
         height={251}
         className={`${styles.bgImage} ${styles.moon}`}
+        priority
       />
       <div className={styles.glassEffect}></div>
       <Container size="xl" className={styles.container}>
