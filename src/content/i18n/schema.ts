@@ -82,11 +82,18 @@ export type PrivacySection = {
   content: string;
 };
 
+export type PostalAddressData = {
+  streetAddress: string;
+  addressLocality: string;
+  addressCountry: string;
+};
+
 export type FooterDictionary = {
   contactsTitle: string;
   phone: string;
   email: string;
   address: string;
+  structuredAddress: PostalAddressData;
   description: string;
   privacy: string;
   terms: string;

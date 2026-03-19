@@ -21,6 +21,11 @@ const en: Dictionary = {
     phone: '+380674441177',
     email: 'info@jpd-koi.com.ua',
     address: 'Akademika Palladina Ave, 48, Kyiv, Ukraine',
+    structuredAddress: {
+      streetAddress: 'Akademika Palladina Ave, 48',
+      addressLocality: 'Kyiv',
+      addressCountry: 'UA',
+    },
     description:
       'Official representative office of JPD in Ukraine. Full range of premium lines. Direct deliveries from Japan, guaranteeing originality and freshness of the product.',
     privacy: 'Privacy Policy',

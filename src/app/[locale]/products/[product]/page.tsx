@@ -5,6 +5,9 @@ import { LOCALES } from '@/lib/locales/i18n-config';
 import type { Locale } from '@/lib/locales/i18n-config';
 import { buildPageMetadata } from '@/lib/locales/metadata';
 import type { ProductId, NutritionItem } from '@/content/i18n/schema';
+import { DEFAULT_LOCALE } from '@/lib/locales/i18n-config';
+import { getBaseUrl } from '@/lib/site-url';
+import { JsonLd } from '@/lib/json-ld';
 import Image from 'next/image';
 import {
   Text,
@@ -88,6 +91,22 @@ export default async function ProductPage({ params }: Props) {
   const desktopHero = DESKTOP_HERO[productParam];
   const relatedProductIds = PRODUCT_IDS.filter((id) => id !== productParam);
 
+  const baseUrl = getBaseUrl();
+  const prefix = locale === DEFAULT_LOCALE ? '' : `/${locale}`;
+
+  const productJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: product.name,
+    description: product.benefits,
+    image: `${baseUrl}${productCard.imageLink}`,
+    brand: {
+      '@type': 'Brand',
+      name: 'JPD',
+    },
+    url: `${baseUrl}${prefix}/products/${productParam}`,
+  };
+
   const accordionItems: AccordionItem[] = [
     {
       id: 'features',
@@ -158,6 +177,7 @@ export default async function ProductPage({ params }: Props) {
 
   return (
     <main>
+      <JsonLd data={productJsonLd} />
       <Section padding="sm" className={styles.section}>
         <Container size="xl" className={styles.container}>
           <div className={styles.bgWrapper}>

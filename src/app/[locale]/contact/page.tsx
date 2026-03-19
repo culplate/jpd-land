@@ -3,6 +3,8 @@ import { getDictionary } from '@/lib/locales/locales';
 import { LOCALES } from '@/lib/locales/i18n-config';
 import type { Locale } from '@/lib/locales/i18n-config';
 import { buildPageMetadata } from '@/lib/locales/metadata';
+import { getBaseUrl } from '@/lib/site-url';
+import { JsonLd } from '@/lib/json-ld';
 import { ContactForm } from '@/components/features/ContactForm/ContactForm';
 import { Section } from '@/components/ui/Section/Section';
 import { Container } from '@/components/ui/Container/Container';
@@ -31,9 +33,24 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function Contact({ params }: Props) {
   const { locale } = await params;
   const dict = await getDictionary(locale);
+  const baseUrl = getBaseUrl();
+
+  const localBusinessJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    name: dict.og.siteName,
+    url: baseUrl,
+    telephone: dict.footer.phone,
+    email: dict.footer.email,
+    address: {
+      '@type': 'PostalAddress',
+      ...dict.footer.structuredAddress,
+    },
+  };
 
   return (
     <>
+      <JsonLd data={localBusinessJsonLd} />
       <Section padding="xl">
         <Container size="lg">
           <Title as="h1" size="h1">

@@ -7,6 +7,7 @@ import { LOCALES, type Locale } from '@/lib/locales/i18n-config';
 import { getDictionary } from '@/lib/locales/locales';
 import { getBaseUrl } from '@/lib/site-url';
 import { Toaster } from 'react-hot-toast';
+import { JsonLd } from '@/lib/json-ld';
 
 const manrope = Manrope({
   variable: '--font-manrope',
@@ -18,7 +19,6 @@ type LayoutProps = {
   params: Promise<{ locale: string }>;
 };
 
-// TODO: ADDITIONALLY ADD JSON-LD SCHEMA FOR EACH PAGE
 export async function generateMetadata({
   params,
 }: LayoutProps): Promise<Metadata> {
@@ -33,8 +33,6 @@ export async function generateMetadata({
 
   return {
     metadataBase: new URL(baseUrl),
-    // TODO: ADD IMAGES "/android-chrome-512x512.png" and "/android-chrome-192x192.png" to the project and manifest
-    // TODO opengraph-image.png, twitter-image.png, apple-icon.png, apple-touch-icon.png, favicon.ico, icon.png into APP directory
     manifest: '/site.webmanifest',
     appleWebApp: {
       title: 'JPD Ukraine',
@@ -58,10 +56,39 @@ type Props = {
 export default async function LocaleLayout({ children, params }: Props) {
   const { locale } = await params;
   const dict = await getDictionary(locale);
+  const baseUrl = getBaseUrl();
+
+  const organizationJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: dict.og.siteName,
+    url: baseUrl,
+    logo: `${baseUrl}/logo.png`,
+    contactPoint: {
+      '@type': 'ContactPoint',
+      telephone: dict.footer.phone,
+      email: dict.footer.email,
+      contactType: 'customer service',
+    },
+    address: {
+      '@type': 'PostalAddress',
+      ...dict.footer.structuredAddress,
+    },
+  };
+
+  const websiteJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: dict.og.siteName,
+    url: baseUrl,
+    inLanguage: locale,
+  };
 
   return (
     <html lang={locale}>
       <body className={`${manrope.variable}`}>
+        <JsonLd data={organizationJsonLd} />
+        <JsonLd data={websiteJsonLd} />
         <Header nav={dict.nav} />
         <main>{children}</main>
         <Footer locale={locale as Locale} footer={dict.footer} />

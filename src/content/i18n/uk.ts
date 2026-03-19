@@ -20,6 +20,11 @@ const uk: Dictionary = {
     phone: '+380674441177',
     email: 'info@jpd-koi.com.ua',
     address: 'м. Київ, пр-т Академіка Палладіна, 48',
+    structuredAddress: {
+      streetAddress: 'пр-т Академіка Палладіна, 48',
+      addressLocality: 'Київ',
+      addressCountry: 'UA',
+    },
     description:
       'Офіційне представництво JPD в Україні. Повний асортимент преміальних лінійок. Прямі поставки з Японії, що гарантують оригінальність та свіжість продукту.',
     privacy: 'Privacy Policy',
@@ -478,7 +483,7 @@ const uk: Dictionary = {
     title: 'Japan Pet Design | JPD - преміальні корми для коі',
     description:
       'Japan Pet Design (JPD) в Україні - преміальні японські корми для коі, оригінальна продукція Japan Pet Design та професійні рішення від бренду з Японії.',
-    siteName: 'Japan Pet Design Ukraine',
+    siteName: 'Japan Pet Design Україна',
   },
   pages: {
     home: {
