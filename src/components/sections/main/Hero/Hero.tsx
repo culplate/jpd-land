@@ -31,6 +31,7 @@ export function Hero({ dict, locale, productCards }: HeroProps) {
         alt="Sakura branch left"
         width={273.3}
         height={163.6}
+        quality={90}
         className={`${styles.bgImage} ${styles.sakuraLeft}`}
         sizes="(min-width: 1024px) 273px, 0px"
         priority
@@ -40,6 +41,7 @@ export function Hero({ dict, locale, productCards }: HeroProps) {
         alt="Sakura branch right"
         width={260}
         height={124.8}
+        quality={90}
         className={`${styles.bgImage} ${styles.sakuraRight}`}
         sizes="(min-width: 1024px) 260px, 180px"
         priority
@@ -48,8 +50,9 @@ export function Hero({ dict, locale, productCards }: HeroProps) {
         src="/img/moon.png"
         alt="red moon"
         width={171}
-        height={251}
+        height={260}
         className={`${styles.bgImage} ${styles.moon}`}
+        quality={90}
         sizes="(min-width: 1024px) 171px, 90px"
         priority
       />

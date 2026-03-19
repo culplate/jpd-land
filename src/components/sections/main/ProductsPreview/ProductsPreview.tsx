@@ -21,11 +21,7 @@ type ProductsPreviewProps = {
   };
 };
 
-export function ProductsPreview({
-  dict,
-  locale,
-  productCards,
-}: ProductsPreviewProps) {
+export function ProductsPreview({ dict, productCards }: ProductsPreviewProps) {
   return (
     <Section id="products-preview" padding="lg" className={styles.section}>
       <Carousel

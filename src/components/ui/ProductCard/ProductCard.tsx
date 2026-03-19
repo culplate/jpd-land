@@ -44,6 +44,7 @@ export function ProductCard({
       <span className={styles.content}>
         <span className={styles.imageWrapper}>
           <Image
+            fetchPriority="auto"
             src={imageLink}
             alt={alt}
             width={width}
