@@ -18,7 +18,7 @@ export function History({ dict }: HistoryProps) {
           <div className={styles.illustration}>
             <Image
               src="/img/bg/bg-history-illu.png"
-              alt=""
+              alt="History of Japan Pet Design illustration"
               fill
               sizes="(max-width: 1023px) 100vw, 40vw"
               className={styles.illustrationImage}

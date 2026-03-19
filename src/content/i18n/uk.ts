@@ -30,8 +30,8 @@ const uk: Dictionary = {
     },
     description:
       'Офіційне представництво JPD в Україні. Повний асортимент преміальних лінійок. Прямі поставки з Японії, що гарантують оригінальність та свіжість продукту.',
-    privacy: 'Privacy Policy',
-    terms: 'Terms&Agreements',
+    privacy: 'Політика конфіденційності',
+    terms: 'Умови та угоди',
     designCopyright: '© {year} Japan Pet Design. Усі права захищені.',
   },
   main: {
