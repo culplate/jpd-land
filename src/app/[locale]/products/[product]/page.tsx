@@ -71,7 +71,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return buildPageMetadata(
     locale,
     `/products/${productParam}`,
-    { title: `${product.name} | JPD`, description: product.benefits },
+    { title: `${product.name} — ${dict.products.jsonLd.category} | JPD`, description: product.benefits },
     dict.og.siteName,
     { ogImage: dict.products.card[productParam].imageLink }
   );

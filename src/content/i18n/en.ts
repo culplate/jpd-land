@@ -38,7 +38,7 @@ const en: Dictionary = {
   main: {
     hero: {
       titleMain: 'JPD:',
-      titleSub: 'The Imperial Standard of Koi Care',
+      titleSub: 'The Imperial Standard of Koi Food',
       description: 'This is a description of our website',
       button: 'View all',
     },

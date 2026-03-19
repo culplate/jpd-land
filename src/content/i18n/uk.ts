@@ -37,7 +37,7 @@ const uk: Dictionary = {
   main: {
     hero: {
       titleMain: 'JPD:',
-      titleSub: 'Імператорський стандарт харчування Коі',
+      titleSub: 'Імператорський стандарт корму для Коі',
       description: 'Це опис нашого сайту',
       button: 'Переглянути всі',
     },
