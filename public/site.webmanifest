@@ -1,7 +1,9 @@
 {
   "name": "Japan Pet Design Ukraine",
   "short_name": "JPD Ukraine",
-  "description": "Official JPD representative in Ukraine. Premium koi food from Japan Pet Design — original products for ornamental fish care directly from Japan.",
+  "description": "Офіційне представництво JPD в Україні. Преміальний корм для коі від Japan Pet Design — оригінальна продукція для догляду за декоративними рибками з Японії.",
+  "lang": "uk",
+  "dir": "ltr",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#fffcfa",

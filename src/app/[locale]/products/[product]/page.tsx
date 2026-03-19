@@ -130,6 +130,55 @@ export default async function ProductPage({ params }: Props) {
       })),
   };
 
+  const faqJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: `${dict.products.sections.features} — ${product.name}`,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: product.features,
+        },
+      },
+      {
+        '@type': 'Question',
+        name: `${dict.products.sections.benefits} — ${product.name}`,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: product.benefits,
+        },
+      },
+      {
+        '@type': 'Question',
+        name: `${dict.products.sections.ingredients} — ${product.name}`,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: product.ingredients,
+        },
+      },
+      {
+        '@type': 'Question',
+        name: `${dict.products.sections.nutrition} — ${product.name}`,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: product.nutrition.map((item: NutritionItem) =>
+            item.title ? `${item.title}: ${item.value}` : item.value
+          ).join('; '),
+        },
+      },
+      {
+        '@type': 'Question',
+        name: `${dict.products.sections.packaging} — ${product.name}`,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: product.packaging,
+        },
+      },
+    ],
+  };
+
   const breadcrumbJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
@@ -226,6 +275,7 @@ export default async function ProductPage({ params }: Props) {
     <>
       <JsonLd data={productJsonLd} />
       <JsonLd data={breadcrumbJsonLd} />
+      <JsonLd data={faqJsonLd} />
       <Section padding="sm" className={styles.section}>
         <Container size="xl" className={styles.container}>
           <div className={styles.bgWrapper}>

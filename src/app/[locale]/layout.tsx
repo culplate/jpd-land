@@ -13,6 +13,7 @@ const manrope = Manrope({
   variable: '--font-manrope',
   subsets: ['latin'],
   weight: ['300', '400', '500', '700'],
+  preload: true,
 });
 
 type LayoutProps = {
