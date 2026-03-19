@@ -38,13 +38,21 @@ export default async function Contact({ params }: Props) {
   const localBusinessJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
+    '@id': baseUrl,
     name: dict.og.siteName,
+    description: dict.footer.description,
     url: baseUrl,
+    image: `${baseUrl}/logo.png`,
     telephone: dict.footer.phone,
     email: dict.footer.email,
     address: {
       '@type': 'PostalAddress',
       ...dict.footer.structuredAddress,
+    },
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: 50.4997814,
+      longitude: 30.3632584,
     },
   };
 

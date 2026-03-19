@@ -94,6 +94,8 @@ export default async function ProductPage({ params }: Props) {
   const baseUrl = getBaseUrl();
   const prefix = locale === DEFAULT_LOCALE ? '' : `/${locale}`;
 
+  const { jsonLd: productJsonLdDict } = dict.products;
+
   const productJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Product',
@@ -102,8 +104,17 @@ export default async function ProductPage({ params }: Props) {
     image: `${baseUrl}${productCard.imageLink}`,
     brand: {
       '@type': 'Brand',
-      name: 'JPD',
+      name: productJsonLdDict.brandName,
     },
+    manufacturer: {
+      '@type': 'Organization',
+      name: productJsonLdDict.manufacturerName,
+    },
+    countryOfOrigin: {
+      '@type': 'Country',
+      name: productJsonLdDict.countryOfOrigin,
+    },
+    category: productJsonLdDict.category,
     url: `${baseUrl}${prefix}/products/${productParam}`,
   };
 

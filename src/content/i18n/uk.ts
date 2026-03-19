@@ -23,6 +23,8 @@ const uk: Dictionary = {
     structuredAddress: {
       streetAddress: 'пр-т Академіка Палладіна, 48',
       addressLocality: 'Київ',
+      addressRegion: 'Київська область',
+      postalCode: '04128',
       addressCountry: 'UA',
     },
     description:
@@ -355,6 +357,12 @@ const uk: Dictionary = {
         description: 'Для холодної води, всесезонний.',
         imageLink: '/img/food/shogun-sq.png',
       },
+    },
+    jsonLd: {
+      brandName: 'JPD',
+      manufacturerName: 'Japan Pet Design',
+      countryOfOrigin: 'Японія',
+      category: 'Корм для коропів коі',
     },
   },
   about: {

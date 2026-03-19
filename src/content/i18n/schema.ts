@@ -70,11 +70,19 @@ export type ProductPageSections = {
   relatedProducts: string;
 };
 
+export type ProductsJsonLd = {
+  brandName: string;
+  manufacturerName: string;
+  countryOfOrigin: string;
+  category: string;
+};
+
 export type ProductsDictionary = {
   title: string;
   sections: ProductPageSections;
   page: Record<ProductId, ProductPageItem>;
   card: Record<ProductId, ProductCardItem>;
+  jsonLd: ProductsJsonLd;
 };
 
 export type PrivacySection = {
@@ -85,6 +93,8 @@ export type PrivacySection = {
 export type PostalAddressData = {
   streetAddress: string;
   addressLocality: string;
+  addressRegion: string;
+  postalCode: string;
   addressCountry: string;
 };
 

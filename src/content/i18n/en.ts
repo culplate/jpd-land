@@ -24,6 +24,8 @@ const en: Dictionary = {
     structuredAddress: {
       streetAddress: 'Akademika Palladina Ave, 48',
       addressLocality: 'Kyiv',
+      addressRegion: 'Kyiv Oblast',
+      postalCode: '04128',
       addressCountry: 'UA',
     },
     description:
@@ -307,6 +309,12 @@ const en: Dictionary = {
         description: 'For cold water, all-season.',
         imageLink: '/img/food/shogun-sq.png',
       },
+    },
+    jsonLd: {
+      brandName: 'JPD',
+      manufacturerName: 'Japan Pet Design',
+      countryOfOrigin: 'Japan',
+      category: 'Koi Food',
     },
   },
   about: {

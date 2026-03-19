@@ -61,7 +61,9 @@ export default async function LocaleLayout({ children, params }: Props) {
   const organizationJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
+    '@id': baseUrl,
     name: dict.og.siteName,
+    description: dict.footer.description,
     url: baseUrl,
     logo: `${baseUrl}/logo.png`,
     contactPoint: {
