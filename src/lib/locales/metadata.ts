@@ -9,11 +9,16 @@ function buildLocaleUrl(baseUrl: string, locale: Locale, path: string): string {
   return path ? `${baseUrl}${prefix}${path}` : `${baseUrl}${prefix}`;
 }
 
+type PageMetadataOptions = {
+  ogImage?: string;
+};
+
 export function buildPageMetadata(
   locale: Locale,
   path: string,
   page: PageSeo,
-  siteName: string
+  siteName: string,
+  options?: PageMetadataOptions
 ): Metadata {
   const baseUrl = getBaseUrl();
   const pageUrl = buildLocaleUrl(baseUrl, locale, path);
@@ -23,6 +28,10 @@ export function buildPageMetadata(
     languages[loc] = buildLocaleUrl(baseUrl, loc, path);
   });
   languages['x-default'] = buildLocaleUrl(baseUrl, DEFAULT_LOCALE, path);
+
+  const ogImage = options?.ogImage
+    ? `${baseUrl}${options.ogImage}`
+    : `${baseUrl}/opengraph-image.png`;
 
   return {
     title: page.title,
@@ -34,6 +43,13 @@ export function buildPageMetadata(
       siteName,
       locale,
       type: 'website',
+      images: [{ url: ogImage }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: page.title,
+      description: page.description,
+      images: [ogImage],
     },
     alternates: {
       canonical: pageUrl,

@@ -9,6 +9,7 @@ const uk: Dictionary = {
     cancel: 'Скасувати',
   },
   nav: {
+    home: 'Головна',
     products: 'Продукти',
     about: 'Про нас',
     contact: 'Контакти',

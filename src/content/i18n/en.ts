@@ -10,6 +10,7 @@ const en: Dictionary = {
     cancel: 'Cancel',
   },
   nav: {
+    home: 'Home',
     products: 'Products',
     about: 'About',
     contact: 'Contact',

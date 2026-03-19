@@ -72,7 +72,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     locale,
     `/products/${productParam}`,
     { title: `${product.name} | JPD`, description: product.benefits },
-    dict.og.siteName
+    dict.og.siteName,
+    { ogImage: dict.products.card[productParam].imageLink }
   );
 }
 
@@ -101,7 +102,10 @@ export default async function ProductPage({ params }: Props) {
     '@type': 'Product',
     name: product.name,
     description: product.benefits,
-    image: `${baseUrl}${productCard.imageLink}`,
+    image: [
+      `${baseUrl}${productCard.imageLink}`,
+      `${baseUrl}${desktopHero}`,
+    ],
     brand: {
       '@type': 'Brand',
       name: productJsonLdDict.brandName,
@@ -116,6 +120,38 @@ export default async function ProductPage({ params }: Props) {
     },
     category: productJsonLdDict.category,
     url: `${baseUrl}${prefix}/products/${productParam}`,
+    material: product.ingredients,
+    additionalProperty: product.nutrition
+      .filter((item: NutritionItem) => item.title)
+      .map((item: NutritionItem) => ({
+        '@type': 'PropertyValue',
+        name: item.title,
+        value: item.value,
+      })),
+  };
+
+  const breadcrumbJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: dict.nav.home,
+        item: `${baseUrl}${prefix}`,
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: dict.nav.products,
+        item: `${baseUrl}${prefix}/products`,
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: product.name,
+      },
+    ],
   };
 
   const accordionItems: AccordionItem[] = [
@@ -187,8 +223,9 @@ export default async function ProductPage({ params }: Props) {
   ];
 
   return (
-    <main>
+    <>
       <JsonLd data={productJsonLd} />
+      <JsonLd data={breadcrumbJsonLd} />
       <Section padding="sm" className={styles.section}>
         <Container size="xl" className={styles.container}>
           <div className={styles.bgWrapper}>
@@ -239,6 +276,6 @@ export default async function ProductPage({ params }: Props) {
         productCards={dict.products.card}
         productIds={relatedProductIds}
       />
-    </main>
+    </>
   );
 }

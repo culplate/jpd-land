@@ -121,6 +121,7 @@ export type Dictionary = {
   };
   // Navigation (header)
   nav: {
+    home: string;
     products: string;
     about: string;
     contact: string;
