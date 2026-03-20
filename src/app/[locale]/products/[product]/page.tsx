@@ -120,6 +120,11 @@ export default async function ProductPage({ params }: Props) {
     },
     category: productJsonLdDict.category,
     url: `${baseUrl}${prefix}/products/${productParam}`,
+    offers: {
+      '@type': 'Offer',
+      availability: 'https://schema.org/InStock',
+      url: `${baseUrl}${prefix}/contact`,
+    },
     material: product.ingredients,
     additionalProperty: product.nutrition
       .filter((item: NutritionItem) => item.title)
