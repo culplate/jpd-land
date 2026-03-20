@@ -100,32 +100,28 @@ export default async function ProductPage({ params }: Props) {
 
   const { jsonLd: productJsonLdDict } = dict.products;
 
-  const productJsonLd = {
+  const pageJsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'Product',
+    '@type': 'WebPage',
     name: product.name,
     description: product.benefits,
-    image: [`${baseUrl}${productCard.imageLink}`, `${baseUrl}${desktopHero}`],
-    brand: {
-      '@type': 'Brand',
-      name: productJsonLdDict.brandName,
-    },
-    manufacturer: {
-      '@type': 'Organization',
-      name: productJsonLdDict.manufacturerName,
-    },
-    countryOfOrigin: {
-      '@type': 'Country',
-      name: productJsonLdDict.countryOfOrigin,
-    },
-    category: productJsonLdDict.category,
     url: `${baseUrl}${prefix}/products/${productParam}`,
-    offers: {
-      '@type': 'Offer',
-      availability: 'https://schema.org/InStock',
-      url: `${baseUrl}${prefix}/contact`,
+    image: [`${baseUrl}${productCard.imageLink}`, `${baseUrl}${desktopHero}`],
+    about: {
+      '@type': 'Thing',
+      name: product.name,
+      description: product.features,
+      brand: {
+        '@type': 'Brand',
+        name: productJsonLdDict.brandName,
+      },
+      manufacturer: {
+        '@type': 'Organization',
+        name: productJsonLdDict.manufacturerName,
+      },
+      category: productJsonLdDict.category,
     },
-    material: product.ingredients,
+    specialty: product.ingredients,
     additionalProperty: product.nutrition
       .filter((item: NutritionItem) => item.title)
       .map((item: NutritionItem) => ({
@@ -280,7 +276,7 @@ export default async function ProductPage({ params }: Props) {
 
   return (
     <>
-      <JsonLd data={productJsonLd} />
+      <JsonLd data={pageJsonLd} />
       <JsonLd data={breadcrumbJsonLd} />
       <JsonLd data={faqJsonLd} />
       <Section padding="sm" className={styles.section}>
