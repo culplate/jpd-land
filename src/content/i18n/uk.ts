@@ -437,6 +437,11 @@ const uk: Dictionary = {
       phonePlaceholder: '+380671234567',
       messageLabel: 'Ваше повідомлення (необов\u2019язково)',
       messagePlaceholder: 'Напишіть нам, щоб зробити ваших коі щасливішими',
+      consentPrefix: 'Я погоджуюся з ',
+      consentPrivacyLabel: 'Політикою конфіденційності',
+      consentMiddle: ' та ',
+      consentTermsLabel: 'Умовами та угодами',
+      consentSuffix: ' цього вебсайту',
       submit: 'Відправити заявку',
       sending: 'Надсилання...',
       successMessage: 'Повідомлення надіслано успішно',
@@ -450,6 +455,8 @@ const uk: Dictionary = {
       phoneRequired: 'Номер телефону є обов\u2019язковим',
       phoneInvalid: 'Будь ласка, введіть дійсний номер телефону',
       phoneMax: 'Номер телефону може містити щонайбільше 30 символів',
+      consentRequired:
+        'Потрібно погодитися з Політикою конфіденційності та Умовами',
     },
   },
   privacy: {

@@ -8,7 +8,7 @@ import {
 } from '@/lib/validations/contact';
 import type { Dictionary } from '@/content/i18n/schema';
 import s from './ContactForm.module.scss';
-import { Button } from '@/components/ui/Button/Button';
+import { Button, Link } from '@/components/ui';
 
 type Props = {
   dict: Dictionary['contact'];
@@ -136,6 +136,40 @@ export function ContactForm({ dict }: Props) {
           tabIndex={-1}
           autoComplete="off"
         />
+      </div>
+
+      <div
+        className={
+          errors.consent ? `${s.consent} ${s.consentError}` : s.consent
+        }
+      >
+        <div className={s.consentRow}>
+          <input
+            type="checkbox"
+            id="consent"
+            name="consent"
+            value="on"
+            aria-invalid={!!errors.consent}
+            aria-describedby={errors.consent ? 'consent-error' : undefined}
+            className={s.consentCheckbox}
+          />
+          <label htmlFor="consent" className={s.consentLabel}>
+            <span>{dict.form.consentPrefix}</span>
+            <Link href="/privacy" variant="underline" className={s.consentLink}>
+              {dict.form.consentPrivacyLabel}
+            </Link>
+            <span>{dict.form.consentMiddle}</span>
+            <Link href="/terms" variant="underline" className={s.consentLink}>
+              {dict.form.consentTermsLabel}
+            </Link>
+            <span>{dict.form.consentSuffix}</span>
+          </label>
+        </div>
+        {errors.consent && (
+          <span id="consent-error" className={s.error} role="alert">
+            {errors.consent}
+          </span>
+        )}
       </div>
 
       <Button type="submit" disabled={loading}>

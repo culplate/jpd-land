@@ -10,6 +10,7 @@ export type ContactValidationMessages = {
   phoneRequired: string;
   phoneInvalid: string;
   phoneMax: string;
+  consentRequired: string;
 };
 
 const DEFAULT_MESSAGES: ContactValidationMessages = {
@@ -20,6 +21,7 @@ const DEFAULT_MESSAGES: ContactValidationMessages = {
   phoneRequired: 'Phone number is required',
   phoneInvalid: 'Please enter a valid phone number',
   phoneMax: 'Phone number must be less than 30 characters',
+  consentRequired: 'You must agree to the Privacy Policy and Terms to continue',
 };
 
 export function createContactFormSchema(
@@ -41,6 +43,12 @@ export function createContactFormSchema(
         error: messages.phoneInvalid,
       }),
     message: z.string().optional(),
+    consent: z.preprocess(
+      (val) => (typeof val === 'string' ? val : ''),
+      z.string().refine((v) => v === 'on', {
+        error: messages.consentRequired,
+      })
+    ),
     website: z.string(),
   });
 }

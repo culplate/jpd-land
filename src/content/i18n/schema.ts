@@ -175,6 +175,11 @@ export type Dictionary = {
       phonePlaceholder: string;
       messageLabel: string;
       messagePlaceholder: string;
+      consentPrefix: string;
+      consentPrivacyLabel: string;
+      consentMiddle: string;
+      consentTermsLabel: string;
+      consentSuffix: string;
       submit: string;
       sending: string;
       successMessage: string;
@@ -188,6 +193,7 @@ export type Dictionary = {
       phoneRequired: string;
       phoneInvalid: string;
       phoneMax: string;
+      consentRequired: string;
     };
   };
   privacy: {
