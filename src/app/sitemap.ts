@@ -42,6 +42,12 @@ const staticRoutes: StaticRoute[] = [
     priority: 0.3,
     lastModified: new Date('2026-02-01'),
   },
+  {
+    path: 'terms',
+    changeFrequency: 'yearly',
+    priority: 0.3,
+    lastModified: new Date('2026-03-22'),
+  },
 ];
 
 const PRODUCT_IDS: ProductId[] = [

@@ -195,6 +195,11 @@ export type Dictionary = {
     lastUpdated: string;
     sections: PrivacySection[];
   };
+  terms: {
+    title: string;
+    lastUpdated: string;
+    sections: PrivacySection[];
+  };
   // Default Open Graph
   og: {
     title: string;
@@ -208,5 +213,6 @@ export type Dictionary = {
     contact: PageSeo;
     products: PageSeo;
     privacy: PageSeo;
+    terms: PageSeo;
   };
 };

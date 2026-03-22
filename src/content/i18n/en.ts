@@ -406,37 +406,96 @@ const en: Dictionary = {
   },
   privacy: {
     title: 'Privacy Policy',
-    lastUpdated: 'Last updated: February 2026',
+    lastUpdated: 'Effective date: March 22, 2026',
     sections: [
       {
-        heading: 'Information We Collect',
+        heading: 'Website operator',
         content:
-          'We collect information you provide directly to us, such as when you create an account, contact us, or subscribe to our newsletter. This may include your name, email address, phone number, and any other information you choose to provide.',
+          'This website (jpd-koi.com.ua) is operated by:\n\nVladyslav Brataniuk\nPhone: +380674441177\nEmail: info@jpd-koi.com.ua',
       },
       {
-        heading: 'How We Use Your Information',
+        heading: '1. What data we collect',
         content:
-          'We use the information we collect to provide, maintain, and improve our services, to process transactions, to send you technical notices and support messages, and to respond to your comments and questions.',
+          'We may collect the following personal data through the contact form:\n\n• Name\n• Email address\n• Message content',
       },
       {
-        heading: 'Information Sharing',
+        heading: '2. Purpose of data collection',
         content:
-          'We do not share your personal information with third parties except as described in this policy or with your consent. We may share information with service providers who assist us in operating our business, subject to confidentiality agreements.',
+          'Your data is collected solely for the purpose of:\n\n• responding to your inquiries\n• communication regarding your request',
       },
       {
-        heading: 'Data Security',
+        heading: '3. How we process your data',
         content:
-          'We implement appropriate technical and organizational measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction.',
+          'When you submit the contact form:\n\n• your data is sent via an email delivery service (Resend)\n• the message is delivered to our corporate email inbox\n• data is processed manually\n\nWe do not use your data for marketing or automated profiling.',
       },
       {
-        heading: 'Your Rights',
+        heading: '4. Data storage',
         content:
-          'You may access, correct, or delete your personal information at any time. You may also object to or restrict certain processing of your data. Contact us if you wish to exercise these rights.',
+          'Your data is not stored in a dedicated database on this website.\n\nHowever, your message is stored:\n\n• in the email inbox used to receive messages\n• temporarily processed by third-party email service providers',
       },
       {
-        heading: 'Contact Us',
+        heading: '5. Third-party services',
         content:
-          'If you have questions about this Privacy Policy, please contact us through our contact page or by email at the address provided on our website.',
+          'We use third-party services to deliver messages:\n\n• Resend (email delivery service)\n• email providers (Zohomail)\n\nThese providers may process your data according to their own privacy policies.',
+      },
+      {
+        heading: '6. Data retention',
+        content:
+          'We retain your data only as long as necessary to handle your request or as long as the email remains in our inbox.',
+      },
+      {
+        heading: '7. Your rights',
+        content:
+          'You have the right to:\n\n• request access to your data\n• request correction of your data\n• request deletion of your data\n\nTo exercise these rights, contact us at:\ninfo@jpd-koi.com.ua',
+      },
+      {
+        heading: '8. Contact',
+        content:
+          'If you have any questions regarding this Privacy Policy, contact:\n\ninfo@jpd-koi.com.ua',
+      },
+    ],
+  },
+  terms: {
+    title: 'Terms and Conditions',
+    lastUpdated: 'Effective date: March 22, 2026',
+    sections: [
+      {
+        heading: '1. General information',
+        content:
+          'This website (jpd-koi.com.ua) is an informational resource related to JPD (Japan Pet Design) products.\n\nThe website is operated by:\n\nVladyslav Brataniuk\nPhone: +380674441177\nEmail: info@jpd-koi.com.ua',
+      },
+      {
+        heading: '2. No commercial activity',
+        content:
+          'This website does not sell any products or services.\n\nAll information provided is for informational purposes only.',
+      },
+      {
+        heading: '3. Brand disclaimer',
+        content:
+          'This website is operated by an official representative of JPD in Ukraine.\n\nThe operator of this website is not the legal owner of the JPD trademarks.\n\nAll trademarks, logos, and brand names belong to their respective owners.',
+      },
+      {
+        heading: '4. Contact form',
+        content:
+          'The contact form is provided for communication purposes only.\n\nWe do not guarantee response times or availability.\n\nUsers must not use the form for:\n\n• spam\n• illegal content\n• abusive messages',
+      },
+      {
+        heading: '5. Limitation of liability',
+        content:
+          'We are not responsible for:\n\n• inaccuracies in the information provided\n• any damages resulting from the use of this website',
+      },
+      {
+        heading: '6. Intellectual property',
+        content:
+          'All content on this website (except third-party trademarks) belongs to the website operator unless otherwise stated.\n\nUnauthorized use is prohibited.',
+      },
+      {
+        heading: '7. Changes',
+        content: 'We reserve the right to update these Terms at any time.',
+      },
+      {
+        heading: '8. Contact',
+        content: 'info@jpd-koi.com.ua',
       },
     ],
   },
@@ -471,6 +530,11 @@ const en: Dictionary = {
       title: 'Privacy Policy | Japan Pet Design | JPD',
       description:
         'Read our privacy policy to learn how we collect, use, and protect your personal data.',
+    },
+    terms: {
+      title: 'Terms and Conditions | Japan Pet Design | JPD',
+      description:
+        'Read the terms and conditions for using the Japan Pet Design representative website in Ukraine.',
     },
   },
 };

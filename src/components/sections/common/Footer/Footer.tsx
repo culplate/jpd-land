@@ -90,7 +90,7 @@ export function Footer({ locale, footer }: FooterProps) {
             <div className={styles.bottom}>
               <nav className={styles.bottomLinks} aria-label="Legal">
                 <Link href="/privacy">{footer.privacy}</Link>
-                <Link href="#terms">{footer.terms}</Link>
+                <Link href="/terms">{footer.terms}</Link>
               </nav>
               <Text as="p" size="sm" weight="light">
                 {prefix}
